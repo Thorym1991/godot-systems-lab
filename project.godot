@@ -13,3 +13,12 @@ config_version=5
 config/name="Godot Systems Lab"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[file_customization]
+
+folder_colors={
+"res://Addons/": "orange",
+"res://Demo/": "green",
+"res://Systems/": "teal",
+"res://core/": "purple"
+}
