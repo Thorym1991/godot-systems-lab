@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://f7jkrumw5cp4"]
+
+[ext_resource type="Script" uid="uid://c8rwc7r23bplp" path="res://Systems/player_state/topdown/TopdownPlayer2D.gd" id="1_v8nwm"]
+[ext_resource type="Texture2D" uid="uid://mijcres87hji" path="res://icon.svg" id="2_56c2u"]
+[ext_resource type="Script" uid="uid://cm12sjpi70nmw" path="res://Systems/player_state/StateMachine.gd" id="3_5h788"]
+[ext_resource type="Script" uid="uid://l8cg34mr6avg" path="res://Systems/player_state/topdown/states/TopdownIdle.gd" id="4_37knj"]
+[ext_resource type="Script" uid="uid://cside3mcjntcy" path="res://Systems/player_state/topdown/states/TopdownMove.gd" id="5_opgnk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_53xgk"]
+size = Vector2(64, 64)
+
+[node name="PlayerDemoTd" type="CharacterBody2D"]
+script = ExtResource("1_v8nwm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_56c2u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_53xgk")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("3_5h788")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("4_37knj")
+
+[node name="Move" type="Node" parent="StateMachine"]
+script = ExtResource("5_opgnk")
+
+[node name="Camera2D" type="Camera2D" parent="."]
