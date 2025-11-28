@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://bjwcfqwj1s2y0"]
+[gd_scene load_steps=6 format=4 uid="uid://bjwcfqwj1s2y0"]
 
 [ext_resource type="Texture2D" uid="uid://mijcres87hji" path="res://icon.svg" id="1_7ibrg"]
 [ext_resource type="PackedScene" uid="uid://f7jkrumw5cp4" path="res://Demo/player_state_demo/Topdown/PlayerDemoTD.tscn" id="2_ytfdg"]
+[ext_resource type="PackedScene" uid="uid://cmbyagwxt0tjq" path="res://Demo/DemoBackHUD.tscn" id="3_70wku"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ytfdg"]
 texture = ExtResource("1_7ibrg")
@@ -83,3 +84,5 @@ tile_set = SubResource("TileSet_70wku")
 [node name="PlayerDemoTd" parent="." instance=ExtResource("2_ytfdg")]
 position = Vector2(38, 35)
 motion_mode = 1
+
+[node name="DemoBackHud" parent="PlayerDemoTd" instance=ExtResource("3_70wku")]
