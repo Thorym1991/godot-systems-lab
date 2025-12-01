@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://3g8y67j2qrc7"
+path="res://.godot/imported/Bonus.wav-c1c2457d07b1d71b09d84fc0a86d1f1c.sample"
+
+[deps]
+
+source_file="res://Assits/Ninja Adventure - Asset Pack/Sounds/Game/Bonus.wav"
+dest_files=["res://.godot/imported/Bonus.wav-c1c2457d07b1d71b09d84fc0a86d1f1c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
