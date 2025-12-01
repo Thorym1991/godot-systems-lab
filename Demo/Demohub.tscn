@@ -37,3 +37,7 @@ text = "Platformer Demo
 [node name="TopdownButton" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "Topdown Demo"
+
+[node name="TopdownInteractDemoButton" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Topdown Interact Demo"

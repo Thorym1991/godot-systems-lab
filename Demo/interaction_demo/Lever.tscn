@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bw86lkmkmhdsu"]
+
+[ext_resource type="Script" uid="uid://droqavedeamf4" path="res://Demo/interaction_demo/lever.gd" id="1_3p6jb"]
+[ext_resource type="Texture2D" uid="uid://lda8ay3wclcr" path="res://Assits/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetDungeon.png" id="2_n1d2p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dc27b"]
+radius = 16.0
+
+[node name="Lever" type="Area2D"]
+collision_layer = 5
+collision_mask = 2
+script = ExtResource("1_3p6jb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_n1d2p")
+hframes = 12
+vframes = 4
+frame = 27
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_dc27b")
+debug_color = Color(0.988851, 0, 0.297294, 0.42)

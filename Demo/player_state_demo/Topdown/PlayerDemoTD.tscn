@@ -1,23 +1,39 @@
-[gd_scene load_steps=7 format=3 uid="uid://f7jkrumw5cp4"]
+[gd_scene load_steps=9 format=3 uid="uid://f7jkrumw5cp4"]
 
 [ext_resource type="Script" uid="uid://c8rwc7r23bplp" path="res://Systems/player_state/topdown/TopdownPlayer2D.gd" id="1_v8nwm"]
-[ext_resource type="Texture2D" uid="uid://mijcres87hji" path="res://icon.svg" id="2_56c2u"]
+[ext_resource type="Texture2D" uid="uid://qhrpnqg7kcpc" path="res://Assits/Ninja Adventure - Asset Pack/Actor/Characters/GladiatorBlue/SpriteSheet.png" id="2_56c2u"]
 [ext_resource type="Script" uid="uid://cm12sjpi70nmw" path="res://Systems/player_state/StateMachine.gd" id="3_5h788"]
 [ext_resource type="Script" uid="uid://l8cg34mr6avg" path="res://Systems/player_state/topdown/states/TopdownIdle.gd" id="4_37knj"]
 [ext_resource type="Script" uid="uid://cside3mcjntcy" path="res://Systems/player_state/topdown/states/TopdownMove.gd" id="5_opgnk"]
+[ext_resource type="Script" uid="uid://c73h87mxlbod6" path="res://Systems/Interaction/InteractionManager2D.gd" id="6_5h788"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_53xgk"]
-size = Vector2(64, 64)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_56c2u"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_37knj"]
+radius = 7.0
+height = 22.0
 
 [node name="PlayerDemoTd" type="CharacterBody2D"]
 script = ExtResource("1_v8nwm")
 
+[node name="InteractionManager2D" type="Node2D" parent="."]
+script = ExtResource("6_5h788")
+
+[node name="DetectionArea" type="Area2D" parent="InteractionManager2D"]
+collision_layer = 3
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionManager2D/DetectionArea"]
+shape = SubResource("CapsuleShape2D_56c2u")
+debug_color = Color(0.705545, 0.296611, 0.960899, 0.42)
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_56c2u")
+hframes = 4
+vframes = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_53xgk")
+shape = SubResource("CapsuleShape2D_37knj")
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("3_5h788")
@@ -29,3 +45,4 @@ script = ExtResource("4_37knj")
 script = ExtResource("5_opgnk")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
