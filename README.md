@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="Assets/gsl_splash_full_1280x720.png" alt="Godot Systems Lab Banner" width="100%" />
+</p>
+
+
 # Godot Systems Lab
 
 A modular playground and framework for building 2D games in Godot 4.x.  
