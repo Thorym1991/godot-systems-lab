@@ -13,7 +13,9 @@ config_version=5
 config/name="Godot Systems Lab"
 run/main_scene="uid://cudceesa4jw5l"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.0509804, 0.101961, 0.0784314, 1)
+boot_splash/image="uid://bamurx82dbn0e"
+config/icon="res://icon.png"
 
 [autoload]
 
