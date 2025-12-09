@@ -14,20 +14,38 @@ The goal of this project is to provide reusable systems (player state machines, 
 
 - ✅ **Player State System (shared core)**
   - Platformer player with idle / move / air states
-  - Topdown player with 4 / 8-way movement
+  - Topdown player with 4- / 8-way movement
+  - Shared state machine base (`StateMachine.gd`, `PlayerState.gd`) for multiple player types
 
-- ✅ **Demo Hub**
-  - Main menu to launch each demo
-  - Back-to-hub overlay inside every demo
+- ✅ **Interaction System**
+  - Base class for interactables (`Interactable.gd`)
+  - Example lever implementation (`Lever.gd`)
+  - Signal-based, decoupled interaction flow
+  - Topdown interaction demo scene
+
+- ✅ **Demo Hub & UI**
+  - Central **DemoHub.tscn** scene to launch all demos
+  - In-game **Back-to-Hub overlay** (`DemoBackHUD.tscn`) inside every demo
+  - Custom green branding & boot splash
 
 - 🧪 **Demos**
-  - Platformer player demo
-  - Topdown player demo
+  - Platformer player demo level
+  - Topdown overworld demo
+  - Topdown interaction demo (lever test world)
+
+- 🧪 **Documentation**
+  - Getting started: installation & project folder structure
+  - System docs: player state machine, interaction system, UI system (WIP)
+  - Demo overview + per-demo pages
+  - Autoloads & signals reference
 
 - 🚧 **Planned systems**
-  - Interaction system demo
-  - Inventory system demo
-  - Save/Load, UI widgets, and more
+  - Inventory system (items, equipment, UI)
+  - Save/Load & persistence layer
+  - Extended UI widgets (menus, options, pause, etc.)
+  - More interaction types (doors, chests, triggers, NPCs)
+  - Additional systems (dialogue, combat, RPG-style mechanics)
+
 
 ---
 
@@ -36,36 +54,36 @@ The goal of this project is to provide reusable systems (player state machines, 
 ```text
 res://
   core/
-    globals/
-      GlobalSignals.gd
+	globals/
+	  GlobalSignals.gd
   Systems/
-    player_state/
-      StateMachine.gd
-      PlayerState.gd
-      platformer/
-        PlatformerPlayer.gd
-        states/
-          IdleState.gd
-          MoveState.gd
-          AirState.gd
-      topdown/
-        TopdownPlayer2D.gd
-        states/
-          TopdownIdle.gd
-          TopdownMove.gd
-    Interaction/
-    inventory/
-    ui/
-      DemoBackHUD.tscn
+	player_state/
+	  StateMachine.gd
+	  PlayerState.gd
+	  platformer/
+		PlatformerPlayer.gd
+		states/
+		  IdleState.gd
+		  MoveState.gd
+		  AirState.gd
+	  topdown/
+		TopdownPlayer2D.gd
+		states/
+		  TopdownIdle.gd
+		  TopdownMove.gd
+	Interaction/
+	inventory/
+	ui/
+	  DemoBackHUD.tscn
   Demo/
-    DemoHub.tscn
-    player_state_demo/
-      Platformer/
-        PlayerDemoPF.tscn
-        TestWorldPF.tscn
-      Topdown/
-        PlayerDemoTD.tscn
-        TestWorldTD.tscn
+	DemoHub.tscn
+	player_state_demo/
+	  Platformer/
+		PlayerDemoPF.tscn
+		TestWorldPF.tscn
+	  Topdown/
+		PlayerDemoTD.tscn
+		TestWorldTD.tscn
 # Languages  
 🇬🇧 [English](#english-version) • 🇩🇪 [Deutsch](#deutsche-version)
 
