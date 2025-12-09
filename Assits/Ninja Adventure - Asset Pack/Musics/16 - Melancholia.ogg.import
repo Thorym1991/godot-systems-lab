@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://jagu5idfm8iu"
+path="res://.godot/imported/16 - Melancholia.ogg-03e5d82f11e7fa23a032c1a7ac218a41.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assits/Ninja Adventure - Asset Pack/Musics/16 - Melancholia.ogg"
+dest_files=["res://.godot/imported/16 - Melancholia.ogg-03e5d82f11e7fa23a032c1a7ac218a41.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
