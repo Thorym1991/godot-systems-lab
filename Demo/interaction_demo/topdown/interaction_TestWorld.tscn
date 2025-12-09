@@ -1,15 +1,15 @@
 [gd_scene load_steps=15 format=4 uid="uid://ov8ork84tq8s"]
 
-[ext_resource type="Texture2D" uid="uid://bdo8qmyewf4k2" path="res://Assits/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetField.png" id="1_yk3kg"]
-[ext_resource type="Texture2D" uid="uid://bvbf5iguh5iai" path="res://Assits/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloor.png" id="2_smbyu"]
-[ext_resource type="PackedScene" uid="uid://bw86lkmkmhdsu" path="res://Demo/interaction_demo/Lever.tscn" id="3_7vvky"]
-[ext_resource type="Texture2D" uid="uid://dj1whj8dbdfr1" path="res://Assits/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetNature.png" id="4_budjh"]
-[ext_resource type="Texture2D" uid="uid://crdjitrjueo0c" path="res://Assits/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloorDetail.png" id="5_8osbh"]
-[ext_resource type="Texture2D" uid="uid://cy7rq5c7pqt0t" path="res://Assits/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetDesert.png" id="6_2rs87"]
-[ext_resource type="PackedScene" uid="uid://f7jkrumw5cp4" path="res://Demo/player_state_demo/Topdown/PlayerDemoTD.tscn" id="7_m2uwo"]
+[ext_resource type="Texture2D" uid="uid://bdo8qmyewf4k2" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetField.png" id="1_htkye"]
+[ext_resource type="Texture2D" uid="uid://bvbf5iguh5iai" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloor.png" id="2_bdxe5"]
+[ext_resource type="Texture2D" uid="uid://dj1whj8dbdfr1" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetNature.png" id="3_ya2tx"]
+[ext_resource type="Texture2D" uid="uid://crdjitrjueo0c" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloorDetail.png" id="4_i3kyx"]
+[ext_resource type="Texture2D" uid="uid://cy7rq5c7pqt0t" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetDesert.png" id="5_ilhdn"]
+[ext_resource type="PackedScene" uid="uid://bw86lkmkmhdsu" path="res://Demo/interaction_demo/topdown/Lever.tscn" id="6_da0dn"]
+[ext_resource type="PackedScene" uid="uid://f7jkrumw5cp4" path="res://Demo/player_state_demo/Topdown/PlayerDemoTD.tscn" id="7_xdtfy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vtvcy"]
-texture = ExtResource("1_yk3kg")
+texture = ExtResource("1_htkye")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -77,7 +77,7 @@ texture = ExtResource("1_yk3kg")
 2:14/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_200sc"]
-texture = ExtResource("2_smbyu")
+texture = ExtResource("2_bdxe5")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -542,7 +542,7 @@ sources/0 = SubResource("TileSetAtlasSource_vtvcy")
 sources/1 = SubResource("TileSetAtlasSource_200sc")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kmjoi"]
-texture = ExtResource("4_budjh")
+texture = ExtResource("3_ya2tx")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -928,7 +928,7 @@ texture = ExtResource("4_budjh")
 11:20/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fnn7p"]
-texture = ExtResource("5_8osbh")
+texture = ExtResource("4_i3kyx")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -964,7 +964,7 @@ texture = ExtResource("5_8osbh")
 7:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_py8pk"]
-texture = ExtResource("6_2rs87")
+texture = ExtResource("5_ilhdn")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1209,7 +1209,7 @@ tile_set = SubResource("TileSet_jqpvg")
 tile_map_data = PackedByteArray("AAAPAPT/AAARAAoAAAAPAPX/AAARAAsAAAAPAPb/AAARAAwAAAAQAPT/AAASAAoAAAAQAPX/AAASAAsAAAAQAPb/AgALAAIAAAARAPT/AAATAAoAAAARAPX/AAATAAsAAAARAPb/AAATAAwAAAASAPX/AAAUAAsAAAASAPb/AAAUAAwAAAANAPT/AAAVAAoAAAANAPX/AAAVAAsAAAANAPb/AAAVAAwAAAAOAPT/AAAWAAoAAAAOAPX/AAAWAAsAAAAOAPb/AAAWAAwAAAAMAPb/AAARAA0AAAARAPj/AAAOABIAAAAEAAoAAQADAAIAAAACAAkAAQACAAIAAAAIAAoAAQAEAAIAAAAGAA0AAQAGAAIAAAAGAAUAAQAFAAIAAAAHAAUAAQAFAAIAAAAMAAwAAQAFAAMAAAAPAAgAAQAFAAMAAAANAP//AQAHAAAAAAAIAAAAAQAHAAAAAAAIAP7/AQAIAAAAAAAGAP//AQAAAAAAAAALAPr/AQAAAAAAAAACAAAAAQACAAIAAAAEAPj/AQACAAIAAAAFAPr/AQADAAIAAAAOAPr/AQADAAIAAAAMAAEAAQADAAIAAAACAA4AAQADAAIAAAADAA4AAQADAAIAAAAEAA4AAQADAAIAAAAEAA0AAQAFAAIAAAAAAAwAAQAFAAIAAAAIAAIAAQAHAAIAAAA=")
 tile_set = SubResource("TileSet_mt0ww")
 
-[node name="Lever" parent="." instance=ExtResource("3_7vvky")]
+[node name="Lever" parent="." instance=ExtResource("6_da0dn")]
 position = Vector2(253, -105)
 
-[node name="PlayerDemoTd" parent="." instance=ExtResource("7_m2uwo")]
+[node name="PlayerDemoTd" parent="." instance=ExtResource("7_xdtfy")]

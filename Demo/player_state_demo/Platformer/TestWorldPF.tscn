@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=4 uid="uid://dd14uk7cx7n70"]
 
-[ext_resource type="Texture2D" uid="uid://mijcres87hji" path="res://icon.svg" id="1_dxo6x"]
+[ext_resource type="Texture2D" uid="uid://botlewrpvd0t0" path="res://icon.svg" id="1_dxo6x"]
 [ext_resource type="PackedScene" uid="uid://dkxr30mq0v301" path="res://Demo/player_state_demo/Platformer/PlayerDemoPF.tscn" id="1_dyor5"]
-[ext_resource type="PackedScene" uid="uid://cmbyagwxt0tjq" path="res://Demo/DemoBackHUD.tscn" id="3_4vai1"]
+[ext_resource type="PackedScene" uid="uid://cmbyagwxt0tjq" path="res://Systems/ui/DemoBackHUD.tscn" id="3_4vai1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4qyx1"]
 texture = ExtResource("1_dxo6x")
