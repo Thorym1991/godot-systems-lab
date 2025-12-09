@@ -8,6 +8,23 @@
 A modular playground and framework for building 2D games in Godot 4.x.  
 The goal of this project is to provide reusable systems (player state machines, interaction, inventory, UI, etc.) plus small demos that show how everything works.
 
+Why this project exists
+
+Godot Systems Lab was created as a learning-driven framework to explore, understand, and document how reusable gameplay systems can be built in Godot 4.
+It is not intended to be a finished engine or a polished toolkit — instead, it is a growing collection of systems, experiments, and demos that evolve as new mechanics are added.
+
+The goal of the project is:
+
+to develop clean and modular gameplay systems
+
+to learn by building small, focused demos
+
+to document every step in an organized and accessible way
+
+to create a foundation that can be reused in future games
+
+This repository grows as I learn more about Godot, game architecture, and system design.
+It is meant to be a playground, reference, and work-in-progress framework — not a final product.
 ---
 
 ## Features (current state)
