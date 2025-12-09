@@ -1,3 +1,58 @@
-# Godot 4+ specific ignores
+# Godot 4 specific ignores ------------------------------------
+
+# The .godot/ folder contains:
+# - Imported textures
+# - Cached scenes/resources
+# - Editor metadata
+# → Should NEVER be committed!
 .godot/
+
+# Godot import files (automatically generated)
+*.import
+
+# Imported binary resources
+*.ctex
+*.stex
+*.res
+
+# Android build artifacts
 /android/
+*.apk
+*.aab
+
+# Windows/macOS/Linux export artifacts
+*.exe
+*.pck
+*.dll
+*.app
+*.dmg
+*.zip
+*.tar.gz
+
+# Mono / C# related
+.mono/
+*.csproj
+*.sln
+*.tmp
+obj/
+bin/
+
+# System / Editor / OS garbage
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+
+# Logs
+logs/
+*.log
+
+# VSCode / JetBrains / General editors
+.vscode/
+.idea/
+
+# Python venv (if used for tools)
+venv/
