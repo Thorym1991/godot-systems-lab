@@ -3,7 +3,7 @@ extends Control
 const DEMO_SCENES := {
 	"platformer": "res://Demo/player_state_demo/Platformer/TestWorldPF.tscn",
 	"topdown": "res://Demo/player_state_demo/Topdown/TestWorldTD.tscn",
-	"interactdemo": "res://Demo/interaction_demo/interaction_TestWorld.tscn"
+	"interactdemo": "res://Demo/interaction_demo/topdown/interaction_TestWorld.tscn"
 }
 
 func _ready() -> void:
