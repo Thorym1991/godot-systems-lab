@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 class_name InteractionManager2D
 ## Handles detection of nearby Interactable2D nodes and triggering interactions.
 ## Intended to be used as a child of the player character.
