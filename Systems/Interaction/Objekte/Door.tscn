@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://du8oxey5ik0te"]
+
+[ext_resource type="Script" uid="uid://dhj1cctr8iw2m" path="res://Systems/Interaction/Objekte/door.gd" id="1_aqxtl"]
+[ext_resource type="Texture2D" uid="uid://81oqijwbef5w" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetHouse.png" id="2_br5sp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5lbb"]
+size = Vector2(14, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_frqjw"]
+size = Vector2(14, 15)
+
+[node name="Door" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_aqxtl")
+
+[node name="InteractCollider" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_m5lbb")
+debug_color = Color(0, 0.647059, 0.227451, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_br5sp")
+region_enabled = true
+region_rect = Rect2(17.0256, 48.386, 14.029, 15.4134)
+
+[node name="Blockbody" type="StaticBody2D" parent="."]
+collision_layer = 9
+
+[node name="BlockCollider" type="CollisionShape2D" parent="Blockbody"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_frqjw")
+debug_color = Color(0.301961, 0.0117647, 0.356863, 0.419608)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

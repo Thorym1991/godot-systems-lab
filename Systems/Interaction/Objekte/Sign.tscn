@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvqe4i5jupu0y"]
+
+[ext_resource type="Texture2D" uid="uid://devel3uuiwtq3" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetElement.png" id="1_moej6"]
+[ext_resource type="Script" uid="uid://coymc1w7vg63s" path="res://Systems/Interaction/Objekte/sign.gd" id="1_o0juj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3g7ni"]
+size = Vector2(12, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0p4bu"]
+size = Vector2(12, 5)
+
+[node name="Sign" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_o0juj")
+
+[node name="InteractCollider" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_3g7ni")
+debug_color = Color(2.575e-06, 0.646838, 0.227039, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_moej6")
+hframes = 17
+vframes = 15
+frame = 34
+
+[node name="BlockBody" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 33
+
+[node name="BlockCollider" type="CollisionShape2D" parent="BlockBody"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_0p4bu")
+debug_color = Color(0.303063, 0.0125563, 0.354991, 0.42)
