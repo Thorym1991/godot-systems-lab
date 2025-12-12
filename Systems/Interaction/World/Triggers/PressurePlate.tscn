@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=3 uid="uid://dvvkbf3lsca1w"]
+
+[ext_resource type="Script" uid="uid://ct4mvrnjpnwvo" path="res://Systems/Interaction/World/Triggers/pressure_plate.gd" id="1_7asb2"]
+[ext_resource type="Texture2D" uid="uid://lda8ay3wclcr" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetDungeon.png" id="1_8wuup"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7asb2"]
+size = Vector2(11, 12)
+
+[sub_resource type="Animation" id="Animation_7asb2"]
+resource_name = "pressed"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0999056),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Rect2(32.0179, 17.2094, 16.5294, 15.6064), Rect2(48.3769, 17.7412, 15.3211, 14.7674)]
+}
+
+[sub_resource type="Animation" id="Animation_8nnaw"]
+resource_name = "released"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Rect2(48.0061, 17.741, 15.7826, 15.0442), Rect2(32.0179, 17.2094, 16.5294, 15.6064)]
+}
+
+[sub_resource type="Animation" id="Animation_12jw1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(32.0179, 17.2094, 16.5294, 15.6064)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_12jw1"]
+_data = {
+&"RESET": SubResource("Animation_12jw1"),
+&"pressed": SubResource("Animation_7asb2"),
+&"released": SubResource("Animation_8nnaw")
+}
+
+[node name="PressurePlate" type="Node2D"]
+script = ExtResource("1_7asb2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8wuup")
+region_enabled = true
+region_rect = Rect2(32.0179, 17.2094, 16.5294, 15.6064)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_7asb2")
+debug_color = Color(0.301961, 0.0117647, 0.356863, 0.419608)
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_12jw1")
+}
