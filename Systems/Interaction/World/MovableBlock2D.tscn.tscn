@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://momo280pmw7i"]
+
+[ext_resource type="Script" uid="uid://dfwb5ybye8gkk" path="res://Systems/Interaction/World/movable_block_2d.gd" id="1_63jnf"]
+[ext_resource type="Texture2D" uid="uid://lda8ay3wclcr" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetDungeon.png" id="2_pwjyh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sm5e7"]
+size = Vector2(14, 15)
+
+[node name="MovableBlock2d_tscn" type="CharacterBody2D" groups=["movable"]]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_63jnf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_pwjyh")
+region_enabled = true
+region_rect = Rect2(129.292, 48.9435, 14.1211, 15.013)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_sm5e7")
+debug_color = Color(0.301961, 0.0117647, 0.356863, 0.419608)

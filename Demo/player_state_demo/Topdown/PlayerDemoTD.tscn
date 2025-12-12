@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://cm12sjpi70nmw" path="res://Systems/player_state/StateMachine.gd" id="3_5h788"]
 [ext_resource type="Script" uid="uid://l8cg34mr6avg" path="res://Systems/player_state/topdown/states/TopdownIdle.gd" id="4_37knj"]
 [ext_resource type="Script" uid="uid://cside3mcjntcy" path="res://Systems/player_state/topdown/states/TopdownMove.gd" id="5_opgnk"]
-[ext_resource type="Script" uid="uid://c73h87mxlbod6" path="res://Systems/Interaction/InteractionManager2D.gd" id="6_5h788"]
+[ext_resource type="Script" uid="uid://c73h87mxlbod6" path="res://Systems/Interaction/Core/InteractionManager2D.gd" id="6_5h788"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_56c2u"]
 
@@ -13,7 +13,7 @@
 radius = 6.0
 height = 16.0
 
-[node name="PlayerDemoTd" type="CharacterBody2D"]
+[node name="PlayerDemoTd" type="CharacterBody2D" groups=["player"]]
 collision_mask = 8
 script = ExtResource("1_v8nwm")
 

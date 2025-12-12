@@ -1,22 +1,27 @@
-[gd_scene load_steps=34 format=4 uid="uid://ov8ork84tq8s"]
+[gd_scene load_steps=39 format=4 uid="uid://ov8ork84tq8s"]
 
 [ext_resource type="Texture2D" uid="uid://bdo8qmyewf4k2" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetField.png" id="1_htkye"]
 [ext_resource type="Texture2D" uid="uid://bvbf5iguh5iai" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloor.png" id="2_bdxe5"]
 [ext_resource type="Texture2D" uid="uid://bogrfd56d5ebp" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloorB.png" id="3_ctecb"]
-[ext_resource type="PackedScene" uid="uid://du8oxey5ik0te" path="res://Systems/Interaction/Objekte/Door.tscn" id="3_ilhdn"]
+[ext_resource type="PackedScene" uid="uid://du8oxey5ik0te" path="res://Systems/Interaction/Interactables/Door/Door.tscn" id="3_ilhdn"]
 [ext_resource type="Texture2D" uid="uid://dj1whj8dbdfr1" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetNature.png" id="3_ya2tx"]
 [ext_resource type="Texture2D" uid="uid://crdjitrjueo0c" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloorDetail.png" id="4_i3kyx"]
 [ext_resource type="Texture2D" uid="uid://cy7rq5c7pqt0t" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetDesert.png" id="5_ilhdn"]
-[ext_resource type="PackedScene" uid="uid://bw86lkmkmhdsu" path="res://Systems/Interaction/Objekte/Lever.tscn" id="6_da0dn"]
+[ext_resource type="PackedScene" uid="uid://bw86lkmkmhdsu" path="res://Systems/Interaction/World/Triggers/Lever.tscn" id="6_da0dn"]
 [ext_resource type="Texture2D" uid="uid://dvkgso10xt3k1" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetRelief.png" id="6_m72ov"]
 [ext_resource type="Texture2D" uid="uid://chkk7spytx00v" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetReliefDetail.png" id="7_oc16g"]
 [ext_resource type="PackedScene" uid="uid://f7jkrumw5cp4" path="res://Demo/player_state_demo/Topdown/PlayerDemoTD.tscn" id="7_xdtfy"]
 [ext_resource type="PackedScene" uid="uid://cmbyagwxt0tjq" path="res://Systems/ui/DemoBackHUD.tscn" id="8_bdxe5"]
 [ext_resource type="Texture2D" uid="uid://v0njxhn0b6ie" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetWater.png" id="8_wlrdv"]
-[ext_resource type="PackedScene" uid="uid://cvqe4i5jupu0y" path="res://Systems/Interaction/Objekte/Sign.tscn" id="9_ya2tx"]
-[ext_resource type="PackedScene" uid="uid://cu0i0bdk10odc" path="res://Systems/Interaction/Objekte/Chest.tscn" id="10_i3kyx"]
+[ext_resource type="PackedScene" uid="uid://cvqe4i5jupu0y" path="res://Systems/Interaction/Interactables/Sign/Sign.tscn" id="9_ya2tx"]
+[ext_resource type="PackedScene" uid="uid://cu0i0bdk10odc" path="res://Systems/Interaction/Interactables/Chest/Chest.tscn" id="10_i3kyx"]
 [ext_resource type="Texture2D" uid="uid://81oqijwbef5w" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetHouse.png" id="10_o324a"]
-[ext_resource type="PackedScene" uid="uid://cbul32g2hq3sd" path="res://Systems/Interaction/Objekte/Gate.tscn" id="17_m72ov"]
+[ext_resource type="PackedScene" uid="uid://cbul32g2hq3sd" path="res://Systems/Interaction/World/Gate.tscn" id="17_m72ov"]
+[ext_resource type="PackedScene" uid="uid://b0qvhl1nn7f4q" path="res://Systems/Interaction/World/Triggers/StepTrigger.tscn" id="18_oc16g"]
+[ext_resource type="PackedScene" uid="uid://dvvkbf3lsca1w" path="res://Systems/Interaction/World/Triggers/PressurePlate.tscn" id="19_o324a"]
+[ext_resource type="PackedScene" uid="uid://du6voiohvtnyb" path="res://Systems/Interaction/World/Triggers/TimedStepTrigger.tscn" id="19_wlrdv"]
+[ext_resource type="PackedScene" uid="uid://momo280pmw7i" path="res://Systems/Interaction/World/MovableBlock2D.tscn.tscn" id="21_bmyst"]
+[ext_resource type="PackedScene" uid="uid://bpgqctmk7dohp" path="res://Systems/Interaction/World/PushBlock.tscn" id="22_trcdq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vtvcy"]
 texture = ExtResource("1_htkye")
@@ -3351,7 +3356,7 @@ target_gate = NodePath("../Gate")
 [node name="PlayerDemoTd" parent="." instance=ExtResource("7_xdtfy")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(24, -1)
+position = Vector2(258, 372)
 
 [node name="DemoBackHud" parent="." instance=ExtResource("8_bdxe5")]
 
@@ -3394,3 +3399,21 @@ position = Vector2(264, -136)
 z_index = 2
 y_sort_enabled = true
 position = Vector2(23, 156)
+
+[node name="StepTrigger" parent="." node_paths=PackedStringArray("target_gate") instance=ExtResource("18_oc16g")]
+position = Vector2(113, 200)
+target_gate = NodePath("../Gate")
+
+[node name="TimedStepTrigger" parent="." node_paths=PackedStringArray("target_gate") instance=ExtResource("19_wlrdv")]
+position = Vector2(53, 200)
+target_gate = NodePath("../Gate")
+
+[node name="PressurePlate" parent="." node_paths=PackedStringArray("target_gate") instance=ExtResource("19_o324a")]
+position = Vector2(26, 231)
+target_gate = NodePath("../Gate")
+
+[node name="MovableBlock2d_tscn" parent="." instance=ExtResource("21_bmyst")]
+position = Vector2(22, 351)
+
+[node name="PushBlock" parent="." instance=ExtResource("22_trcdq")]
+position = Vector2(-36, 286)
