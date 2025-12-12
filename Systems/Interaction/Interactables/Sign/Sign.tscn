@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cvqe4i5jupu0y"]
 
 [ext_resource type="Texture2D" uid="uid://devel3uuiwtq3" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetElement.png" id="1_moej6"]
-[ext_resource type="Script" uid="uid://coymc1w7vg63s" path="res://Systems/Interaction/Objekte/sign.gd" id="1_o0juj"]
+[ext_resource type="Script" uid="uid://coymc1w7vg63s" path="res://Systems/Interaction/Interactables/Sign/sign.gd" id="1_o0juj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3g7ni"]
 size = Vector2(12, 10)

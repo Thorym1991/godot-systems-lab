@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://du8oxey5ik0te"]
 
-[ext_resource type="Script" uid="uid://dhj1cctr8iw2m" path="res://Systems/Interaction/Objekte/door.gd" id="1_aqxtl"]
+[ext_resource type="Script" uid="uid://dhj1cctr8iw2m" path="res://Systems/Interaction/Interactables/Door/door.gd" id="1_aqxtl"]
 [ext_resource type="Texture2D" uid="uid://81oqijwbef5w" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetHouse.png" id="2_br5sp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m5lbb"]

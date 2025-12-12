@@ -12,7 +12,8 @@ func open_gate() -> void:
 		return
 	is_open = true
 	# Collider aus → Weg frei
-	block_collider.disabled = true
+	block_collider.set_deferred("disabled", true)
+
 
 	# Entweder nur transparent machen:
 	sprite.modulate.a = 0.0
@@ -25,7 +26,7 @@ func close_gate() -> void:
 	if not is_open:
 		return
 	is_open = false
-	block_collider.disabled = false
+	block_collider.set_deferred("disabled", false)
 	sprite.modulate.a = 1.0
 	if anim_player and anim_player.has_animation("close"):
 		anim_player.play("close")
