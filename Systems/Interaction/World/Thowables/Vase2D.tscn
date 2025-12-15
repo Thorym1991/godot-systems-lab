@@ -1,0 +1,58 @@
+[gd_scene load_steps=12 format=3 uid="uid://gtgf2kop36go"]
+
+[ext_resource type="Script" uid="uid://vl7aioji17ix" path="res://Systems/Interaction/World/Thowables/vase_2d.gd" id="1_4vpbq"]
+[ext_resource type="PackedScene" uid="uid://b6axrw1lmyg63" path="res://Systems/Interaction/World/Thowables/VaseShard2D_a.tscn" id="2_15cg2"]
+[ext_resource type="Texture2D" uid="uid://devel3uuiwtq3" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetElement.png" id="2_u02g3"]
+[ext_resource type="PackedScene" uid="uid://cagjaukmol6r5" path="res://Systems/Interaction/World/Thowables/VaseShard2D_b.tscn" id="3_hu3xv"]
+[ext_resource type="Script" uid="uid://fpdt2oo5p2hw" path="res://Systems/Interaction/Core/Interactable2D.gd" id="3_mkg71"]
+[ext_resource type="PackedScene" uid="uid://cpjafnquiy20c" path="res://Systems/Interaction/World/Thowables/VaseShard2D_c.tscn" id="4_6e2vb"]
+[ext_resource type="PackedScene" uid="uid://b8yxm71655b31" path="res://Systems/Interaction/World/Thowables/VaseShard2D_d.tscn" id="5_4vtoe"]
+[ext_resource type="Script" uid="uid://bqxi4w3klfjbe" path="res://Systems/Interaction/World/Thowables/vase_interact.gd" id="5_dtha4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c7tal"]
+radius = 7.0
+height = 16.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fc7vl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dtha4"]
+radius = 8.0
+
+[node name="Vase2d" type="RigidBody2D"]
+collision_layer = 8
+collision_mask = 25
+gravity_scale = 0.0
+script = ExtResource("1_4vpbq")
+shards_scene = ExtResource("2_15cg2")
+shard_scenes = Array[PackedScene]([ExtResource("2_15cg2"), ExtResource("3_hu3xv"), ExtResource("4_6e2vb"), ExtResource("5_4vtoe")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_u02g3")
+region_enabled = true
+region_rect = Rect2(1.4013, 160.13, 13.3902, 15.3557)
+
+[node name="BlockCollider" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_c7tal")
+debug_color = Color(0.301961, 0.0117647, 0.356863, 0.419608)
+
+[node name="InteractableArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("3_mkg71")
+
+[node name="InteractableCollider" type="CollisionShape2D" parent="InteractableArea"]
+shape = SubResource("RectangleShape2D_fc7vl")
+debug_color = Color(0, 0.647059, 0.227451, 0.419608)
+
+[node name="Hitarea" type="Area2D" parent="."]
+collision_layer = 1024
+collision_mask = 25
+
+[node name="HitCollider" type="CollisionShape2D" parent="Hitarea"]
+shape = SubResource("CircleShape2D_dtha4")
+debug_color = Color(0.975968, 0.0647559, 0.360487, 0.42)
+
+[node name="VaseInteract" type="Node" parent="."]
+script = ExtResource("5_dtha4")
+interactable_path = NodePath("../InteractableArea")
+vase_path = NodePath("..")
