@@ -27,6 +27,7 @@ folder_colors={
 "res://Addons/": "orange",
 "res://Assits/": "yellow",
 "res://Demo/": "green",
+"res://Resorcen/": "gray",
 "res://Systems/": "teal",
 "res://core/": "purple",
 "res://docs/": "pink"
@@ -77,6 +78,7 @@ interact={
 2d_physics/layer_8="Player_Hitbox"
 2d_physics/layer_9="Items / Pickups"
 2d_physics/layer_10="Environment_Zones"
+2d_physics/layer_11="Props_Physics"
 
 [rendering]
 

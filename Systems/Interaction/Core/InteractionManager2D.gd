@@ -18,11 +18,9 @@ var _current: Interactable2D
 
 
 func _ready() -> void:
-	print("InteractionManager2D READY on:", owner.name)
 	# Get detection area
 	_detection_area = get_node_or_null(detection_area_path)
 	if _detection_area == null:
-		push_error("InteractionManager2D: DetectionArea not found at path: %s" % detection_area_path)
 		return
 
 	_detection_area.area_entered.connect(_on_area_entered)
@@ -80,10 +78,14 @@ func _update_current() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	# Wenn der Player gerade grabt, soll Interact NUR der Grab-State behandeln
+	if owner and owner.has_method("is_grabbing") and owner.call("is_grabbing"):
+		return
+
 	if event.is_action_pressed("interact") and _current:
-		print("interact pressed, current:", _current)  # <--- NEU
-		if _current:
-			_current.interact(owner)  # owner ist in der Regel der Player
+		print("interact pressed, current:", _current)
+		_current.interact(owner)
+
 
 
 func _update_prompt() -> void:
@@ -91,7 +93,12 @@ func _update_prompt() -> void:
 	if _prompt_ui == null:
 		return
 
-	# Einfachste Variante: prompt_ui ist ein Label
+	# ⛔ Während Grab keinen Interact-Prompt anzeigen
+	if owner and owner.has_method("is_grabbing") and owner.call("is_grabbing"):
+		_prompt_ui.visible = false
+		return
+
+	# Normaler Interact-Prompt
 	if _current:
 		if _prompt_ui is Label:
 			(_prompt_ui as Label).text = _current.prompt_text
