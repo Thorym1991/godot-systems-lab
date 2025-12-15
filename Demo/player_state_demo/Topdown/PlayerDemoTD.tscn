@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://f7jkrumw5cp4"]
+[gd_scene load_steps=11 format=3 uid="uid://f7jkrumw5cp4"]
 
 [ext_resource type="Script" uid="uid://c8rwc7r23bplp" path="res://Systems/player_state/topdown/TopdownPlayer2D.gd" id="1_v8nwm"]
 [ext_resource type="Texture2D" uid="uid://qhrpnqg7kcpc" path="res://Assets/Ninja Adventure - Asset Pack/Actor/Characters/GladiatorBlue/SpriteSheet.png" id="2_56c2u"]
@@ -6,12 +6,16 @@
 [ext_resource type="Script" uid="uid://l8cg34mr6avg" path="res://Systems/player_state/topdown/states/TopdownIdle.gd" id="4_37knj"]
 [ext_resource type="Script" uid="uid://cside3mcjntcy" path="res://Systems/player_state/topdown/states/TopdownMove.gd" id="5_opgnk"]
 [ext_resource type="Script" uid="uid://c73h87mxlbod6" path="res://Systems/Interaction/Core/InteractionManager2D.gd" id="6_5h788"]
+[ext_resource type="Script" uid="uid://op4v5x3xl2ae" path="res://Systems/player_state/topdown/states/Topdowngrab.gd" id="7_5h788"]
+[ext_resource type="Script" uid="uid://c83haxp0eca0j" path="res://Systems/player_state/topdown/states/TopdownCarry.gd" id="8_37knj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_56c2u"]
+radius = 8.0
+height = 20.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_37knj"]
-radius = 6.0
-height = 16.0
+radius = 5.0
+height = 14.0
 
 [node name="PlayerDemoTd" type="CharacterBody2D" groups=["player"]]
 collision_mask = 8
@@ -47,5 +51,11 @@ script = ExtResource("4_37knj")
 [node name="Move" type="Node" parent="StateMachine"]
 script = ExtResource("5_opgnk")
 
+[node name="Grab" type="Node" parent="StateMachine"]
+script = ExtResource("7_5h788")
+
+[node name="Carry" type="Node" parent="StateMachine"]
+script = ExtResource("8_37knj")
+
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+zoom = Vector2(3, 3)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://ov8ork84tq8s"]
+[gd_scene load_steps=40 format=4 uid="uid://ov8ork84tq8s"]
 
 [ext_resource type="Texture2D" uid="uid://bdo8qmyewf4k2" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetField.png" id="1_htkye"]
 [ext_resource type="Texture2D" uid="uid://bvbf5iguh5iai" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloor.png" id="2_bdxe5"]
@@ -20,8 +20,9 @@
 [ext_resource type="PackedScene" uid="uid://b0qvhl1nn7f4q" path="res://Systems/Interaction/World/Triggers/StepTrigger.tscn" id="18_oc16g"]
 [ext_resource type="PackedScene" uid="uid://dvvkbf3lsca1w" path="res://Systems/Interaction/World/Triggers/PressurePlate.tscn" id="19_o324a"]
 [ext_resource type="PackedScene" uid="uid://du6voiohvtnyb" path="res://Systems/Interaction/World/Triggers/TimedStepTrigger.tscn" id="19_wlrdv"]
-[ext_resource type="PackedScene" uid="uid://momo280pmw7i" path="res://Systems/Interaction/World/MovableBlock2D.tscn.tscn" id="21_bmyst"]
-[ext_resource type="PackedScene" uid="uid://bpgqctmk7dohp" path="res://Systems/Interaction/World/PushBlock.tscn" id="22_trcdq"]
+[ext_resource type="PackedScene" uid="uid://yb2mlqlvnta3" path="res://Systems/Interaction/World/Blocks/GrabBlock2D.tscn" id="22_khng4"]
+[ext_resource type="PackedScene" uid="uid://bpgqctmk7dohp" path="res://Systems/Interaction/World/Blocks/PushBlock.tscn" id="22_trcdq"]
+[ext_resource type="PackedScene" uid="uid://gtgf2kop36go" path="res://Systems/Interaction/World/Thowables/Vase2D.tscn" id="23_khng4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vtvcy"]
 texture = ExtResource("1_htkye")
@@ -3412,8 +3413,26 @@ target_gate = NodePath("../Gate")
 position = Vector2(26, 231)
 target_gate = NodePath("../Gate")
 
-[node name="MovableBlock2d_tscn" parent="." instance=ExtResource("21_bmyst")]
-position = Vector2(22, 351)
-
 [node name="PushBlock" parent="." instance=ExtResource("22_trcdq")]
 position = Vector2(-36, 286)
+
+[node name="GrabBlock2d" parent="." instance=ExtResource("22_khng4")]
+position = Vector2(78, 330)
+
+[node name="Vases" type="Node2D" parent="."]
+z_index = 1
+
+[node name="Vase2d" parent="Vases" instance=ExtResource("23_khng4")]
+position = Vector2(226, 282)
+
+[node name="Vase2d2" parent="Vases" instance=ExtResource("23_khng4")]
+position = Vector2(232, 323)
+
+[node name="Vase2d3" parent="Vases" instance=ExtResource("23_khng4")]
+position = Vector2(287, 326)
+
+[node name="Vase2d4" parent="Vases" instance=ExtResource("23_khng4")]
+position = Vector2(318, 260)
+
+[node name="Vase2d5" parent="Vases" instance=ExtResource("23_khng4")]
+position = Vector2(373, 331)
