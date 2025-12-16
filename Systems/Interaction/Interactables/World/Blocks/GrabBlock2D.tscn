@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://yb2mlqlvnta3"]
+[gd_scene load_steps=7 format=3 uid="uid://yb2mlqlvnta3"]
 
-[ext_resource type="Script" uid="uid://c6uhrg0gq8o5u" path="res://Systems/Interaction/World/Blocks/grab_block_2d.gd" id="1_o2dry"]
+[ext_resource type="Script" uid="uid://c6uhrg0gq8o5u" path="res://Systems/Interaction/Interactables/World/Blocks/grab_block_2d.gd" id="1_o2dry"]
 [ext_resource type="Texture2D" uid="uid://lda8ay3wclcr" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetDungeon.png" id="2_mbx5c"]
 [ext_resource type="Script" uid="uid://fpdt2oo5p2hw" path="res://Systems/Interaction/Core/Interactable2D.gd" id="3_mbx5c"]
+[ext_resource type="Script" uid="uid://cjj6gu3how2hv" path="res://Systems/Interaction/Interactables/World/Blocks/grab_block_interact.gd" id="4_acgk3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l7elo"]
 size = Vector2(14, 14)
@@ -32,3 +33,6 @@ script = ExtResource("3_mbx5c")
 [node name="InteractableCollider" type="CollisionShape2D" parent="InteractableArea"]
 shape = SubResource("RectangleShape2D_jajrs")
 debug_color = Color(0.301961, 0.0117647, 0.356863, 0.419608)
+
+[node name="GrabBlockInteract" type="Node" parent="."]
+script = ExtResource("4_acgk3")

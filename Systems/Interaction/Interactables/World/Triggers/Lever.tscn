@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bw86lkmkmhdsu"]
 
-[ext_resource type="Script" uid="uid://droqavedeamf4" path="res://Systems/Interaction/World/Triggers/lever.gd" id="1_3p6jb"]
+[ext_resource type="Script" uid="uid://droqavedeamf4" path="res://Systems/Interaction/Interactables/World/Triggers/lever.gd" id="1_3p6jb"]
 [ext_resource type="Texture2D" uid="uid://dp8fvlkwf3xgf" path="res://Assets/Lever.png" id="2_vinnj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dc27b"]

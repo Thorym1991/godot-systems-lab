@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dvvkbf3lsca1w"]
 
-[ext_resource type="Script" uid="uid://ct4mvrnjpnwvo" path="res://Systems/Interaction/World/Triggers/pressure_plate.gd" id="1_7asb2"]
+[ext_resource type="Script" uid="uid://ct4mvrnjpnwvo" path="res://Systems/Interaction/Interactables/World/Triggers/pressure_plate.gd" id="1_7asb2"]
 [ext_resource type="Texture2D" uid="uid://lda8ay3wclcr" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetDungeon.png" id="1_8wuup"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7asb2"]

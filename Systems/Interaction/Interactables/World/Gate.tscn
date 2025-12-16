@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cbul32g2hq3sd"]
 
 [ext_resource type="Texture2D" uid="uid://81oqijwbef5w" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetHouse.png" id="1_05le5"]
-[ext_resource type="Script" uid="uid://ym6qg8skspqy" path="res://Systems/Interaction/World/gate.gd" id="1_jf2ck"]
+[ext_resource type="Script" uid="uid://ym6qg8skspqy" path="res://Systems/Interaction/Interactables/World/gate.gd" id="1_jf2ck"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jf2ck"]
 size = Vector2(48, 42)
