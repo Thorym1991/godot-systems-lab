@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8yxm71655b31"]
+
+[ext_resource type="Script" uid="uid://l7krwcd50job" path="res://Systems/Interaction/Interactables/World/Thowables/vase_shard_2d.gd" id="1_6mayu"]
+[ext_resource type="Texture2D" uid="uid://devel3uuiwtq3" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetElement.png" id="2_wyfg4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_apnkn"]
+size = Vector2(6, 5)
+
+[node name="VaseShard2d_a" type="RigidBody2D"]
+collision_layer = 32
+collision_mask = 32
+gravity_scale = 1.219
+linear_damp = 8.0
+angular_damp = 3.0
+script = ExtResource("1_6mayu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_wyfg4")
+region_enabled = true
+region_rect = Rect2(22.9259, 164.449, 5.36998, 4.43184)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_apnkn")

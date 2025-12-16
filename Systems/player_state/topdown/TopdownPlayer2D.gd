@@ -5,7 +5,7 @@ class_name TopdownPlayer2D
 
 var grabbed_block: GrabBlock2D = null
 var input_dir: Vector2 = Vector2.ZERO
-var carried: Vase2D = null
+var carried: Carryable2D = null
 
 func _physics_process(delta: float) -> void:
 	# NUR Input sammeln – KEINE Bewegung!
@@ -31,10 +31,15 @@ func release_grab() -> void:
 		grabbed_block.release()
 	grabbed_block = null
 
+func start_grab(b: GrabBlock2D) -> void:
+	grabbed_block = b
+	$StateMachine.change(&"grab")
 
+func stop_grab() -> void:
+	grabbed_block = null
 
-func pickup(v: Vase2D) -> void:
-	carried = v
+func pickup(c: Carryable2D) -> void:
+	carried = c
 	$StateMachine.change(&"carry")
 
 func drop_carried() -> void:

@@ -1,6 +1,6 @@
 extends PlayerState
 
-@export var carry_offset: Vector2 = Vector2(0, -28)
+@export var carry_offset: Vector2 = Vector2(0, -20)
 @export var throw_force: float = 480.0
 @export var arm_delay: float = 0.08
 @export var throw_if_moving: bool = true
@@ -12,14 +12,12 @@ func id() -> StringName:
 	return &"carry"
 
 func enter(previous: PlayerState) -> void:
+	print("ENTER CARRY STATE")
 	var p := character as TopdownPlayer2D
 	if p.carried == null:
 		machine.change(&"idle")
 		return
-
-	# beim Tragen: Physik aus, Hitbox aus
-	p.carried.enable_physics(false)
-	p.carried.arm_hitbox(false)
+	p.carried.on_pickup(p)
 
 func exit(next: PlayerState) -> void:
 	_arming_task_running = false
@@ -31,10 +29,10 @@ func physics_update(delta: float) -> void:
 		machine.change(&"idle")
 		return
 
-	# Vase folgt Player (State macht das, nicht die Vase)
-	v.global_position = character.global_position + carry_offset
+	var c := p.carried
+	c.set_carried_transform(character.global_position, carry_offset)
 
-	# Player bewegen (optional langsamer)
+# Player bewegen (optional langsamer)
 	var dir := p.input_dir
 	character.velocity = dir.normalized() * p.speed if dir != Vector2.ZERO else Vector2.ZERO
 	character.move_and_slide()
@@ -55,25 +53,13 @@ func physics_update(delta: float) -> void:
 			var throw_dir := locked.normalized()
 
 			# 3) Vase vor dem Player spawnen (NICHT carry_offset!)
-			v.enable_physics(true)
-			v.arm_hitbox(false)
-			v.global_position = character.global_position + throw_dir * throw_spawn_distance
-
-
-			# 4) Immer voller Wurf (nicht dir * force)
-			v.linear_velocity = throw_dir * throw_force
-
-			# 5) Player carried leeren
+			p.carried.on_throw(p, throw_dir, throw_force)
 			p.carried = null
-
-			# 6) Hitbox nach Delay scharf
-			_arm_later(v, p)
 		else:
-			# DROP: keine Hitbox, keine Rest-velocity
-			v.enable_physics(true)
-			v.arm_hitbox(false)
-			v.linear_velocity = Vector2.ZERO
+			
+			p.carried.on_drop(p)
 			p.carried = null
+
 
 		machine.change(&"idle")
 		return
