@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://ov8ork84tq8s"]
+[gd_scene load_steps=41 format=4 uid="uid://ov8ork84tq8s"]
 
 [ext_resource type="Texture2D" uid="uid://bdo8qmyewf4k2" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetField.png" id="1_htkye"]
 [ext_resource type="Texture2D" uid="uid://bvbf5iguh5iai" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloor.png" id="2_bdxe5"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://yb2mlqlvnta3" path="res://Systems/Interaction/Interactables/World/Blocks/GrabBlock2D.tscn" id="22_khng4"]
 [ext_resource type="PackedScene" uid="uid://bpgqctmk7dohp" path="res://Systems/Interaction/Interactables/World/Blocks/PushBlock.tscn" id="22_trcdq"]
 [ext_resource type="PackedScene" uid="uid://gtgf2kop36go" path="res://Systems/Interaction/Interactables/World/Thowables/Vase2D.tscn" id="23_khng4"]
+[ext_resource type="PackedScene" uid="uid://dn075q13glxmg" path="res://Systems/Interaction/Interactables/World/Thowables/Stone2D.tscn" id="24_vrund"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vtvcy"]
 texture = ExtResource("1_htkye")
@@ -3314,7 +3315,6 @@ sources/3 = SubResource("TileSetAtlasSource_o5lv0")
 y_sort_enabled = true
 
 [node name="World" type="Node2D" parent="."]
-y_sort_enabled = true
 
 [node name="Ground" type="TileMapLayer" parent="World"]
 position = Vector2(0, 1)
@@ -3436,3 +3436,6 @@ position = Vector2(318, 260)
 
 [node name="Vase2d5" parent="Vases" instance=ExtResource("23_khng4")]
 position = Vector2(373, 331)
+
+[node name="Stone2d" parent="." instance=ExtResource("24_vrund")]
+position = Vector2(440, 243)

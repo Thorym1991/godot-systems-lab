@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://dn075q13glxmg"]
+
+[ext_resource type="Script" uid="uid://b4wj7l7jnqlt1" path="res://Systems/Interaction/Interactables/World/Thowables/stone_2D.gd" id="1_1v4qr"]
+[ext_resource type="Texture2D" uid="uid://crdjitrjueo0c" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloorDetail.png" id="2_3aasj"]
+[ext_resource type="Script" uid="uid://bgyffqi45f1mo" path="res://Systems/Interaction/Interactables/World/Thowables/CarryableStone2D.gd" id="2_bxo84"]
+[ext_resource type="Script" uid="uid://bhaxtfi8yyx17" path="res://Systems/Interaction/Interactables/World/Thowables/StoneInteract.gd" id="3_kwxma"]
+[ext_resource type="Script" uid="uid://fpdt2oo5p2hw" path="res://Systems/Interaction/Core/Interactable2D.gd" id="3_vi6o8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vi6o8"]
+radius = 13.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_je3lm"]
+size = Vector2(26, 26)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lxb1u"]
+radius = 13.0
+
+[node name="Stone2d" type="RigidBody2D"]
+collision_layer = 8
+collision_mask = 25
+script = ExtResource("1_1v4qr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_3aasj")
+region_enabled = true
+region_rect = Rect2(242.342, 2.3047, 11.823, 10.9089)
+
+[node name="BlockCollider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vi6o8")
+debug_color = Color(0.797928, 0.0777668, 0.99002, 0.42)
+
+[node name="InteractableArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("3_vi6o8")
+
+[node name="InteractCollider" type="CollisionShape2D" parent="InteractableArea"]
+shape = SubResource("RectangleShape2D_je3lm")
+debug_color = Color(0.344134, 0.613859, 0.268141, 0.42)
+
+[node name="HitableArea" type="Area2D" parent="."]
+
+[node name="HitCollider" type="CollisionShape2D" parent="HitableArea"]
+shape = SubResource("CircleShape2D_lxb1u")
+debug_color = Color(0.528313, 0.562245, 0.299366, 0.42)
+
+[node name="Carryable" type="Node" parent="."]
+script = ExtResource("2_bxo84")
+
+[node name="StoneInteract" type="Node" parent="."]
+script = ExtResource("3_kwxma")
