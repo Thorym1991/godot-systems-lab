@@ -1831,4 +1831,3 @@ position = Vector2(38, 35)
 motion_mode = 1
 
 [node name="DemoBackHud" parent="PlayerDemoTd" instance=ExtResource("3_70wku")]
-visible = false

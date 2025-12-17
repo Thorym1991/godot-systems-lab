@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://onaetwq5g6h7"]
+
+[ext_resource type="Script" uid="uid://bqmjv7q3enw3j" path="res://Systems/Interaction/Interactables/World/bomb_wall_2d.gd" id="1_b8och"]
+[ext_resource type="Texture2D" uid="uid://chkk7spytx00v" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetReliefDetail.png" id="2_sie1g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ubv5"]
+size = Vector2(16, 15.125)
+
+[node name="BombWall2d" type="StaticBody2D"]
+collision_layer = 8
+script = ExtResource("1_b8och")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_sie1g")
+region_enabled = true
+region_rect = Rect2(16.0276, 79.8133, 16.1506, 15.2392)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.4375)
+shape = SubResource("RectangleShape2D_8ubv5")
+debug_color = Color(0.6276, 0.378955, 0.939428, 0.42)

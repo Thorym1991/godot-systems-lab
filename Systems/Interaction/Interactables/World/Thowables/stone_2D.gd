@@ -2,7 +2,7 @@ extends RigidBody2D
 class_name Stone2D
 
 @export var max_speed: float = 520.0
-@export var linear_damp_world: float = 8.0
+@export var linear_damp_world: float = 4.0
 @export var linear_damp_carried: float = 20.0
 
 func _ready() -> void:
