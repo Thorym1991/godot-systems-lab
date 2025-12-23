@@ -41,15 +41,3 @@ func stop_grab() -> void:
 func pickup(c: Carryable2D) -> void:
 	carried = c
 	$StateMachine.change(&"carry")
-
-func drop_carried() -> void:
-	if carried:
-		carried.enable_physics(true)
-		carried.arm_hitbox(false)
-	carried = null
-
-func throw_carried(dir: Vector2, force: float) -> void:
-	if carried:
-		carried.enable_physics(true)
-		carried.linear_velocity = dir.normalized() * force
-	carried = null

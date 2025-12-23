@@ -34,9 +34,7 @@ func _ready() -> void:
 
 
 func _on_area_entered(area: Area2D) -> void:
-	print("ENTER:", area.name)  # <--- NEU
 	if area is Interactable2D:
-		print(" -> is Interactable2D")   # Debug
 		_candidates.append(area)
 		_update_current()
 
@@ -51,7 +49,6 @@ func _on_area_exited(area: Area2D) -> void:
 
 func _update_current() -> void:
 	## Pick the closest interactable to the player from all candidates.
-	print("Candidates:", _candidates)   # <--- NEU
 	if _candidates.is_empty():
 		_current = null
 		_update_prompt()
@@ -73,28 +70,36 @@ func _update_current() -> void:
 			best_dist = dist
 
 	_current = best
-	print("Current set to:", _current.name)  # <--- NEU
 	_update_prompt()
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	# Wenn der Player gerade grabt, soll Interact NUR der Grab-State behandeln
-	if owner and owner.has_method("is_grabbing") and owner.call("is_grabbing"):
+	var p := owner as TopdownPlayer2D
+	if p == null:
+		return
+
+	# ⛔ Während Grab kein Interact erlauben
+	if p.is_grabbing():
+		return
+
+	# ⛔ Während Carry kein neues Interact erlauben
+	if p.carried != null:
 		return
 
 	if event.is_action_pressed("interact") and _current:
-		print("interact pressed, current:", _current)
-		_current.interact(owner)
-
-
+		_current.interact(p)
 
 func _update_prompt() -> void:
-	## Update UI (if any) with the current prompt text.
 	if _prompt_ui == null:
 		return
 
-	# ⛔ Während Grab keinen Interact-Prompt anzeigen
-	if owner and owner.has_method("is_grabbing") and owner.call("is_grabbing"):
+	var p := owner as TopdownPlayer2D
+	if p == null:
+		_prompt_ui.visible = false
+		return
+
+	# ⛔ Während Grab oder Carry keinen Interact-Prompt anzeigen
+	if p.is_grabbing() or p.carried != null:
 		_prompt_ui.visible = false
 		return
 
