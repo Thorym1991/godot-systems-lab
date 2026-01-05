@@ -41,8 +41,28 @@ func physics_update(delta: float) -> void:
 				locked = Vector2(0.0, sign(locked.y))
 
 			c.on_throw(p, locked.normalized(), throw_force)
+			# 🔊 Sound
+			feedbackBus.sfx_requested.emit(
+			&"throw",
+			p.global_position,
+			-6.0,
+			randf_range(0.98, 1.02)
+			)
+
+			# 📸 kleiner Kamera-Kick (Kickback)
+			feedbackBus.impulse_requested.emit(
+			-locked.normalized(),
+			6.0,
+			0.08
+			)
 		else:
 			c.on_drop(p)
+			feedbackBus.sfx_requested.emit(
+			&"drop",
+			p.global_position,
+			-10.0,
+			1.0
+			)
 
 		p.carried = null
 		machine.change(&"idle")

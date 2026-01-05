@@ -7,6 +7,7 @@ var grabbed_block: GrabBlock2D = null
 var input_dir: Vector2 = Vector2.ZERO
 var carried: Carryable2D = null
 
+
 func _physics_process(delta: float) -> void:
 	# NUR Input sammeln – KEINE Bewegung!
 	input_dir = Input.get_vector(

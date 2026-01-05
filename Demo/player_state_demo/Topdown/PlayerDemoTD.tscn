@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://f7jkrumw5cp4"]
+[gd_scene load_steps=12 format=3 uid="uid://f7jkrumw5cp4"]
 
 [ext_resource type="Script" uid="uid://c8rwc7r23bplp" path="res://Systems/player_state/topdown/TopdownPlayer2D.gd" id="1_v8nwm"]
 [ext_resource type="Texture2D" uid="uid://qhrpnqg7kcpc" path="res://Assets/Ninja Adventure - Asset Pack/Actor/Characters/GladiatorBlue/SpriteSheet.png" id="2_56c2u"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://c73h87mxlbod6" path="res://Systems/Interaction/Core/InteractionManager2D.gd" id="6_5h788"]
 [ext_resource type="Script" uid="uid://op4v5x3xl2ae" path="res://Systems/player_state/topdown/states/Topdowngrab.gd" id="7_5h788"]
 [ext_resource type="Script" uid="uid://c83haxp0eca0j" path="res://Systems/player_state/topdown/states/TopdownCarry.gd" id="8_37knj"]
+[ext_resource type="Script" uid="uid://db3yb1v3mn377" path="res://core/feedback/CameraShake2D.gd" id="9_opgnk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_56c2u"]
 radius = 8.0
@@ -59,3 +60,4 @@ script = ExtResource("8_37knj")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
+script = ExtResource("9_opgnk")

@@ -20,6 +20,8 @@ config/icon="res://icon.png"
 [autoload]
 
 globalsignals="*res://core/globals/GlobalSignals.gd"
+feedbackBus="*res://core/feedback/feedbackBus.gd"
+audioManager="*res://core/globals/AudioManager.gd"
 
 [file_customization]
 
