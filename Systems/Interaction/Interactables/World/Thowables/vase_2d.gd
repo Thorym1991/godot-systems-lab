@@ -49,6 +49,8 @@ func break_vase() -> void:
 	if broken:
 		return
 	broken = true
+	# SFX sofort (bevor deferred break + queue_free)
+	feedbackBus.sfx_requested.emit(&"pot_break", global_position, -6.0, randf_range(0.95, 1.05))
 	call_deferred("_do_break")
 
 func _do_break() -> void:
@@ -108,3 +110,10 @@ func _pick_weighted_scene() -> PackedScene:
 			return shard_scenes[i]
 
 	return shard_scenes[0]
+
+func on_explosion(_pos: Vector2, _force: float) -> void:
+	if broken:
+		return
+		await get_tree().create_timer(0.05).timeout
+	break_vase()
+	

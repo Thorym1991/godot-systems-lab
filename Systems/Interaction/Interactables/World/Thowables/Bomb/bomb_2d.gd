@@ -31,12 +31,13 @@ func arm() -> void:
 	explode()
 
 func explode() -> void:
-	# Feedback
-	feedbackBus.shake_requested.emit(12.0, 0.20)
-	feedbackBus.sfx_requested.emit(&"explosion", global_position, -2.0, randf_range(0.95, 1.05))
 	if _exploded:
 		return
 	_exploded = true
+	# Feedback
+	feedbackBus.shake_requested.emit(12.0, 0.20)
+	feedbackBus.sfx_requested.emit(&"explosion", global_position, -2.0, randf_range(0.95, 1.05))
+
 
 	if explosion_area == null or not is_instance_valid(explosion_area):
 		push_error("[Bomb] ExplosionArea missing!")
