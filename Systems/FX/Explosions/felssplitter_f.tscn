@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c25u6rjgtmmpt"]
+
+[ext_resource type="Script" uid="uid://l7krwcd50job" path="res://Systems/Interaction/Interactables/World/Thowables/ShardPiece2D.gd" id="1_ksjkd"]
+[ext_resource type="Texture2D" uid="uid://buin486akarkq" path="res://Assets/Art/Felssplitter f.png" id="1_x352f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x352f"]
+size = Vector2(5, 5)
+
+[node name="Felssplitter f" type="RigidBody2D"]
+script = ExtResource("1_ksjkd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_x352f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_x352f")

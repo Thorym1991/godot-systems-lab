@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://gtgf2kop36go"]
+[gd_scene load_steps=14 format=3 uid="uid://gtgf2kop36go"]
 
 [ext_resource type="Script" uid="uid://vl7aioji17ix" path="res://Systems/Interaction/Interactables/World/Thowables/vase_2d.gd" id="1_4vpbq"]
 [ext_resource type="PackedScene" uid="uid://b6axrw1lmyg63" path="res://Systems/Interaction/Interactables/World/Thowables/VaseShard2D_a.tscn" id="2_15cg2"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b8yxm71655b31" path="res://Systems/Interaction/Interactables/World/Thowables/VaseShard2D_d.tscn" id="5_4vtoe"]
 [ext_resource type="Script" uid="uid://bqxi4w3klfjbe" path="res://Systems/Interaction/Interactables/World/Thowables/vase_interact.gd" id="5_dtha4"]
 [ext_resource type="Script" uid="uid://chphh51eokqfm" path="res://Systems/Interaction/Interactables/Interfaces/carryable_vase.gd" id="9_tyn77"]
+[ext_resource type="Script" uid="uid://24a1dcpnul2x" path="res://core/fx/BreakableShards2D.gd" id="10_trtxr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c7tal"]
 radius = 7.0
@@ -24,8 +25,6 @@ collision_layer = 8
 collision_mask = 25
 gravity_scale = 0.0
 script = ExtResource("1_4vpbq")
-shards_scene = ExtResource("2_15cg2")
-shard_scenes = Array[PackedScene]([ExtResource("2_15cg2"), ExtResource("3_hu3xv"), ExtResource("4_6e2vb"), ExtResource("5_4vtoe")])
 
 [node name="Carryable" type="Node" parent="."]
 script = ExtResource("9_tyn77")
@@ -60,3 +59,8 @@ debug_color = Color(0.975968, 0.0647559, 0.360487, 0.42)
 script = ExtResource("5_dtha4")
 interactable_path = NodePath("../InteractableArea")
 vase_path = NodePath("..")
+
+[node name="BreakableShards2D" type="Node2D" parent="."]
+script = ExtResource("10_trtxr")
+shard_scenes = Array[PackedScene]([ExtResource("2_15cg2"), ExtResource("3_hu3xv"), ExtResource("4_6e2vb"), ExtResource("5_4vtoe")])
+shard_weights = Array[int]([3, 2, 2, 3])

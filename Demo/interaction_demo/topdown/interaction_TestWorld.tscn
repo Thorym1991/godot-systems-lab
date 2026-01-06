@@ -3520,3 +3520,6 @@ position = Vector2(475, -180)
 
 [node name="Bomb2d3" parent="." instance=ExtResource("25_dej8y")]
 position = Vector2(405, -195)
+
+[node name="BombWall2d" parent="." instance=ExtResource("11_odcpt")]
+position = Vector2(517, -90)
