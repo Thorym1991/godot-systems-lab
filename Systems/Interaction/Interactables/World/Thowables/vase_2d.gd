@@ -7,6 +7,7 @@ class_name Vase2D
 @onready var shards: BreakableShards2D = $BreakableShards2D
 @onready var block_collider: CollisionShape2D = get_node_or_null(block_collider_path) as CollisionShape2D
 @onready var hit_area: Area2D = get_node_or_null(hit_area_path) as Area2D
+@onready var loot: LootDropper2D = $Lootdropper2D
 
 var broken := false
 var armed := false
@@ -41,12 +42,11 @@ func break_vase() -> void:
 	if broken:
 		return
 	broken = true
-
 	feedbackBus.sfx_requested.emit(&"pot_break", global_position, -6.0, randf_range(0.95, 1.05))
-
 	if is_instance_valid(shards):
 		shards.spawn(global_position)
-
+	if is_instance_valid(loot):
+		loot.drop(global_position)
 	queue_free()
 
 func on_explosion(_pos: Vector2, _force: float) -> void:

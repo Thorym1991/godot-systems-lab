@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://b1543q135joqy"]
+
+[ext_resource type="Script" uid="uid://lmoeju08ed42" path="res://core/Items/ItemData.gd" id="1_0ok10"]
+[ext_resource type="Texture2D" uid="uid://bt47l1gsw7a2d" path="res://Assets/Ninja Adventure - Asset Pack/Items/Treasure/GoldCoin.png" id="1_78ppl"]
+
+[resource]
+script = ExtResource("1_0ok10")
+id = &"copper"
+display_name = "Copper"
+icon = ExtResource("1_78ppl")
+heal_amount = 0
+value_copper = 1
+mana_amount = 0
+stackable = true
+max_stack = 99
+metadata/_custom_type_script = "uid://lmoeju08ed42"

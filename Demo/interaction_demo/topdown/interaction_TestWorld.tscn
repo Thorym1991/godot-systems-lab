@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://ov8ork84tq8s"]
+[gd_scene load_steps=47 format=4 uid="uid://ov8ork84tq8s"]
 
 [ext_resource type="Texture2D" uid="uid://bdo8qmyewf4k2" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetField.png" id="1_htkye"]
 [ext_resource type="Texture2D" uid="uid://bvbf5iguh5iai" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloor.png" id="2_bdxe5"]
@@ -26,6 +26,9 @@
 [ext_resource type="PackedScene" uid="uid://gtgf2kop36go" path="res://Systems/Interaction/Interactables/World/Thowables/Vase2D.tscn" id="23_khng4"]
 [ext_resource type="PackedScene" uid="uid://dn075q13glxmg" path="res://Systems/Interaction/Interactables/World/Thowables/Stone2D.tscn" id="24_vrund"]
 [ext_resource type="PackedScene" uid="uid://p5s7gajxvshu" path="res://Systems/Interaction/Interactables/World/Thowables/Bomb/Bomb2D.tscn" id="25_dej8y"]
+[ext_resource type="PackedScene" uid="uid://dtgj68ivxwy8u" path="res://core/Items/pickups/LootPickup2D.tscn" id="27_o5lv0"]
+[ext_resource type="Resource" uid="uid://b1543q135joqy" path="res://core/Items/data/Copper.tres" id="28_rxhaq"]
+[ext_resource type="Resource" uid="uid://bofx5d5p754oi" path="res://core/Items/data/Apple.tres" id="29_1el00"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vtvcy"]
 texture = ExtResource("1_htkye")
@@ -3521,5 +3524,11 @@ position = Vector2(475, -180)
 [node name="Bomb2d3" parent="." instance=ExtResource("25_dej8y")]
 position = Vector2(405, -195)
 
-[node name="BombWall2d" parent="." instance=ExtResource("11_odcpt")]
-position = Vector2(517, -90)
+[node name="LootPickup2d" parent="." instance=ExtResource("27_o5lv0")]
+z_index = 1
+position = Vector2(501, -51)
+item = ExtResource("28_rxhaq")
+
+[node name="LootPickup2d2" parent="." instance=ExtResource("27_o5lv0")]
+position = Vector2(428, -65)
+item = ExtResource("29_1el00")

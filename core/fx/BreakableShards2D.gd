@@ -9,6 +9,9 @@ class_name BreakableShards2D
 
 
 func spawn(position: Vector2) -> void:
+	call_deferred("_spawn_deferred", position)
+
+func _spawn_deferred(position: Vector2) -> void:
 	if shard_scenes.is_empty():
 		return
 
