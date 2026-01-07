@@ -3404,7 +3404,7 @@ tile_map_data = PackedByteArray("AAASAPT/AwAZAAMAAAASAPX/AwAZAAQAAAASAPb/AwAZAAU
 tile_set = SubResource("TileSet_mt0ww")
 
 [node name="BombWall2d" parent="World/Objekt" instance=ExtResource("11_odcpt")]
-position = Vector2(472, -274)
+position = Vector2(473, -274)
 
 [node name="Objekt2" type="TileMapLayer" parent="World"]
 z_index = 2
@@ -3516,13 +3516,22 @@ position = Vector2(294, -7)
 position = Vector2(443, 268)
 
 [node name="Bomb2d" parent="." instance=ExtResource("25_dej8y")]
-position = Vector2(538, -190)
+position = Vector2(369, -160)
 
 [node name="Bomb2d2" parent="." instance=ExtResource("25_dej8y")]
-position = Vector2(475, -180)
+position = Vector2(368, -105)
 
 [node name="Bomb2d3" parent="." instance=ExtResource("25_dej8y")]
-position = Vector2(405, -195)
+position = Vector2(367, -60)
+
+[node name="Bomb2d4" parent="." instance=ExtResource("25_dej8y")]
+position = Vector2(428, -160)
+
+[node name="Bomb2d5" parent="." instance=ExtResource("25_dej8y")]
+position = Vector2(427, -106)
+
+[node name="Bomb2d6" parent="." instance=ExtResource("25_dej8y")]
+position = Vector2(426, -60)
 
 [node name="LootPickup2d" parent="." instance=ExtResource("27_o5lv0")]
 z_index = 1
