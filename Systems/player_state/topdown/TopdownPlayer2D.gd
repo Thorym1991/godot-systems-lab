@@ -51,8 +51,9 @@ func _on_hp_changed(current: int, max_hp: int, delta: int, source: Node) -> void
 
 	if delta < 0:
 		_input_lock_left = maxf(_input_lock_left, 0.10)
-		print("TRIGGER FLASH")
+		feedbackBus.sfx_requested.emit(&"hurt", global_position, -6.0, randf_range(0.95, 1.05))
 		_hurt_flash()
+
 
 
 
