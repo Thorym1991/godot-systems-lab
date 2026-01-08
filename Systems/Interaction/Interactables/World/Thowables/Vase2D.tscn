@@ -77,3 +77,5 @@ items = Array[ExtResource("13_ii2f1")]([ExtResource("14_8if8b"), ExtResource("15
 weights = Array[int]([1, 1])
 drop_chance = 0.75
 max_amount = 4
+scatter_impulse = 25.0
+drops_per_trigger_max = 8
