@@ -120,3 +120,6 @@ func _update_prompt() -> void:
 		_prompt_ui.visible = true
 	else:
 		_prompt_ui.visible = false
+
+func refresh_prompt() -> void:
+	_update_current()

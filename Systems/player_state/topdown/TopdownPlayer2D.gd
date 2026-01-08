@@ -12,7 +12,10 @@ var input_dir: Vector2 = Vector2.ZERO
 var carried: Carryable2D = null
 var _input_lock_left: float = 0.0
 
+var checkpoint_pos: Vector2
+
 func _ready() -> void:
+	checkpoint_pos = global_position
 	# optional: falls du Feedback/Debug willst
 	if health:
 		health.hp_changed.connect(_on_hp_changed)
@@ -66,7 +69,15 @@ func _on_hp_changed(current: int, max_hp: int, delta: int, source: Node) -> void
 
 var is_dead := false
 
+
 func _on_died(source: Variant) -> void:
+	if carried != null:
+	# je nach deinem System: drop() oder carried.on_drop(...)
+		carried = null
+
+	if grabbed_block != null:
+		stop_grab()
+	
 	if is_dead:
 		return
 	is_dead = true
@@ -80,6 +91,10 @@ func _on_died(source: Variant) -> void:
 
 	$StateMachine.change(&"dead")
 	print("PLAYER DIED. source=", source)
+
+	await get_tree().create_timer(1.0).timeout
+	respawn()
+
 
 func on_explosion(pos: Vector2, _force: float) -> void:
 	if health == null:
@@ -115,3 +130,21 @@ func _hurt_flash() -> void:
 		if not is_instance_valid(sprite): break
 
 	_flashing = false
+
+func set_checkpoint(pos: Vector2) -> void:
+	checkpoint_pos = pos
+
+func respawn() -> void:
+	is_dead = false
+	_input_lock_left = 0.15
+	velocity = Vector2.ZERO
+	global_position = checkpoint_pos
+
+	if health:
+		health.heal(health.max_hp, self)
+
+	$StateMachine.change(&"idle")
+
+	var im := get_node_or_null("InteractionManager2D")
+	if im and im.has_method("refresh_prompt"):
+		im.call("refresh_prompt")
