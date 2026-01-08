@@ -78,6 +78,10 @@ func _unhandled_input(event: InputEvent) -> void:
 	if p == null:
 		return
 
+	# ⛔ Wenn tot: keinerlei Interactions
+	if p.is_dead:
+		return
+
 	# ⛔ Während Grab kein Interact erlauben
 	if p.is_grabbing():
 		return
@@ -89,12 +93,18 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and _current:
 		_current.interact(p)
 
+
 func _update_prompt() -> void:
 	if _prompt_ui == null:
 		return
 
 	var p := owner as TopdownPlayer2D
 	if p == null:
+		_prompt_ui.visible = false
+		return
+
+	# ⛔ Wenn tot: Prompt aus
+	if p.is_dead:
 		_prompt_ui.visible = false
 		return
 
