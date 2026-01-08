@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="AudioLibrary" load_steps=8 format=3 uid="uid://bywt32rwhrhj8"]
+[gd_resource type="Resource" script_class="AudioLibrary" load_steps=10 format=3 uid="uid://bywt32rwhrhj8"]
 
 [ext_resource type="Script" uid="uid://b5cfap6dvupcl" path="res://core/audio/AudioLibrary.gd" id="1_ab0lk"]
 [ext_resource type="AudioStream" uid="uid://b41t7ybmsb8xw" path="res://Assets/Ninja Adventure - Asset Pack/Sounds/Game/Hit6.wav" id="2_eg821"]
@@ -7,10 +7,14 @@
 [ext_resource type="AudioStream" uid="uid://oyi8p6oboj7d" path="res://Assets/Art/OOT Soundtrack/OOT_BackgroundSounds/OOT_Pot_Shatter.wav" id="6_v1orm"]
 [ext_resource type="AudioStream" uid="uid://bjxuf6bjlf3ix" path="res://Assets/Art/OOT Soundtrack/OOT_AdultLink/OOT_AdultLink_Hurt3.wav" id="7_ji68b"]
 [ext_resource type="AudioStream" uid="uid://da54f4thqesbq" path="res://Assets/Art/OOT Soundtrack/OOT_WeaponsItems/OOT_Bomb_Blow.wav" id="7_yamne"]
+[ext_resource type="AudioStream" uid="uid://ddbacbwgx20nb" path="res://Assets/Art/OOT Soundtrack/OOT_BackgroundSounds/OOT_Door_Regular_Close.wav" id="8_pxuoh"]
+[ext_resource type="AudioStream" uid="uid://cdcpxo3v8mewp" path="res://Assets/Art/OOT Soundtrack/OOT_BackgroundSounds/OOT_Door_Regular_Open.wav" id="9_x53qj"]
 
 [resource]
 script = ExtResource("1_ab0lk")
 sounds = Dictionary[StringName, AudioStream]({
+&"doorclose": ExtResource("8_pxuoh"),
+&"dooropen": ExtResource("9_x53qj"),
 &"drop": ExtResource("3_v1orm"),
 &"explosion": ExtResource("7_yamne"),
 &"hurt": ExtResource("7_ji68b"),

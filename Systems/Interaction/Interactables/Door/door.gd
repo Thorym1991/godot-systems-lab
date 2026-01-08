@@ -14,6 +14,7 @@ func interact(interactor: Node) -> void:
 
 func open_door() -> void:
 	is_open = true
+	feedbackBus.sfx_requested.emit(&"dooropen", global_position, -2.0, randf_range(0.95, 1.05))
 
 	# 1. Tür durchsichtig machen
 	sprite.modulate.a = 0.0  # Alpha-Kanal = komplett transparent
@@ -23,7 +24,7 @@ func open_door() -> void:
 
 func close_door() -> void:
 	is_open = false
-
+	feedbackBus.sfx_requested.emit(&"doorclose", global_position, -2.0, randf_range(0.95, 1.05))
 	# 1. Tür durchsichtig machen
 	sprite.modulate.a = 1.0  # Alpha-Kanal = komplett transparent
 
