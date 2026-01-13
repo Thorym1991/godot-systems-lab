@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://dunatjyganj48"]
+
+[ext_resource type="Script" uid="uid://b7hb646ehv2yw" path="res://UI/HUD/hud_player_stats.gd" id="1_u4rmj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_u4rmj"]
+font_color = Color(1, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tbbbx"]
+font_color = Color(0.517061, 0.261144, 0.0865737, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_utw4r"]
+font_color = Color(0.188235, 0.905882, 0.411765, 1)
+
+[node name="HudPlayerStats" type="CanvasLayer" groups=["hud_player_stats"]]
+script = ExtResource("1_u4rmj")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -103.0
+offset_right = 74.0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="LabelHP" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "HP: 6/6"
+label_settings = SubResource("LabelSettings_u4rmj")
+
+[node name="LabelCopper" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Copper: 0"
+label_settings = SubResource("LabelSettings_tbbbx")
+
+[node name="LabelLives" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Lives: 3
+"
+label_settings = SubResource("LabelSettings_utw4r")

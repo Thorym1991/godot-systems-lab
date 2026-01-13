@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://ov8ork84tq8s"]
+[gd_scene load_steps=48 format=4 uid="uid://ov8ork84tq8s"]
 
 [ext_resource type="Texture2D" uid="uid://bdo8qmyewf4k2" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetField.png" id="1_htkye"]
 [ext_resource type="Texture2D" uid="uid://bvbf5iguh5iai" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloor.png" id="2_bdxe5"]
@@ -26,6 +26,9 @@
 [ext_resource type="PackedScene" uid="uid://gtgf2kop36go" path="res://Systems/Interaction/Interactables/World/Thowables/Vase2D.tscn" id="23_khng4"]
 [ext_resource type="PackedScene" uid="uid://dn075q13glxmg" path="res://Systems/Interaction/Interactables/World/Thowables/Stone2D.tscn" id="24_vrund"]
 [ext_resource type="PackedScene" uid="uid://p5s7gajxvshu" path="res://Systems/Interaction/Interactables/World/Thowables/Bomb/Bomb2D.tscn" id="25_dej8y"]
+[ext_resource type="PackedScene" uid="uid://dunatjyganj48" path="res://UI/HUD/HUDPlayerStats.tscn" id="28_5gw0l"]
+[ext_resource type="PackedScene" uid="uid://unylmwfwoldp" path="res://UI/HUD/HUDHearts2D.tscn" id="29_o5lv0"]
+[ext_resource type="PackedScene" uid="uid://bs4pwg2634rx3" path="res://Systems/Interaction/Interactables/World/Hazards/Fire/FireHazard2D.tscn" id="30_1el00"]
 [ext_resource type="PackedScene" uid="uid://dg7s220lc4x5u" path="res://Systems/Interaction/Interactables/World/Checkpoints/Checkpoint2D.tscn" id="30_rxhaq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vtvcy"]
@@ -3430,7 +3433,6 @@ target_gate = NodePath("../Gate")
 z_index = 1
 y_sort_enabled = true
 position = Vector2(442, 320)
-lives_enabled = true
 
 [node name="DemoBackHud" parent="." instance=ExtResource("8_bdxe5")]
 
@@ -3539,3 +3541,11 @@ position = Vector2(586, 183)
 
 [node name="Checkpoint2d2" parent="." instance=ExtResource("30_rxhaq")]
 position = Vector2(399, 181)
+
+[node name="HudPlayerStats" parent="." instance=ExtResource("28_5gw0l")]
+
+[node name="HudHearts2d" parent="." instance=ExtResource("29_o5lv0")]
+player_path = NodePath("../PlayerDemoTd")
+
+[node name="FireHazard2d" parent="." instance=ExtResource("30_1el00")]
+position = Vector2(440, 115)

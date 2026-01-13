@@ -27,6 +27,7 @@ var lives_left: int = 0
 
 
 func _ready() -> void:
+	add_to_group("player")
 	checkpoint_pos = global_position
 
 	lives_left = clampi(start_lives, 0, max_lives)
@@ -81,6 +82,7 @@ func pickup_item(item: ItemData, amount: int) -> void:
 
 	print("PICKUP: %s x%d | HP: %d/%d | Copper: %d"
 		% [item.id, amount, health.hp, health.max_hp, money_copper])
+	_refresh_hud()
 
 
 func _on_hp_changed(current: int, max_hp: int, delta: int, source: Node) -> void:
@@ -123,7 +125,7 @@ func _on_died(source: Variant) -> void:
 	
 	await get_tree().create_timer(1.0).timeout
 	respawn()
-
+	_refresh_hud()
 
 func on_explosion(pos: Vector2, _force: float) -> void:
 	if health == null:
@@ -185,6 +187,9 @@ func respawn() -> void:
 	var im := get_node_or_null("InteractionManager2D")
 	if im and im.has_method("refresh_prompt"):
 		im.call("refresh_prompt")
+		_refresh_hud()
+
+
 
 func game_over() -> void:
 	_input_lock_left = 9999.0
@@ -198,3 +203,8 @@ func game_over() -> void:
 	# Reset und zurück zum Checkpoint
 	lives_left = clampi(start_lives, 0, max_lives)
 	respawn()
+
+func _refresh_hud() -> void:
+	var hud := get_tree().get_first_node_in_group("hud_player_stats")
+	if hud and hud.has_method("refresh_all"):
+		hud.call("refresh_all")

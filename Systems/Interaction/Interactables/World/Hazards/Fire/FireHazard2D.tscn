@@ -1,0 +1,162 @@
+[gd_scene load_steps=23 format=3 uid="uid://bs4pwg2634rx3"]
+
+[ext_resource type="Script" uid="uid://qsl2y1yj1pg6" path="res://Systems/Interaction/Interactables/World/Hazards/Fire/fire_hazard_2d.gd" id="1_rxamq"]
+[ext_resource type="Texture2D" uid="uid://13lv6q7a1yqe" path="res://Assets/Art/Fire.png" id="2_hpqgj"]
+[ext_resource type="Texture2D" uid="uid://ci7eulx760m2j" path="res://Assets/Art/Smoke Dark - 2.png" id="3_p14k7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f32lh"]
+atlas = ExtResource("2_hpqgj")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtl65"]
+atlas = ExtResource("2_hpqgj")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xci45"]
+atlas = ExtResource("2_hpqgj")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgc1e"]
+atlas = ExtResource("2_hpqgj")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m06k4"]
+atlas = ExtResource("2_hpqgj")
+region = Rect2(128, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xb81l"]
+atlas = ExtResource("2_hpqgj")
+region = Rect2(160, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yr563"]
+atlas = ExtResource("2_hpqgj")
+region = Rect2(192, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4g88"]
+atlas = ExtResource("2_hpqgj")
+region = Rect2(224, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ty5cn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f32lh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtl65")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xci45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgc1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m06k4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xb81l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yr563")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4g88")
+}],
+"loop": true,
+"name": &"burn",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhuo7"]
+atlas = ExtResource("3_p14k7")
+region = Rect2(0, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yo0b0"]
+atlas = ExtResource("3_p14k7")
+region = Rect2(64, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7lre"]
+atlas = ExtResource("3_p14k7")
+region = Rect2(128, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sn36e"]
+atlas = ExtResource("3_p14k7")
+region = Rect2(192, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56qgb"]
+atlas = ExtResource("3_p14k7")
+region = Rect2(256, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2esal"]
+atlas = ExtResource("3_p14k7")
+region = Rect2(320, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7lx1"]
+atlas = ExtResource("3_p14k7")
+region = Rect2(384, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m24r2"]
+atlas = ExtResource("3_p14k7")
+region = Rect2(448, 0, 64, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jnt5x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhuo7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yo0b0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7lre")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sn36e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56qgb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2esal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7lx1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m24r2")
+}],
+"loop": true,
+"name": &"smoke",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2hgce"]
+radius = 9.0
+height = 26.0
+
+[node name="FireHazard2d" type="Area2D"]
+script = ExtResource("1_rxamq")
+
+[node name="Fire" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -24)
+sprite_frames = SubResource("SpriteFrames_ty5cn")
+animation = &"burn"
+autoplay = "burn"
+frame_progress = 0.79637
+speed_scale = 2.0
+
+[node name="Smoke" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.584314, 0.584314, 0.584314, 0.462745)
+position = Vector2(2, -46)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_jnt5x")
+animation = &"smoke"
+frame_progress = 0.243487
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("CapsuleShape2D_2hgce")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]

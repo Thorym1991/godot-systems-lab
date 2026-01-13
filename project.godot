@@ -31,6 +31,7 @@ folder_colors={
 "res://Demo/": "green",
 "res://Resorcen/": "gray",
 "res://Systems/": "teal",
+"res://UI/": "red",
 "res://core/": "purple",
 "res://docs/": "pink"
 }
