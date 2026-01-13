@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dg7s220lc4x5u"]
+
+[ext_resource type="Script" uid="uid://cp7o6mec0pohx" path="res://Systems/Interaction/Interactables/World/Checkpoints/checkpoint_2d.gd" id="1_p8s2h"]
+[ext_resource type="Texture2D" uid="uid://62txhgoi7ude" path="res://Assets/Art/Checkpoint.png" id="2_bmuue"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j06m2"]
+size = Vector2(26, 20)
+
+[node name="Checkpoint2d" type="Area2D"]
+script = ExtResource("1_p8s2h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_bmuue")
+vframes = 2
+
+[node name="Glow" type="Sprite2D" parent="Sprite2D"]
+texture = ExtResource("2_bmuue")
+vframes = 2
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_j06m2")

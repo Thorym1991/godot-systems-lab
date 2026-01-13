@@ -54,3 +54,13 @@ func take_damage(amount: int, source: Node = null) -> void:
 	if hp <= 0 and not _dead:
 		_dead = true
 		died.emit(source)
+
+func revive_full(source: Node = null) -> void:
+	_dead = false
+	_invuln_left = 0.0
+
+	var before := hp
+	hp = max_hp
+	var delta_hp := hp - before
+	if delta_hp != 0:
+		hp_changed.emit(hp, max_hp, delta_hp, source)

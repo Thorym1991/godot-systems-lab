@@ -15,14 +15,26 @@ var _input_lock_left: float = 0.0
 
 var checkpoint_pos: Vector2
 var is_dead := false
+var active_checkpoint: Node = null
+
+@export_group("Lives / Game Over")
+@export var lives_enabled: bool = false
+@export_range(0, 99, 1) var start_lives: int = 3
+@export_range(0, 99, 1) var max_lives: int = 3
+@export var refill_lives_on_checkpoint: bool = true
+
+var lives_left: int = 0
 
 
 func _ready() -> void:
 	checkpoint_pos = global_position
 
+	lives_left = clampi(start_lives, 0, max_lives)
+
 	if health:
 		health.hp_changed.connect(_on_hp_changed)
 		health.died.connect(_on_died)
+
 
 
 func _physics_process(delta: float) -> void:
@@ -99,6 +111,16 @@ func _on_died(source: Variant) -> void:
 		damage_feedback.play_death()
 
 	$StateMachine.change(&"dead")
+	
+	# Lives optional
+	if lives_enabled:
+		lives_left -= 1
+
+		if lives_left < 0:
+			await get_tree().create_timer(1.0).timeout
+			game_over()
+			return
+	
 	await get_tree().create_timer(1.0).timeout
 	respawn()
 
@@ -126,22 +148,53 @@ func is_grabbing() -> bool:
 	return grabbed_block != null and grabbed_block.grabber == self
 
 
-func set_checkpoint(pos: Vector2) -> void:
+func set_checkpoint(pos: Vector2, checkpoint: Node = null) -> void:
+	# alten deaktivieren
+	if active_checkpoint and active_checkpoint != checkpoint:
+		if active_checkpoint.has_method("deactivate"):
+			active_checkpoint.deactivate()
+
 	checkpoint_pos = pos
+	active_checkpoint = checkpoint
+
+	# optional refill
+	if lives_enabled and refill_lives_on_checkpoint:
+		lives_left = max_lives
+
 
 
 func respawn() -> void:
 	is_dead = false
-	_input_lock_left = 0.15
+
+	# ✅ Movement/Input wieder freigeben
+	_input_lock_left = 0.0
+	input_dir = Vector2.ZERO
 	velocity = Vector2.ZERO
+
+	# optional: falls irgendwas hängen bleibt
+	grabbed_block = null
+	carried = null
+
 	global_position = checkpoint_pos
 
 	if health:
-		# ok wenn heal clamp macht; sonst: health.hp = health.max_hp
-		health.heal(health.max_hp, self)
+		health.revive_full(self)
 
 	$StateMachine.change(&"idle")
 
 	var im := get_node_or_null("InteractionManager2D")
 	if im and im.has_method("refresh_prompt"):
 		im.call("refresh_prompt")
+
+func game_over() -> void:
+	_input_lock_left = 9999.0
+	velocity = Vector2.ZERO
+
+	print("GAME OVER")
+
+	# Optional: nach 2 Sekunden wieder starten (Placeholder)
+	await get_tree().create_timer(2.0).timeout
+
+	# Reset und zurück zum Checkpoint
+	lives_left = clampi(start_lives, 0, max_lives)
+	respawn()
