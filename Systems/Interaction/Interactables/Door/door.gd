@@ -2,14 +2,20 @@ extends Interactable2D
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var block_collider: CollisionShape2D = $Blockbody/BlockCollider
+@export var player_interactable: bool = true
+
 
 var is_open: bool = false
 
 func interact(interactor: Node) -> void:
+	if not player_interactable:
+		return
+
 	if is_open:
 		close_door()
 	else:
 		open_door()
+
 
 
 func open_door() -> void:

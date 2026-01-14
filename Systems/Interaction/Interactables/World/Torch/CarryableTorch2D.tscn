@@ -1,0 +1,200 @@
+[gd_scene load_steps=29 format=3 uid="uid://ysp8phhsl8b5"]
+
+[ext_resource type="Script" uid="uid://80asr4qt1m6k" path="res://Systems/Interaction/Interactables/World/Torch/carryable_torch_2d.gd" id="1_47snd"]
+[ext_resource type="Texture2D" uid="uid://cy5qwh6bq83j1" path="res://Assets/Ninja Adventure - Asset Pack/Items/Weapons/Stick/SpriteInHand.png" id="2_i6lee"]
+[ext_resource type="Texture2D" uid="uid://ci7eulx760m2j" path="res://Assets/Art/Smoke Dark - 2.png" id="3_bgc1v"]
+[ext_resource type="Texture2D" uid="uid://13lv6q7a1yqe" path="res://Assets/Art/Fire.png" id="4_tkxe4"]
+[ext_resource type="Script" uid="uid://bumhfh6dc3lwy" path="res://Systems/Interaction/Interactables/World/Torch/torch_interact.gd" id="5_i6lee"]
+[ext_resource type="Script" uid="uid://mn51tuksfxxk" path="res://Systems/Interaction/Interactables/World/Torch/CarryableTorchInterface.gd" id="6_bgc1v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0l21"]
+atlas = ExtResource("3_bgc1v")
+region = Rect2(0, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6umg4"]
+atlas = ExtResource("3_bgc1v")
+region = Rect2(64, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3r8m"]
+atlas = ExtResource("3_bgc1v")
+region = Rect2(128, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1aiv"]
+atlas = ExtResource("3_bgc1v")
+region = Rect2(192, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejf06"]
+atlas = ExtResource("3_bgc1v")
+region = Rect2(256, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfdiw"]
+atlas = ExtResource("3_bgc1v")
+region = Rect2(320, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uu2aa"]
+atlas = ExtResource("3_bgc1v")
+region = Rect2(384, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkvns"]
+atlas = ExtResource("3_bgc1v")
+region = Rect2(448, 0, 64, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pphtg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0l21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6umg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3r8m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1aiv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejf06")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfdiw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uu2aa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mkvns")
+}],
+"loop": true,
+"name": &"smoke",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwtg0"]
+atlas = ExtResource("4_tkxe4")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28ldw"]
+atlas = ExtResource("4_tkxe4")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cvyp"]
+atlas = ExtResource("4_tkxe4")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2l1s"]
+atlas = ExtResource("4_tkxe4")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00pqq"]
+atlas = ExtResource("4_tkxe4")
+region = Rect2(128, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqxy7"]
+atlas = ExtResource("4_tkxe4")
+region = Rect2(160, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10xcv"]
+atlas = ExtResource("4_tkxe4")
+region = Rect2(192, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwcpt"]
+atlas = ExtResource("4_tkxe4")
+region = Rect2(224, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bs6ke"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwtg0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28ldw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5cvyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2l1s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00pqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqxy7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10xcv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwcpt")
+}],
+"loop": true,
+"name": &"burn",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_47snd"]
+radius = 3.0
+height = 10.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i6lee"]
+radius = 4.0
+height = 16.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bgc1v"]
+size = Vector2(2.75, 11)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bgc1v"]
+radius = 11.0
+
+[node name="CarryableTorch2D" type="RigidBody2D"]
+collision_layer = 9
+collision_mask = 9
+gravity_scale = 0.0
+script = ExtResource("1_47snd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_i6lee")
+
+[node name="Smoke" type="AnimatedSprite2D" parent="."]
+position = Vector2(5.96046e-08, -21)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_pphtg")
+animation = &"smoke"
+autoplay = "smoke"
+frame_progress = 0.814892
+
+[node name="Fire" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -15)
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_bs6ke")
+animation = &"burn"
+autoplay = "burn"
+frame_progress = 0.728356
+
+[node name="IgniteArea" type="Area2D" parent="."]
+
+[node name="IgniteCollider" type="CollisionShape2D" parent="IgniteArea"]
+position = Vector2(0, -10)
+shape = SubResource("CapsuleShape2D_47snd")
+
+[node name="DamageArea" type="Area2D" parent="."]
+
+[node name="DamgeCollider" type="CollisionShape2D" parent="DamageArea"]
+position = Vector2(0, -11)
+shape = SubResource("CapsuleShape2D_i6lee")
+
+[node name="BodyCollider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bgc1v")
+
+[node name="InteractableArea" type="Area2D" parent="."]
+collision_mask = 4
+script = ExtResource("5_i6lee")
+
+[node name="InteractCollider" type="CollisionShape2D" parent="InteractableArea"]
+shape = SubResource("CircleShape2D_bgc1v")
+
+[node name="Carryable" type="Node" parent="."]
+script = ExtResource("6_bgc1v")

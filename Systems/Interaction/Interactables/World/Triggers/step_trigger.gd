@@ -2,7 +2,7 @@ extends Node2D
 
 signal triggered(body: Node)
 
-@export var target_gate: Gate
+@export var target: Node
 @export_enum("Open", "Close", "Toggle") var action := "Open"
 @export var only_player: bool = true
 
@@ -16,8 +16,6 @@ func _ready() -> void:
 	area.body_entered.connect(_on_body_entered)
 
 func _on_body_entered(body: Node) -> void:
-	print("StepTrigger BODY ENTERED:", body.name)
-
 	if _used:
 		return
 
@@ -30,11 +28,36 @@ func _on_body_entered(body: Node) -> void:
 	if anim_player and anim_player.has_animation("trigger"):
 		anim_player.play("trigger")
 
-	if target_gate:
-		match action:
-			"Open":
-				target_gate.open_gate()
-			"Close":
-				target_gate.close_gate()
-			"Toggle":
-				target_gate.toggle_gate()
+	_apply_target_action(action)
+
+
+func _apply_target_action(action: String) -> void:
+	if target == null:
+		return
+
+	match action:
+		"Open":
+			if target.has_method("open_door"):
+				target.call_deferred("open_door")
+			elif target.has_method("open_gate"):
+				target.call_deferred("open_gate")
+
+		"Close":
+			if target.has_method("close_door"):
+				target.call_deferred("close_door")
+			elif target.has_method("close_gate"):
+				target.call_deferred("close_gate")
+
+		"Toggle":
+			# Gate hat echtes toggle
+			if target.has_method("toggle_gate"):
+				target.call_deferred("toggle_gate")
+
+			# Door togglen wir über is_open + open/close
+			elif ("is_open" in target
+				and target.has_method("open_door")
+				and target.has_method("close_door")):
+				if target.is_open:
+					target.call_deferred("close_door")
+				else:
+					target.call_deferred("open_door")

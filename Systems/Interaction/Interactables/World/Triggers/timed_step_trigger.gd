@@ -4,14 +4,16 @@ class_name TimedStepTrigger
 signal triggered(body: Node)
 signal reset
 
-@export var target_gate: Gate
+@export var target: Node
 @export_enum("Open", "Close", "Toggle") var action := "Open"
 @export var only_player: bool = true
 
+@export_group("Timing")
 @export var reset_after_time: bool = true
 @export var reset_time: float = 3.0
 
-@export var reset_gate_on_timeout: bool = true
+@export_group("Reset")
+@export var reset_target_on_timeout: bool = true
 @export var reusable: bool = true
 
 @onready var area: Area2D = $Area2D
@@ -29,30 +31,29 @@ func _ready() -> void:
 func _on_body_entered(body: Node) -> void:
 	if _used:
 		return
-
 	if only_player and not body.is_in_group("player"):
 		return
 
 	_used = true
-	emit_signal("triggered", body)
+	triggered.emit(body)
 
 	if anim_player and anim_player.has_animation("trigger"):
 		anim_player.play("trigger")
 
-	_do_action()
+	_apply_target_action(action)
 
 	if reset_after_time:
 		timer.start(reset_time)
 
 
 func _on_timeout() -> void:
-	emit_signal("reset")
+	reset.emit()
 
 	if anim_player and anim_player.has_animation("reset"):
 		anim_player.play("reset")
 
-	if reset_gate_on_timeout:
-		_undo_action()
+	if reset_target_on_timeout:
+		_apply_target_action(_invert_action(action))
 
 	if reusable:
 		_used = false
@@ -61,27 +62,38 @@ func _on_timeout() -> void:
 		area.monitorable = false
 
 
-func _do_action() -> void:
-	if not target_gate:
+func _invert_action(a: String) -> String:
+	match a:
+		"Open": return "Close"
+		"Close": return "Open"
+		"Toggle": return "Toggle"
+		_: return a
+
+
+func _apply_target_action(a: String) -> void:
+	if target == null:
 		return
 
-	match action:
+	match a:
 		"Open":
-			target_gate.open_gate()
+			if target.has_method("open_door"):
+				target.call_deferred("open_door")
+			elif target.has_method("open_gate"):
+				target.call_deferred("open_gate")
+
 		"Close":
-			target_gate.close_gate()
+			if target.has_method("close_door"):
+				target.call_deferred("close_door")
+			elif target.has_method("close_gate"):
+				target.call_deferred("close_gate")
+
 		"Toggle":
-			target_gate.toggle_gate()
-
-
-func _undo_action() -> void:
-	if not target_gate:
-		return
-
-	match action:
-		"Open":
-			target_gate.close_gate()
-		"Close":
-			target_gate.open_gate()
-		"Toggle":
-			target_gate.toggle_gate()
+			if target.has_method("toggle_gate"):
+				target.call_deferred("toggle_gate")
+			elif ("is_open" in target
+				and target.has_method("open_door")
+				and target.has_method("close_door")):
+				if target.is_open:
+					target.call_deferred("close_door")
+				else:
+					target.call_deferred("open_door")

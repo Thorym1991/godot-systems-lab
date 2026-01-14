@@ -45,6 +45,10 @@ func _process(delta: float) -> void:
 		_try_damage(body)
 
 func _on_body_entered(body: Node) -> void:
+	area_entered.connect(func(a): 
+		if a.has_method("ignite"):
+			a.ignite(self)
+	)
 	_try_damage(body)
 
 func _on_body_exited(body: Node) -> void:

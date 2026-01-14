@@ -3,7 +3,8 @@ extends Control
 const DEMO_SCENES := {
 	"platformer": "res://Demo/player_state_demo/Platformer/TestWorldPF.tscn",
 	"topdown": "res://Demo/player_state_demo/Topdown/TestWorldTD.tscn",
-	"interactdemo": "res://Demo/interaction_demo/topdown/interaction_TestWorld.tscn"
+	"interactdemo": "res://Demo/interaction_demo/topdown/interaction_TestWorld.tscn",
+	"dungeondemo": "res://Demo/DungeonDemo/DungeonDemoTorch/DungeonDemo.tscn"
 }
 
 func _ready() -> void:
@@ -17,7 +18,9 @@ func _ready() -> void:
 	$MarginContainer/CenterContainer/VBoxContainer/TopdownInteractDemoButton.pressed.connect(
 		func(): _open_demo("interactdemo")
 	)
-
+	$"MarginContainer/CenterContainer/VBoxContainer/Dungeon Demo".pressed.connect(
+	func(): _open_demo("dungeondemo")
+	)
 
 func _open_demo(key: String) -> void:
 	if not DEMO_SCENES.has(key):

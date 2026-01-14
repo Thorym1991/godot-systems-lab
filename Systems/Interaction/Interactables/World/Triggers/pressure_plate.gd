@@ -7,7 +7,7 @@ signal deactivated
 @export var only_player: bool = false  # false = Player + andere Bodies erlaubt
 @export var required_bodies: int = 1   # z.B. 2 = Player + Block
 
-@export var target_gate: Gate
+@export var target: Node
 @export_enum("Open", "Close", "Toggle") var on_activate := "Open"
 @export_enum("Open", "Close", "Toggle") var on_deactivate := "Close"
 
@@ -77,7 +77,7 @@ func _activate() -> void:
 	if use_animation and anim_player and anim_player.has_animation(pressed_anim):
 		anim_player.play(pressed_anim)
 
-	_apply_gate_action(on_activate)
+	_apply_target_action(on_activate)
 
 
 func _deactivate() -> void:
@@ -87,17 +87,33 @@ func _deactivate() -> void:
 	if use_animation and anim_player and anim_player.has_animation(released_anim):
 		anim_player.play(released_anim)
 
-	_apply_gate_action(on_deactivate)
+	_apply_target_action(on_deactivate)
 
 
-func _apply_gate_action(action: String) -> void:
-	if not target_gate:
+func _apply_target_action(action: String) -> void:
+	if target == null:
 		return
 
 	match action:
 		"Open":
-			target_gate.open_gate()
+			if target.has_method("open_door"):
+				target.call_deferred("open_door")
+			elif target.has_method("open_gate"):
+				target.call_deferred("open_gate")
+
 		"Close":
-			target_gate.close_gate()
+			if target.has_method("close_door"):
+				target.call_deferred("close_door")
+			elif target.has_method("close_gate"):
+				target.call_deferred("close_gate")
+
 		"Toggle":
-			target_gate.toggle_gate()
+			if target.has_method("toggle_gate"):
+				target.call_deferred("toggle_gate")
+			elif ("is_open" in target
+				and target.has_method("open_door")
+				and target.has_method("close_door")):
+				if target.is_open:
+					target.call_deferred("close_door")
+				else:
+					target.call_deferred("open_door")

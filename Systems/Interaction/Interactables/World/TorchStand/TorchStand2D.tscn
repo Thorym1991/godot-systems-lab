@@ -1,0 +1,176 @@
+[gd_scene load_steps=25 format=3 uid="uid://dhh680jwj1t7j"]
+
+[ext_resource type="Script" uid="uid://471brro4asrh" path="res://Systems/Interaction/Interactables/World/TorchStand/torch_stand_2d.gd" id="1_tbsi7"]
+[ext_resource type="Texture2D" uid="uid://daoma06br4wsd" path="res://Assets/Art/TorchStand2D.png" id="2_eb4uv"]
+[ext_resource type="Texture2D" uid="uid://ci7eulx760m2j" path="res://Assets/Art/Smoke Dark - 2.png" id="3_wy6ha"]
+[ext_resource type="Texture2D" uid="uid://13lv6q7a1yqe" path="res://Assets/Art/Fire.png" id="4_sey2t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygkcg"]
+atlas = ExtResource("3_wy6ha")
+region = Rect2(0, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgx53"]
+atlas = ExtResource("3_wy6ha")
+region = Rect2(64, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b08wr"]
+atlas = ExtResource("3_wy6ha")
+region = Rect2(128, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jy4rd"]
+atlas = ExtResource("3_wy6ha")
+region = Rect2(192, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjee7"]
+atlas = ExtResource("3_wy6ha")
+region = Rect2(256, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_defws"]
+atlas = ExtResource("3_wy6ha")
+region = Rect2(320, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ks807"]
+atlas = ExtResource("3_wy6ha")
+region = Rect2(384, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s80vu"]
+atlas = ExtResource("3_wy6ha")
+region = Rect2(448, 0, 64, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pgl0h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygkcg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgx53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b08wr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jy4rd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjee7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_defws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ks807")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s80vu")
+}],
+"loop": true,
+"name": &"smoke",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eisjg"]
+atlas = ExtResource("4_sey2t")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0afkh"]
+atlas = ExtResource("4_sey2t")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ub7j5"]
+atlas = ExtResource("4_sey2t")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmv3d"]
+atlas = ExtResource("4_sey2t")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqscy"]
+atlas = ExtResource("4_sey2t")
+region = Rect2(128, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_waoiq"]
+atlas = ExtResource("4_sey2t")
+region = Rect2(160, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctoxr"]
+atlas = ExtResource("4_sey2t")
+region = Rect2(192, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbbm5"]
+atlas = ExtResource("4_sey2t")
+region = Rect2(224, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_skko2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eisjg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0afkh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ub7j5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmv3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqscy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_waoiq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctoxr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbbm5")
+}],
+"loop": true,
+"name": &"burn",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tbsi7"]
+radius = 6.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tbsi7"]
+radius = 5.0
+height = 26.0
+
+[node name="TorchStand2d" type="Node2D"]
+script = ExtResource("1_tbsi7")
+
+[node name="BaseSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_eb4uv")
+
+[node name="Smoke" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -27)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_pgl0h")
+animation = &"smoke"
+frame_progress = 0.0554444
+
+[node name="Fire" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -20)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_skko2")
+animation = &"burn"
+frame_progress = 0.23899
+
+[node name="ReceiverArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ReceiverArea"]
+position = Vector2(0, -9)
+shape = SubResource("CircleShape2D_tbsi7")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CapsuleShape2D_tbsi7")
