@@ -33,12 +33,20 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func change(to: StringName) -> void:
-	if not states.has(to) or states[to] == current:
+	if current and current.id() == to:
+		return
+	if not states.has(to):
+		return
+
+	var next: PlayerState = states[to]
+	if next == current:
 		return
 
 	var old: PlayerState = current
-	old.exit(states[to])
-	current = states[to]
+	if old:
+		old.exit(next)
+
+	current = next
 	current.enter(old)
 
 

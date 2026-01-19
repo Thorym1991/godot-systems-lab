@@ -4,14 +4,23 @@ class_name TopdownPlayer2D
 @export var speed: float = 150.0
 var money_copper: int = 0
 
+@export_group("Combat")
+@export var sword_hitbox_path: NodePath = NodePath("SwordPivot/SwordHitbox")
+@export var sword_pivot_path: NodePath = NodePath("SwordPivot")
+@export var sword_offset: float = 14.0
+
+@onready var sword_hitbox: Hitbox2D = get_node_or_null(sword_hitbox_path) as Hitbox2D
+@onready var sword_pivot: Node2D = get_node_or_null(sword_pivot_path) as Node2D
+
 @onready var health: HealthComponent2D = $Health
-@onready var sprite: Sprite2D = $Sprite2D
 @onready var damage_feedback: DamageFeedback2D = $DamageFeedback2D
 
 var grabbed_block: GrabBlock2D = null
-var input_dir: Vector2 = Vector2.ZERO
 var carried: Carryable2D = null
+var input_dir: Vector2 = Vector2.ZERO
 var _input_lock_left: float = 0.0
+
+var facing_dir: Vector2 = Vector2.DOWN
 
 var checkpoint_pos: Vector2
 var is_dead := false
@@ -22,89 +31,104 @@ var active_checkpoint: Node = null
 @export_range(0, 99, 1) var start_lives: int = 3
 @export_range(0, 99, 1) var max_lives: int = 3
 @export var refill_lives_on_checkpoint: bool = true
-
 var lives_left: int = 0
-
 
 func _ready() -> void:
 	add_to_group("player")
 	checkpoint_pos = global_position
-
 	lives_left = clampi(start_lives, 0, max_lives)
+
+	if sword_hitbox:
+		sword_hitbox.area_entered.connect(_on_sword_area_entered)
+	else:
+		push_error("Player: SwordHitbox not found at %s" % str(sword_hitbox_path))
 
 	if health:
 		health.hp_changed.connect(_on_hp_changed)
 		health.died.connect(_on_died)
 
-
+	_update_sword_pivot()
 
 func _physics_process(delta: float) -> void:
+	# Input-Lock (Hitstop/Death etc.)
 	if _input_lock_left > 0.0:
 		_input_lock_left = maxf(_input_lock_left - delta, 0.0)
 		input_dir = Vector2.ZERO
+		_update_sword_pivot()
 		return
 
 	input_dir = Input.get_vector("move_left","move_right","move_up","move_down")
+	_set_facing_from_input(input_dir)
+	_update_sword_pivot()
 
+func _set_facing_from_input(dir: Vector2) -> void:
+	if dir == Vector2.ZERO:
+		return
+
+	# Zelda-like 4-dir snap
+	if absf(dir.x) > absf(dir.y):
+		facing_dir = Vector2.RIGHT if dir.x > 0.0 else Vector2.LEFT
+	else:
+		facing_dir = Vector2.DOWN if dir.y > 0.0 else Vector2.UP
+
+func _update_sword_pivot() -> void:
+	if sword_pivot == null:
+		return
+	sword_pivot.position = facing_dir * sword_offset
+
+# ---- Carry/Grab (wie gehabt) ----
 
 func pickup(c: Carryable2D) -> void:
 	carried = c
 	$StateMachine.change(&"carry")
 
-
-# ✅ Grab API (für Interactables wie GrabBlock)
 func start_grab(block: GrabBlock2D) -> void:
-	if is_dead:
-		return
-	if carried != null:
-		return
+	if is_dead: return
+	if carried != null: return
 	grabbed_block = block
 	$StateMachine.change(&"grab")
-
 
 func stop_grab() -> void:
 	grabbed_block = null
 
+func is_grabbing() -> bool:
+	return grabbed_block != null and grabbed_block.grabber == self
+
+# ---- Items / HUD ----
 
 func pickup_item(item: ItemData, amount: int) -> void:
-	# Heal über HealthComponent
 	if item.heal_amount > 0 and health:
 		health.heal(item.heal_amount * amount, self)
 
-	# Money bleibt im Player (oder später WalletComponent)
 	if item.value_copper > 0:
 		money_copper += item.value_copper * amount
 
-	# ✅ FeedbackBus robust
 	var bus := get_node_or_null("/root/feedbackBus") as feedbackBus
 	if bus:
 		bus.sfx_requested.emit(&"pickup", global_position, -8.0, randf_range(0.95, 1.05))
 
-	print("PICKUP: %s x%d | HP: %d/%d | Copper: %d"
-		% [item.id, amount, health.hp, health.max_hp, money_copper])
 	_refresh_hud()
 
+func _refresh_hud() -> void:
+	var hud := get_tree().get_first_node_in_group("hud_player_stats")
+	if hud and hud.has_method("refresh_all"):
+		hud.call("refresh_all")
 
-func _on_hp_changed(current: int, max_hp: int, delta: int, source: Node) -> void:
-	# optional: debug print später togglebar machen
-	# print("HP CHANGED:", current, "/", max_hp, "delta:", delta)
+# ---- Damage / Death (wie gehabt) ----
 
-	if delta < 0:
-		if damage_feedback:
-			damage_feedback.request_input_lock()
-			damage_feedback.play_hurt()
+func _on_hp_changed(_current: int, _max_hp: int, delta: int, _source: Node) -> void:
+	if delta < 0 and damage_feedback:
+		damage_feedback.request_input_lock()
+		damage_feedback.play_hurt()
 
-
-func _on_died(source: Variant) -> void:
-	if is_dead:
-		return
+func _on_died(_source: Variant) -> void:
+	if is_dead: return
 	is_dead = true
 
-	# ✅ Cleanup: Grab/Carry abbrechen, damit nix hängen bleibt
 	if grabbed_block != null:
 		stop_grab()
 	if carried != null:
-		carried = null # optional später: proper drop()
+		carried = null
 
 	velocity = Vector2.ZERO
 	_input_lock_left = 9999.0
@@ -113,45 +137,19 @@ func _on_died(source: Variant) -> void:
 		damage_feedback.play_death()
 
 	$StateMachine.change(&"dead")
-	
-	# Lives optional
+
 	if lives_enabled:
 		lives_left -= 1
-
 		if lives_left < 0:
 			await get_tree().create_timer(1.0).timeout
 			game_over()
 			return
-	
+
 	await get_tree().create_timer(1.0).timeout
 	respawn()
 	_refresh_hud()
 
-func on_explosion(pos: Vector2, _force: float) -> void:
-	if health == null:
-		return
-	if not health.can_take_damage():
-		return
-
-	health.take_damage(1, self)
-
-	var dir := (global_position - pos)
-	if dir.length() < 0.001:
-		dir = Vector2.UP
-	dir = dir.normalized()
-
-	# ✅ FeedbackBus robust
-	var bus := get_node_or_null("/root/FeedbackBus") as FeedbackBus
-	if bus:
-		bus.impulse_requested.emit(dir, 18.0, 0.10)
-
-
-func is_grabbing() -> bool:
-	return grabbed_block != null and grabbed_block.grabber == self
-
-
 func set_checkpoint(pos: Vector2, checkpoint: Node = null) -> void:
-	# alten deaktivieren
 	if active_checkpoint and active_checkpoint != checkpoint:
 		if active_checkpoint.has_method("deactivate"):
 			active_checkpoint.deactivate()
@@ -159,21 +157,14 @@ func set_checkpoint(pos: Vector2, checkpoint: Node = null) -> void:
 	checkpoint_pos = pos
 	active_checkpoint = checkpoint
 
-	# optional refill
 	if lives_enabled and refill_lives_on_checkpoint:
 		lives_left = max_lives
 
-
-
 func respawn() -> void:
 	is_dead = false
-
-	# ✅ Movement/Input wieder freigeben
 	_input_lock_left = 0.0
 	input_dir = Vector2.ZERO
 	velocity = Vector2.ZERO
-
-	# optional: falls irgendwas hängen bleibt
 	grabbed_block = null
 	carried = null
 
@@ -187,24 +178,38 @@ func respawn() -> void:
 	var im := get_node_or_null("InteractionManager2D")
 	if im and im.has_method("refresh_prompt"):
 		im.call("refresh_prompt")
-		_refresh_hud()
 
-
+	_refresh_hud()
 
 func game_over() -> void:
 	_input_lock_left = 9999.0
 	velocity = Vector2.ZERO
-
 	print("GAME OVER")
 
-	# Optional: nach 2 Sekunden wieder starten (Placeholder)
 	await get_tree().create_timer(2.0).timeout
-
-	# Reset und zurück zum Checkpoint
 	lives_left = clampi(start_lives, 0, max_lives)
 	respawn()
 
-func _refresh_hud() -> void:
-	var hud := get_tree().get_first_node_in_group("hud_player_stats")
-	if hud and hud.has_method("refresh_all"):
-		hud.call("refresh_all")
+# ---- Combat API (für Attack-State) ----
+
+func sword_swing_start() -> void:
+	if sword_hitbox:
+		sword_hitbox.start_swing(self)
+
+func sword_swing_end() -> void:
+	if sword_hitbox:
+		sword_hitbox.end_swing()
+
+func _on_sword_area_entered(a: Area2D) -> void:
+	# Robust: nicht auf "is Hurtbox2D" bestehen, nur apply_hit erwarten
+	if not a.has_method("apply_hit"):
+		return
+
+	var owner := a.get_parent()
+	var dir := facing_dir
+	if owner is Node2D:
+		dir = ((owner as Node2D).global_position - global_position).normalized()
+
+	if sword_hitbox and sword_hitbox.can_hit(owner):
+		sword_hitbox.mark_hit(owner)
+		a.call("apply_hit", sword_hitbox.make_hit(dir))

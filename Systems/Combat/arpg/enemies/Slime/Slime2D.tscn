@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://0csi22ek1r1v"]
+
+[ext_resource type="Script" uid="uid://bm7824w007hpw" path="res://Systems/Combat/arpg/enemies/Slime/slime_2d.gd" id="1_ugvf3"]
+[ext_resource type="Texture2D" uid="uid://bvagwp81culol" path="res://Assets/Art/Ninja Adventure - Asset Pack/Actor/Monsters/Slime/Slime.png" id="2_x7b8q"]
+[ext_resource type="Script" uid="uid://bnih34f750rnf" path="res://core/combat/HealthComponent2D.gd" id="3_111el"]
+[ext_resource type="Script" uid="uid://d2aign2o36xyv" path="res://Systems/Combat/arpg/hitboxes/Hurtbox2D.gd" id="4_ob604"]
+[ext_resource type="Script" uid="uid://cdw4dqs3xs76d" path="res://core/Items/LootDropper2D.gd" id="5_rkncg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sapyg"]
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xo28j"]
+radius = 7.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ugvf3"]
+radius = 5.0
+height = 14.0
+
+[node name="Slime2d" type="CharacterBody2D"]
+collision_layer = 32
+collision_mask = 8
+script = ExtResource("1_ugvf3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_x7b8q")
+hframes = 4
+vframes = 4
+frame = 8
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("3_111el")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("4_ob604")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_sapyg")
+
+[node name="ContactDamage" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ContactDamage"]
+shape = SubResource("CircleShape2D_xo28j")
+
+[node name="LootDropper2D" type="Node2D" parent="."]
+script = ExtResource("5_rkncg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ugvf3")

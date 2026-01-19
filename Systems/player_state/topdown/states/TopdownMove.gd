@@ -10,7 +10,13 @@ func physics_update(delta: float) -> void:
 	if p.is_grabbing():
 		machine.change(&"grab")
 		return
+	
+	if Input.is_action_just_pressed("attack") and machine.current.id() != &"attack":
+		machine.change(&"attack")
+		return
 
+
+	
 	var dir := p.input_dir
 	if dir == Vector2.ZERO:
 		machine.change(&"idle")

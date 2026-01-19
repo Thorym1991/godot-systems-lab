@@ -181,6 +181,7 @@ position = Vector2(0, -10)
 shape = SubResource("CapsuleShape2D_47snd")
 
 [node name="DamageArea" type="Area2D" parent="."]
+collision_mask = 33
 
 [node name="DamgeCollider" type="CollisionShape2D" parent="DamageArea"]
 position = Vector2(0, -11)

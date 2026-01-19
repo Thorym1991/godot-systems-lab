@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://f7jkrumw5cp4"]
+[gd_scene load_steps=18 format=3 uid="uid://f7jkrumw5cp4"]
 
 [ext_resource type="Script" uid="uid://c8rwc7r23bplp" path="res://Systems/player_state/topdown/TopdownPlayer2D.gd" id="1_v8nwm"]
 [ext_resource type="Texture2D" uid="uid://qhrpnqg7kcpc" path="res://Assets/Art/Ninja Adventure - Asset Pack/Actor/Characters/GladiatorBlue/SpriteSheet.png" id="2_56c2u"]
@@ -11,7 +11,9 @@
 [ext_resource type="Script" uid="uid://c3xw1pvm4ktk3" path="res://Systems/player_state/topdown/states/TopdownDead.gd" id="9_7ctjp"]
 [ext_resource type="Script" uid="uid://db3yb1v3mn377" path="res://core/feedback/CameraShake2D.gd" id="9_opgnk"]
 [ext_resource type="Script" uid="uid://bnih34f750rnf" path="res://core/combat/HealthComponent2D.gd" id="10_53xgk"]
+[ext_resource type="Script" uid="uid://cpqkxdypbyse7" path="res://Systems/player_state/topdown/states/TopdownAttack.gd" id="10_fmy8u"]
 [ext_resource type="Script" uid="uid://b646xi4lr874r" path="res://core/feedback/DamageFeedback2D.gd" id="12_6soli"]
+[ext_resource type="Script" uid="uid://bqipucvrn413n" path="res://Systems/Combat/arpg/hitboxes/hitbox_2d.gd" id="13_h4ceb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_56c2u"]
 radius = 8.0
@@ -20,6 +22,9 @@ height = 20.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_37knj"]
 radius = 5.0
 height = 14.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h4ceb"]
+radius = 8.0
 
 [node name="PlayerDemoTd" type="CharacterBody2D" groups=["player"]]
 collision_mask = 8
@@ -65,6 +70,9 @@ script = ExtResource("8_37knj")
 [node name="Dead" type="Node" parent="StateMachine"]
 script = ExtResource("9_7ctjp")
 
+[node name="Attack" type="Node" parent="StateMachine"]
+script = ExtResource("10_fmy8u")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 script = ExtResource("9_opgnk")
@@ -75,3 +83,13 @@ script = ExtResource("10_53xgk")
 [node name="DamageFeedback2D" type="Node" parent="."]
 script = ExtResource("12_6soli")
 sprite_path = NodePath("../Sprite2D")
+
+[node name="SwordPivot" type="Node2D" parent="."]
+
+[node name="SwordHitbox" type="Area2D" parent="SwordPivot"]
+collision_layer = 129
+collision_mask = 32
+script = ExtResource("13_h4ceb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SwordPivot/SwordHitbox"]
+shape = SubResource("CircleShape2D_h4ceb")
