@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bauj8i441w5em"]
 
 [ext_resource type="Script" uid="uid://l7krwcd50job" path="res://Systems/Interaction/Interactables/World/Thowables/ShardPiece2D.gd" id="1_rexkh"]
-[ext_resource type="Texture2D" uid="uid://xq4o4us303y5" path="res://Assets/Art/Felssplitter d.png" id="1_x6dk7"]
+[ext_resource type="Texture2D" uid="uid://xq4o4us303y5" path="res://Assets/Art/Einzel Assets/Felssplitter d.png" id="1_x6dk7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6dk7"]
 size = Vector2(7, 6)

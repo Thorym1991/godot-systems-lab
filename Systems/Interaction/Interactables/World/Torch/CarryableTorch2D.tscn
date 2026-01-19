@@ -1,9 +1,9 @@
 [gd_scene load_steps=29 format=3 uid="uid://ysp8phhsl8b5"]
 
 [ext_resource type="Script" uid="uid://80asr4qt1m6k" path="res://Systems/Interaction/Interactables/World/Torch/carryable_torch_2d.gd" id="1_47snd"]
-[ext_resource type="Texture2D" uid="uid://cy5qwh6bq83j1" path="res://Assets/Ninja Adventure - Asset Pack/Items/Weapons/Stick/SpriteInHand.png" id="2_i6lee"]
-[ext_resource type="Texture2D" uid="uid://ci7eulx760m2j" path="res://Assets/Art/Smoke Dark - 2.png" id="3_bgc1v"]
-[ext_resource type="Texture2D" uid="uid://13lv6q7a1yqe" path="res://Assets/Art/Fire.png" id="4_tkxe4"]
+[ext_resource type="Texture2D" uid="uid://cy5qwh6bq83j1" path="res://Assets/Art/Ninja Adventure - Asset Pack/Items/Weapons/Stick/SpriteInHand.png" id="2_i6lee"]
+[ext_resource type="Texture2D" uid="uid://ci7eulx760m2j" path="res://Assets/Art/Einzel Assets/Smoke Dark - 2.png" id="3_bgc1v"]
+[ext_resource type="Texture2D" uid="uid://13lv6q7a1yqe" path="res://Assets/Art/Einzel Assets/Fire.png" id="4_tkxe4"]
 [ext_resource type="Script" uid="uid://bumhfh6dc3lwy" path="res://Systems/Interaction/Interactables/World/Torch/torch_interact.gd" id="5_i6lee"]
 [ext_resource type="Script" uid="uid://mn51tuksfxxk" path="res://Systems/Interaction/Interactables/World/Torch/CarryableTorchInterface.gd" id="6_bgc1v"]
 

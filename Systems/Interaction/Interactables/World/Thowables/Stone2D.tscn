@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dn075q13glxmg"]
 
 [ext_resource type="Script" uid="uid://b4wj7l7jnqlt1" path="res://Systems/Interaction/Interactables/World/Thowables/stone_2D.gd" id="1_1v4qr"]
-[ext_resource type="Texture2D" uid="uid://crdjitrjueo0c" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloorDetail.png" id="2_3aasj"]
+[ext_resource type="Texture2D" uid="uid://crdjitrjueo0c" path="res://Assets/Art/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloorDetail.png" id="2_3aasj"]
 [ext_resource type="Script" uid="uid://bgyffqi45f1mo" path="res://Systems/Interaction/Interactables/World/Thowables/CarryableStone2D.gd" id="2_bxo84"]
 [ext_resource type="Script" uid="uid://bhaxtfi8yyx17" path="res://Systems/Interaction/Interactables/World/Thowables/StoneInteract.gd" id="3_kwxma"]
 [ext_resource type="Script" uid="uid://fpdt2oo5p2hw" path="res://Systems/Interaction/Core/Interactable2D.gd" id="3_vi6o8"]

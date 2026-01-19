@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://vl7aioji17ix" path="res://Systems/Interaction/Interactables/World/Thowables/vase_2d.gd" id="1_4vpbq"]
 [ext_resource type="PackedScene" uid="uid://b6axrw1lmyg63" path="res://Systems/Interaction/Interactables/World/Thowables/VaseShard2D_a.tscn" id="2_15cg2"]
-[ext_resource type="Texture2D" uid="uid://devel3uuiwtq3" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetElement.png" id="2_u02g3"]
+[ext_resource type="Texture2D" uid="uid://devel3uuiwtq3" path="res://Assets/Art/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetElement.png" id="2_u02g3"]
 [ext_resource type="PackedScene" uid="uid://cagjaukmol6r5" path="res://Systems/Interaction/Interactables/World/Thowables/VaseShard2D_b.tscn" id="3_hu3xv"]
 [ext_resource type="Script" uid="uid://fpdt2oo5p2hw" path="res://Systems/Interaction/Core/Interactable2D.gd" id="3_mkg71"]
 [ext_resource type="PackedScene" uid="uid://cpjafnquiy20c" path="res://Systems/Interaction/Interactables/World/Thowables/VaseShard2D_c.tscn" id="4_6e2vb"]

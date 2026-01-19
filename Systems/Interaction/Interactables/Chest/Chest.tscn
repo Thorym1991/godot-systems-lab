@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cu0i0bdk10odc"]
 
-[ext_resource type="Texture2D" uid="uid://devel3uuiwtq3" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetElement.png" id="1_1w7uo"]
+[ext_resource type="Texture2D" uid="uid://devel3uuiwtq3" path="res://Assets/Art/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetElement.png" id="1_1w7uo"]
 [ext_resource type="Script" uid="uid://dv3fv5d3orthr" path="res://Systems/Interaction/Interactables/Chest/chest.gd" id="1_lfl4h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oalfn"]

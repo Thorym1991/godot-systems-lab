@@ -115,20 +115,26 @@ func _on_ignite_area_entered(a: Area2D) -> void:
 	if a == null:
 		return
 
+	# Standfackel liefert meist die ReceiverArea -> eigentliche Logik sitzt am Parent (TorchStand2D)
+	var src: Node = a
+	var p := a.get_parent()
+	if p != null:
+		src = p
+
 	# 1) Wenn wir brennen und das andere kann ignite -> wir zünden es an
-	if is_lit and a.has_method("ignite"):
-		a.ignite(self)
+	if is_lit and src.has_method("ignite"):
+		src.call_deferred("ignite", self)
 		return
 
-	# 2) Wenn wir aus sind und das andere "is_lit" hat -> wir gehen an
-	if (not is_lit) and ignite_from_lit_areas and ("is_lit" in a) and a.is_lit:
-		ignite(a)
+	# 2) Wenn wir aus sind und das andere brennt -> wir gehen an
+	if (not is_lit) and ignite_from_lit_areas and ("is_lit" in src) and src.is_lit:
+		ignite(src)
 		return
 
-	# 3) Wenn wir aus sind und das andere eine explizite Feuerquelle ist:
-	#    (optional: wenn du FireHazard später "provides_fire" gibst)
-	if (not is_lit) and ("provides_fire" in a) and a.provides_fire:
-		ignite(a)
+	# 3) Optional: explizite Feuerquelle
+	if (not is_lit) and ("provides_fire" in src) and src.provides_fire:
+		ignite(src)
+
 
 # -------------------------
 # Damage Handling

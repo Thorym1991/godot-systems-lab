@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://onaetwq5g6h7"]
 
 [ext_resource type="Script" uid="uid://bqmjv7q3enw3j" path="res://Systems/Interaction/Interactables/World/bomb_wall_2d.gd" id="1_b8och"]
-[ext_resource type="Texture2D" uid="uid://chkk7spytx00v" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetReliefDetail.png" id="2_sie1g"]
+[ext_resource type="Texture2D" uid="uid://chkk7spytx00v" path="res://Assets/Art/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetReliefDetail.png" id="2_sie1g"]
 [ext_resource type="Script" uid="uid://24a1dcpnul2x" path="res://core/fx/BreakableShards2D.gd" id="3_8ubv5"]
 [ext_resource type="PackedScene" uid="uid://d1kdig6377t5o" path="res://Systems/FX/Explosions/felssplitter_a.tscn" id="4_0edmg"]
 [ext_resource type="PackedScene" uid="uid://cl6y4g2x5gpvo" path="res://Systems/FX/Explosions/felssplitter_b.tscn" id="5_5qgfv"]

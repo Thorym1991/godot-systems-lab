@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b0qvhl1nn7f4q"]
 
 [ext_resource type="Script" uid="uid://bkateo58ownda" path="res://Systems/Interaction/Interactables/World/Triggers/step_trigger.gd" id="1_jr3la"]
-[ext_resource type="Texture2D" uid="uid://lda8ay3wclcr" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetDungeon.png" id="1_w06gn"]
+[ext_resource type="Texture2D" uid="uid://lda8ay3wclcr" path="res://Assets/Art/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetDungeon.png" id="1_w06gn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w06gn"]
 size = Vector2(10, 9)

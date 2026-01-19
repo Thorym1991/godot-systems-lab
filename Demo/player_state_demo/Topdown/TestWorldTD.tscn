@@ -1,12 +1,12 @@
 [gd_scene load_steps=14 format=4 uid="uid://bjwcfqwj1s2y0"]
 
-[ext_resource type="Texture2D" uid="uid://81oqijwbef5w" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetHouse.png" id="1_f4pa6"]
-[ext_resource type="Texture2D" uid="uid://bdo8qmyewf4k2" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetField.png" id="2_34ko7"]
+[ext_resource type="Texture2D" uid="uid://81oqijwbef5w" path="res://Assets/Art/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetHouse.png" id="1_f4pa6"]
+[ext_resource type="Texture2D" uid="uid://bdo8qmyewf4k2" path="res://Assets/Art/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetField.png" id="2_34ko7"]
 [ext_resource type="PackedScene" uid="uid://f7jkrumw5cp4" path="res://Demo/player_state_demo/Topdown/PlayerDemoTD.tscn" id="2_ytfdg"]
-[ext_resource type="Texture2D" uid="uid://bvbf5iguh5iai" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloor.png" id="3_4wldx"]
+[ext_resource type="Texture2D" uid="uid://bvbf5iguh5iai" path="res://Assets/Art/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloor.png" id="3_4wldx"]
 [ext_resource type="PackedScene" uid="uid://cmbyagwxt0tjq" path="res://Systems/ui/DemoBackHUD.tscn" id="3_70wku"]
-[ext_resource type="Texture2D" uid="uid://crdjitrjueo0c" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloorDetail.png" id="4_amm3b"]
-[ext_resource type="Texture2D" uid="uid://dj1whj8dbdfr1" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetNature.png" id="5_mt4dn"]
+[ext_resource type="Texture2D" uid="uid://crdjitrjueo0c" path="res://Assets/Art/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloorDetail.png" id="4_amm3b"]
+[ext_resource type="Texture2D" uid="uid://dj1whj8dbdfr1" path="res://Assets/Art/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetNature.png" id="5_mt4dn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f4pa6"]
 texture = ExtResource("3_4wldx")

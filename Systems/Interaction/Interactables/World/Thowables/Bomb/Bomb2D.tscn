@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cdidp5oi5vso" path="res://Systems/Interaction/Interactables/World/Thowables/Bomb/bomb_2d.gd" id="1_va83p"]
 [ext_resource type="Script" uid="uid://fpdt2oo5p2hw" path="res://Systems/Interaction/Core/Interactable2D.gd" id="2_i6u2l"]
-[ext_resource type="Texture2D" uid="uid://beqina8oo7ml6" path="res://Assets/Art/Bombe.png" id="2_iobqo"]
+[ext_resource type="Texture2D" uid="uid://beqina8oo7ml6" path="res://Assets/Art/Einzel Assets/Bombe.png" id="2_iobqo"]
 [ext_resource type="PackedScene" uid="uid://c04yacjieme2i" path="res://Systems/FX/Explosions/ExplosionFX2D.tscn" id="2_wd06d"]
 [ext_resource type="Script" uid="uid://bg4bmbamptndb" path="res://Systems/Interaction/Interactables/Interfaces/CarryableBomb2D.gd" id="4_iobqo"]
 [ext_resource type="Script" uid="uid://qx6wydvinmyn" path="res://Systems/Interaction/Interactables/World/Thowables/Bomb/BombInteract.gd" id="5_j5rfc"]

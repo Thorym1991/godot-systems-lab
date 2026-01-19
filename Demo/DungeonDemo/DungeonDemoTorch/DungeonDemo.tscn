@@ -1,7 +1,7 @@
-[gd_scene load_steps=18 format=4 uid="uid://cy0tm8nbfkya8"]
+[gd_scene load_steps=17 format=4 uid="uid://cy0tm8nbfkya8"]
 
-[ext_resource type="Texture2D" uid="uid://du2befs18w1pc" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/Interior/TilesetInteriorFloor.png" id="1_rb7jk"]
-[ext_resource type="Texture2D" uid="uid://dy88upmpw84kn" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/Interior/TilesetWallSimple.png" id="2_jsobe"]
+[ext_resource type="Texture2D" uid="uid://du2befs18w1pc" path="res://Assets/Art/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/Interior/TilesetInteriorFloor.png" id="1_rb7jk"]
+[ext_resource type="Texture2D" uid="uid://dy88upmpw84kn" path="res://Assets/Art/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/Interior/TilesetWallSimple.png" id="2_jsobe"]
 [ext_resource type="PackedScene" uid="uid://dhh680jwj1t7j" path="res://Systems/Interaction/Interactables/World/TorchStand/TorchStand2D.tscn" id="3_0jc3s"]
 [ext_resource type="PackedScene" uid="uid://dvvkbf3lsca1w" path="res://Systems/Interaction/Interactables/World/Triggers/PressurePlate.tscn" id="3_ub3mk"]
 [ext_resource type="PackedScene" uid="uid://yb2mlqlvnta3" path="res://Systems/Interaction/Interactables/World/Blocks/GrabBlock2D.tscn" id="4_t8ae2"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://du8oxey5ik0te" path="res://Systems/Interaction/Interactables/Door/Door.tscn" id="6_ub3mk"]
 [ext_resource type="Script" uid="uid://c2mtyw0exutnj" path="res://Systems/Puzzles/TorchDoorPuzzle2D.gd" id="7_t8ae2"]
 [ext_resource type="PackedScene" uid="uid://f7jkrumw5cp4" path="res://Demo/player_state_demo/Topdown/PlayerDemoTD.tscn" id="8_vrckg"]
-[ext_resource type="PackedScene" uid="uid://bs4pwg2634rx3" path="res://Systems/Interaction/Interactables/World/Hazards/Fire/FireHazard2D.tscn" id="10_0jc3s"]
 [ext_resource type="PackedScene" uid="uid://dunatjyganj48" path="res://UI/HUD/HUDPlayerStats.tscn" id="11_osh2n"]
 [ext_resource type="PackedScene" uid="uid://unylmwfwoldp" path="res://UI/HUD/HUDHearts2D.tscn" id="12_ub3mk"]
 
@@ -538,9 +537,6 @@ door_path = NodePath("../Doors/Door")
 
 [node name="PlayerDemoTd" parent="World" instance=ExtResource("8_vrckg")]
 position = Vector2(104, 84)
-
-[node name="FireHazard2d" parent="World" instance=ExtResource("10_0jc3s")]
-position = Vector2(35, 42)
 
 [node name="HudPlayerStats" parent="." instance=ExtResource("11_osh2n")]
 

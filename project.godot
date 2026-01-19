@@ -27,10 +27,17 @@ audioManager="*res://core/globals/AudioManager.gd"
 
 folder_colors={
 "res://Addons/": "orange",
+"res://Assets/Art/Einzel Assets/": "orange",
+"res://Assets/Art/Ninja Adventure - Asset Pack/": "pink",
+"res://Assets/Art/OOT Soundtrack/": "green",
 "res://Assits/": "yellow",
 "res://Demo/": "green",
 "res://Resorcen/": "gray",
 "res://Systems/": "teal",
+"res://Systems/Combat/": "red",
+"res://Systems/Combat/arpg/": "green",
+"res://Systems/Combat/rpg/": "purple",
+"res://Systems/Combat/wow_like/": "blue",
 "res://UI/": "red",
 "res://core/": "purple",
 "res://docs/": "pink"

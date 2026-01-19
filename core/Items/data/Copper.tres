@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://b1543q135joqy"]
 
 [ext_resource type="Script" uid="uid://lmoeju08ed42" path="res://core/Items/ItemData.gd" id="1_0ok10"]
-[ext_resource type="Texture2D" uid="uid://bt47l1gsw7a2d" path="res://Assets/Ninja Adventure - Asset Pack/Items/Treasure/GoldCoin.png" id="1_78ppl"]
+[ext_resource type="Texture2D" uid="uid://bt47l1gsw7a2d" path="res://Assets/Art/Ninja Adventure - Asset Pack/Items/Treasure/GoldCoin.png" id="1_78ppl"]
 
 [resource]
 script = ExtResource("1_0ok10")

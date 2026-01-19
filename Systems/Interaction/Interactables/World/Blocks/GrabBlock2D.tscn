@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://yb2mlqlvnta3"]
 
 [ext_resource type="Script" uid="uid://c6uhrg0gq8o5u" path="res://Systems/Interaction/Interactables/World/Blocks/grab_block_2d.gd" id="1_o2dry"]
-[ext_resource type="Texture2D" uid="uid://lda8ay3wclcr" path="res://Assets/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetDungeon.png" id="2_mbx5c"]
+[ext_resource type="Texture2D" uid="uid://lda8ay3wclcr" path="res://Assets/Art/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetDungeon.png" id="2_mbx5c"]
 [ext_resource type="Script" uid="uid://fpdt2oo5p2hw" path="res://Systems/Interaction/Core/Interactable2D.gd" id="3_mbx5c"]
 [ext_resource type="Script" uid="uid://cjj6gu3how2hv" path="res://Systems/Interaction/Interactables/World/Blocks/grab_block_interact.gd" id="4_acgk3"]
 

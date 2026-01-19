@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bofx5d5p754oi"]
 
-[ext_resource type="Texture2D" uid="uid://cg1rn8ugakj5c" path="res://Assets/Ninja Adventure - Asset Pack/Items/Food/Seed3.png" id="1_1aplb"]
+[ext_resource type="Texture2D" uid="uid://cg1rn8ugakj5c" path="res://Assets/Art/Ninja Adventure - Asset Pack/Items/Food/Seed3.png" id="1_1aplb"]
 [ext_resource type="Script" uid="uid://lmoeju08ed42" path="res://core/Items/ItemData.gd" id="1_bwqv5"]
 
 [resource]
