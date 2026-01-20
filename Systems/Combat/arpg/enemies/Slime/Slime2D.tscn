@@ -1,10 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://0csi22ek1r1v"]
+[gd_scene load_steps=16 format=3 uid="uid://0csi22ek1r1v"]
 
 [ext_resource type="Script" uid="uid://bm7824w007hpw" path="res://Systems/Combat/arpg/enemies/Slime/slime_2d.gd" id="1_ugvf3"]
 [ext_resource type="Texture2D" uid="uid://bvagwp81culol" path="res://Assets/Art/Ninja Adventure - Asset Pack/Actor/Monsters/Slime/Slime.png" id="2_x7b8q"]
 [ext_resource type="Script" uid="uid://bnih34f750rnf" path="res://core/combat/HealthComponent2D.gd" id="3_111el"]
 [ext_resource type="Script" uid="uid://d2aign2o36xyv" path="res://Systems/Combat/arpg/hitboxes/Hurtbox2D.gd" id="4_ob604"]
 [ext_resource type="Script" uid="uid://cdw4dqs3xs76d" path="res://core/Items/LootDropper2D.gd" id="5_rkncg"]
+[ext_resource type="Script" uid="uid://cwmwtp21cqy4i" path="res://Systems/Combat/arpg/enemies/components/AggroSensor2D.gd" id="6_x7b8q"]
+[ext_resource type="Script" uid="uid://w77dhkkkd7n1" path="res://Systems/Combat/arpg/enemies/core/EnemyStateMachine.gd" id="7_xo28j"]
+[ext_resource type="Script" uid="uid://co02usy046tfw" path="res://Systems/Combat/arpg/enemies/behaviors/generic/EnemyStateIdle.gd" id="8_eu2qy"]
+[ext_resource type="Script" uid="uid://bff4c05id2gxg" path="res://Systems/Combat/arpg/enemies/behaviors/generic/EnemyStateHurt.gd" id="9_fx53j"]
+[ext_resource type="Script" uid="uid://c1del0a0ixnhh" path="res://Systems/Combat/arpg/enemies/behaviors/Slime/SlimeStateHopChase.gd" id="10_xo28j"]
+[ext_resource type="Script" uid="uid://dls1au1vh8dv6" path="res://Systems/Combat/arpg/enemies/behaviors/generic/EnemyStateDead.gd" id="11_m1rhb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sapyg"]
 radius = 9.0
@@ -15,6 +21,9 @@ radius = 7.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ugvf3"]
 radius = 5.0
 height = 14.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x7b8q"]
+radius = 33.0606
 
 [node name="Slime2d" type="CharacterBody2D"]
 collision_layer = 32
@@ -48,3 +57,24 @@ script = ExtResource("5_rkncg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_ugvf3")
+
+[node name="AggroSensor2D" type="Area2D" parent="."]
+script = ExtResource("6_x7b8q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AggroSensor2D"]
+shape = SubResource("CircleShape2D_x7b8q")
+
+[node name="EnemyStateMachine" type="Node" parent="."]
+script = ExtResource("7_xo28j")
+
+[node name="EnemyStateIdle" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("8_eu2qy")
+
+[node name="EnemyStateHurt" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("9_fx53j")
+
+[node name="EnemyStateChase" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("10_xo28j")
+
+[node name="EnemyStateDead" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("11_m1rhb")

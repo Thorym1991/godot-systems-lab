@@ -17,12 +17,12 @@ func start_swing(new_source: Node) -> void:
 	source = new_source
 	_swing_id += 1
 	monitoring = true
-	print("HITBOX ON monitoring=", monitoring)
+
 
 
 func end_swing() -> void:
 	monitoring = false
-	print("HITBOX OFF")
+	
 
 
 func can_hit(target: Node) -> bool:

@@ -8,36 +8,46 @@ class_name Slime2D
 
 @onready var health: HealthComponent2D = $Health
 @onready var contact_area: Area2D = $ContactDamage
+@onready var sm: EnemyStateMachine = $EnemyStateMachine
+@onready var aggro: AggroSensor2D = $AggroSensor2D
 
 var _contact_cd_left := 0.0
 var _stun_left := 0.0
+var _target: Node2D = null
+var _active: bool = false
+var _hurt_time_left: float = 0.0
+var _hurt_recover_state: StringName = &"idle"
+var is_dead: bool = false
+
 
 func _ready() -> void:
 	contact_area.body_entered.connect(_on_body_entered)
+
 	if health:
 		health.died.connect(_on_died)
+
+	aggro.target_acquired.connect(_on_target_acquired)
+	aggro.target_lost.connect(_on_target_lost)
+
+	sm.setup(self)
+	sm.change(&"idle")
+
 
 func _physics_process(delta: float) -> void:
 	if _contact_cd_left > 0.0:
 		_contact_cd_left = maxf(_contact_cd_left - delta, 0.0)
 
+	# stun/hurt countdown kannst du später in Hurt-State verlagern
 	if _stun_left > 0.0:
 		_stun_left = maxf(_stun_left - delta, 0.0)
-		move_and_slide()
-		return
 
-	# Mini-AI: langsam zum Player (MVP)
-	var p := get_tree().get_first_node_in_group("player") as Node2D
-	if p:
-		var dir := (p.global_position - global_position)
-		if dir.length() > 4.0:
-			velocity = dir.normalized() * speed
-		else:
-			velocity = Vector2.ZERO
-
-	move_and_slide()
+	sm.physics_process(delta)
 
 func apply_hit(hit: HitData) -> void:
+	if is_dead:
+		return
+	# ... rest wie gehabt ...
+
 	if health == null:
 		return
 	if not health.can_take_damage():
@@ -45,10 +55,13 @@ func apply_hit(hit: HitData) -> void:
 
 	health.take_damage(hit.damage, hit.source)
 
-	# Knockback + kurzer Stun
-	_stun_left = 0.18
 	var kb := hit.knockback / maxf(knockback_resist, 0.01)
 	velocity = hit.dir.normalized() * kb
+
+	_hurt_time_left = 0.18
+	_hurt_recover_state = &"chase" if (_active and _target != null) else &"idle"
+
+	sm.change(&"hurt")
 
 func _on_body_entered(body: Node) -> void:
 	if _contact_cd_left > 0.0:
@@ -69,4 +82,19 @@ func _on_body_entered(body: Node) -> void:
 			_contact_cd_left = contact_cooldown
 
 func _on_died(_source: Variant) -> void:
-	queue_free()
+	if is_dead:
+		return
+	is_dead = true
+	sm.change(&"dead")
+
+
+
+
+func _on_target_acquired(t: Node2D) -> void:
+	_target = t
+	_active = true
+
+func _on_target_lost() -> void:
+	_target = null
+	_active = false
+	velocity = Vector2.ZERO
