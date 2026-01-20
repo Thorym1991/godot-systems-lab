@@ -1,0 +1,79 @@
+[gd_scene load_steps=17 format=3 uid="uid://m7etljfxs8co"]
+
+[ext_resource type="Script" uid="uid://8h02s5mruyw3" path="res://Systems/Combat/arpg/enemies/Oktorok/oktorok_2d.gd" id="1_2skei"]
+[ext_resource type="Texture2D" uid="uid://cnmwsegs3n122" path="res://Assets/Art/Ninja Adventure - Asset Pack/Actor/Monsters/RedOctopus/SpriteSheet.png" id="1_iwysq"]
+[ext_resource type="Script" uid="uid://bnih34f750rnf" path="res://core/combat/HealthComponent2D.gd" id="2_2skei"]
+[ext_resource type="Script" uid="uid://d2aign2o36xyv" path="res://Systems/Combat/arpg/hitboxes/Hurtbox2D.gd" id="3_duy8l"]
+[ext_resource type="Script" uid="uid://cwmwtp21cqy4i" path="res://Systems/Combat/arpg/enemies/components/AggroSensor2D.gd" id="4_ppq3o"]
+[ext_resource type="Script" uid="uid://bqipucvrn413n" path="res://Systems/Combat/arpg/hitboxes/hitbox_2d.gd" id="5_kekfq"]
+[ext_resource type="Script" uid="uid://w77dhkkkd7n1" path="res://Systems/Combat/arpg/enemies/core/EnemyStateMachine.gd" id="6_ggpuj"]
+[ext_resource type="Script" uid="uid://db8elqitvedwq" path="res://Systems/Combat/arpg/enemies/behaviors/Oktorok/OktorokStateIdle.gd" id="7_u8q36"]
+[ext_resource type="Script" uid="uid://8ntc73rlsteo" path="res://Systems/Combat/arpg/enemies/behaviors/Oktorok/OktorokStateShoot.gd" id="8_jchpa"]
+[ext_resource type="Script" uid="uid://bff4c05id2gxg" path="res://Systems/Combat/arpg/enemies/behaviors/generic/EnemyStateHurt.gd" id="9_e2fmm"]
+[ext_resource type="Script" uid="uid://dls1au1vh8dv6" path="res://Systems/Combat/arpg/enemies/behaviors/generic/EnemyStateDead.gd" id="10_5a3xy"]
+[ext_resource type="PackedScene" uid="uid://ci4yeu6c4j62a" path="res://Systems/Combat/arpg/projectiles/stone_projectile.tscn" id="10_duy8l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ppq3o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kekfq"]
+radius = 135.033
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ggpuj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u8q36"]
+
+[node name="Oktorok2d" type="CharacterBody2D"]
+collision_layer = 32
+collision_mask = 9
+script = ExtResource("1_2skei")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("1_iwysq")
+hframes = 4
+vframes = 4
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("2_2skei")
+max_hp = 3
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 2177
+script = ExtResource("3_duy8l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_ppq3o")
+
+[node name="AggroSensor2D" type="Area2D" parent="."]
+script = ExtResource("4_ppq3o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AggroSensor2D"]
+shape = SubResource("CircleShape2D_kekfq")
+
+[node name="ContactDamage" type="Area2D" parent="."]
+script = ExtResource("5_kekfq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ContactDamage"]
+shape = SubResource("CircleShape2D_ggpuj")
+
+[node name="LootDropper2D" type="Node2D" parent="."]
+
+[node name="EnemyStateMachine" type="Node" parent="."]
+script = ExtResource("6_ggpuj")
+
+[node name="idle" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("7_u8q36")
+
+[node name="shoot" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("8_jchpa")
+projectile_scene = ExtResource("10_duy8l")
+
+[node name="hurt" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("9_e2fmm")
+
+[node name="dead" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("10_5a3xy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_u8q36")

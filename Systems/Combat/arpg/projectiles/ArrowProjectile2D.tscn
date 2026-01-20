@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl4ny8315k2qh"]
+
+[ext_resource type="Script" uid="uid://b0qmt7cts6c3f" path="res://Systems/Combat/arpg/projectiles/projectile_2d.gd" id="1_bpmy0"]
+[ext_resource type="Texture2D" uid="uid://cbawyyj84uvg" path="res://Assets/Art/Ninja Adventure - Asset Pack/Items/Weapons/Bow/Arrow.png" id="2_hx384"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78vlc"]
+size = Vector2(13, 4)
+
+[node name="Arrow2d" type="Area2D"]
+collision_mask = 40
+script = ExtResource("1_bpmy0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_78vlc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_hx384")

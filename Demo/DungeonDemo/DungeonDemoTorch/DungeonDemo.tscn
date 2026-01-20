@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://cy0tm8nbfkya8"]
+[gd_scene load_steps=19 format=4 uid="uid://cy0tm8nbfkya8"]
 
 [ext_resource type="Texture2D" uid="uid://du2befs18w1pc" path="res://Assets/Art/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/Interior/TilesetInteriorFloor.png" id="1_rb7jk"]
 [ext_resource type="Texture2D" uid="uid://dy88upmpw84kn" path="res://Assets/Art/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/Interior/TilesetWallSimple.png" id="2_jsobe"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dunatjyganj48" path="res://UI/HUD/HUDPlayerStats.tscn" id="11_osh2n"]
 [ext_resource type="PackedScene" uid="uid://unylmwfwoldp" path="res://UI/HUD/HUDHearts2D.tscn" id="12_ub3mk"]
 [ext_resource type="PackedScene" uid="uid://0csi22ek1r1v" path="res://Systems/Combat/arpg/enemies/Slime/Slime2D.tscn" id="13_ub3mk"]
+[ext_resource type="PackedScene" uid="uid://cmbyagwxt0tjq" path="res://Systems/ui/DemoBackHUD.tscn" id="14_t8ae2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6850j"]
 texture = ExtResource("1_rb7jk")
@@ -545,3 +546,5 @@ position = Vector2(104, 84)
 
 [node name="Slime2d" parent="." instance=ExtResource("13_ub3mk")]
 position = Vector2(65, -145)
+
+[node name="DemoBackHud" parent="." instance=ExtResource("14_t8ae2")]

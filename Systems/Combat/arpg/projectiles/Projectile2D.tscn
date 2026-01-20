@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqhssdju0octk"]
+
+[ext_resource type="Script" uid="uid://b0qmt7cts6c3f" path="res://Systems/Combat/arpg/projectiles/projectile_2d.gd" id="1_o1vft"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o1vft"]
+size = Vector2(14, 4)
+
+[node name="Projectile2d" type="Area2D"]
+script = ExtResource("1_o1vft")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_o1vft")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

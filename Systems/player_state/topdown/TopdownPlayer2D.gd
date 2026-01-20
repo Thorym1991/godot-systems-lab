@@ -8,6 +8,11 @@ var money_copper: int = 0
 @export var sword_hitbox_path: NodePath = NodePath("SwordPivot/SwordHitbox")
 @export var sword_pivot_path: NodePath = NodePath("SwordPivot")
 @export var sword_offset: float = 14.0
+@export_group("Ranged")
+@export var arrow_scene: PackedScene
+@export var arrow_damage: int = 1
+@export var arrow_speed: float = 260.0
+
 
 @onready var sword_hitbox: Hitbox2D = get_node_or_null(sword_hitbox_path) as Hitbox2D
 @onready var sword_pivot: Node2D = get_node_or_null(sword_pivot_path) as Node2D
@@ -60,6 +65,9 @@ func _physics_process(delta: float) -> void:
 	input_dir = Input.get_vector("move_left","move_right","move_up","move_down")
 	_set_facing_from_input(input_dir)
 	_update_sword_pivot()
+	if Input.is_action_just_pressed("shoot"):
+		shoot_arrow()
+
 
 func _set_facing_from_input(dir: Vector2) -> void:
 	if dir == Vector2.ZERO:
@@ -213,3 +221,20 @@ func _on_sword_area_entered(a: Area2D) -> void:
 	if sword_hitbox and sword_hitbox.can_hit(owner):
 		sword_hitbox.mark_hit(owner)
 		a.call("apply_hit", sword_hitbox.make_hit(dir))
+
+func shoot_arrow() -> void:
+	if arrow_scene == null:
+		push_warning("Player: arrow_scene not set")
+		return
+
+	var a := arrow_scene.instantiate() as Projectile2D
+	if a == null:
+		push_warning("Player: arrow_scene is not Projectile2D")
+		return
+
+	# Spawn vor dem Player (ähnlich wie SwordPivot)
+	a.global_position = global_position + facing_dir * 10.0
+	a.speed = arrow_speed
+	a.setup(facing_dir, arrow_damage, self, 80.0)
+
+	get_tree().current_scene.add_child(a)

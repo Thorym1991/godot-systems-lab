@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://ov8ork84tq8s"]
+[gd_scene load_steps=51 format=4 uid="uid://ov8ork84tq8s"]
 
 [ext_resource type="Texture2D" uid="uid://bdo8qmyewf4k2" path="res://Assets/Art/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetField.png" id="1_htkye"]
 [ext_resource type="Texture2D" uid="uid://bvbf5iguh5iai" path="res://Assets/Art/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloor.png" id="2_bdxe5"]
@@ -32,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://dg7s220lc4x5u" path="res://Systems/Interaction/Interactables/World/Checkpoints/Checkpoint2D.tscn" id="30_rxhaq"]
 [ext_resource type="PackedScene" uid="uid://ysp8phhsl8b5" path="res://Systems/Interaction/Interactables/World/Torch/CarryableTorch2D.tscn" id="31_1el00"]
 [ext_resource type="PackedScene" uid="uid://dhh680jwj1t7j" path="res://Systems/Interaction/Interactables/World/TorchStand/TorchStand2D.tscn" id="32_f68et"]
+[ext_resource type="PackedScene" uid="uid://m7etljfxs8co" path="res://Systems/Combat/arpg/enemies/Oktorok/Oktorok2D.tscn" id="33_uir31"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vtvcy"]
 texture = ExtResource("1_htkye")
@@ -3552,3 +3553,6 @@ position = Vector2(464, 226)
 
 [node name="TorchStand2d" parent="." instance=ExtResource("32_f68et")]
 position = Vector2(605, -13)
+
+[node name="Oktorok2d" parent="." instance=ExtResource("33_uir31")]
+position = Vector2(-419, 291)

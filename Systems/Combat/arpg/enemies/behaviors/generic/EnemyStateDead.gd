@@ -26,6 +26,9 @@ func enter() -> void:
 	var body_col := enemy.get_node_or_null("CollisionShape2D") as CollisionShape2D
 	if body_col:
 		body_col.set_deferred("disabled", true)
+	# Enemy-spezifischer Hook (Loot/FX)
+	if enemy.has_method("on_death"):
+		enemy.call("on_death")
 
 	# queue_free ist meistens okay, aber wir machen es auch deferred-sauber
 	enemy.call_deferred("queue_free")

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ci4yeu6c4j62a"]
+
+[ext_resource type="Script" uid="uid://b0qmt7cts6c3f" path="res://Systems/Combat/arpg/projectiles/projectile_2d.gd" id="1_rqt77"]
+[ext_resource type="Texture2D" uid="uid://crdjitrjueo0c" path="res://Assets/Art/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloorDetail.png" id="2_rqt77"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5ew1t"]
+radius = 5.0
+
+[node name="stone_projectile" type="Area2D"]
+collision_layer = 4096
+collision_mask = 2185
+script = ExtResource("1_rqt77")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5ew1t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_rqt77")
+region_enabled = true
+region_rect = Rect2(243.013, 3.09185, 10.832, 8.93281)
