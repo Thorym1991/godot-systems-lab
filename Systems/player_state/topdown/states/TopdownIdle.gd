@@ -18,3 +18,7 @@ func physics_update(delta: float) -> void:
 
 	if p.input_dir != Vector2.ZERO:
 		machine.change(&"move")
+
+	if Input.is_action_pressed("block"):
+		machine.change(&"block")
+		return

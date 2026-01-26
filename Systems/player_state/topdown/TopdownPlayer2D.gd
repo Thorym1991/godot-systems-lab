@@ -12,10 +12,15 @@ var money_copper: int = 0
 @export var arrow_scene: PackedScene
 @export var arrow_damage: int = 1
 @export var arrow_speed: float = 260.0
+@export var perfect_block_window: float = 0.12
+
 
 
 @onready var sword_hitbox: Hitbox2D = get_node_or_null(sword_hitbox_path) as Hitbox2D
 @onready var sword_pivot: Node2D = get_node_or_null(sword_pivot_path) as Node2D
+@onready var sword_parry_hitbox: Area2D = $SwordPivot/SwordParryHitbox
+@onready var shield_block_hitbox: Area2D = $ShieldBlockHitbox
+
 
 @onready var health: HealthComponent2D = $Health
 @onready var damage_feedback: DamageFeedback2D = $DamageFeedback2D
@@ -30,6 +35,7 @@ var facing_dir: Vector2 = Vector2.DOWN
 var checkpoint_pos: Vector2
 var is_dead := false
 var active_checkpoint: Node = null
+var perfect_block_active := false
 
 @export_group("Lives / Game Over")
 @export var lives_enabled: bool = false

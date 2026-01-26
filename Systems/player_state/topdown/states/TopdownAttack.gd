@@ -12,7 +12,7 @@ func id() -> StringName:
 	return &"attack"
 
 func enter(_previous: PlayerState) -> void:
-	# Wenn enter irgendwie doppelt kommt: ignorieren
+	# Schutz vor Doppelstart
 	if _started:
 		return
 
@@ -21,8 +21,26 @@ func enter(_previous: PlayerState) -> void:
 	_hit_on = false
 
 	var p := character as TopdownPlayer2D
-	if p:
-		p.sword_swing_end()
+	if not p:
+		return
+
+
+	# ---------- PARRY WINDOW ----------
+	await get_tree().process_frame
+
+	p.sword_parry_hitbox.monitoring = true
+	p.sword_parry_hitbox.monitorable = true
+
+	await get_tree().create_timer(0.1).timeout
+
+	p.sword_parry_hitbox.monitoring = false
+	p.sword_parry_hitbox.monitorable = false
+	# ---------------------------------
+
+
+	# Original-Logik
+	p.sword_swing_end()
+
 
 func physics_update(delta: float) -> void:
 	_t += delta

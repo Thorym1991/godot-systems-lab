@@ -9,6 +9,9 @@ class_name Oktorok2D
 @onready var contact_area: Area2D = $ContactDamage
 @onready var sm: EnemyStateMachine = $EnemyStateMachine
 @onready var aggro: AggroSensor2D = $AggroSensor2D
+@onready var sprite: CanvasItem = $Sprite2D
+@onready var hurtbox: Area2D = $Hurtbox   # <— falls anders: anpassen
+@onready var hurtbox_shape: CollisionShape2D = $Hurtbox/CollisionShape2D
 
 var _contact_cd_left := 0.0
 var _target: Node2D = null
@@ -19,6 +22,8 @@ var _hurt_recover_state: StringName = &"idle"
 var is_dead: bool = false
 
 func _ready() -> void:
+	print("OKTOROK READY -> change hide")
+	sm.change(&"hide")
 	add_to_group("enemy")
 
 	contact_area.body_entered.connect(_on_body_entered)
@@ -30,7 +35,8 @@ func _ready() -> void:
 	aggro.target_lost.connect(_on_target_lost)
 
 	sm.setup(self)
-	sm.change(&"idle")
+	sm.change(&"hide")
+
 
 func _physics_process(delta: float) -> void:
 	if _contact_cd_left > 0.0:
@@ -82,7 +88,32 @@ func _on_target_acquired(t: Node2D) -> void:
 	_target = t
 	_active = true
 
+	# falls er gerade versteckt/idle ist -> auftauchen
+	sm.change(&"emerge")
+
+
 func _on_target_lost() -> void:
 	_target = null
 	_active = false
 	velocity = Vector2.ZERO
+
+	# direkt verstecken
+	if not is_dead:
+		sm.change(&"hide")
+
+func has_target() -> bool:
+	return _active and _target != null
+
+func set_visible_state(v: bool) -> void:
+	if sprite:
+		sprite.set_deferred("visible", v)
+
+
+func set_vulnerable(v: bool) -> void:
+	if hurtbox:
+		# während Physics flush -> deferred
+		hurtbox.set_deferred("monitoring", v)
+		hurtbox.set_deferred("monitorable", v)
+
+	if hurtbox_shape:
+		hurtbox_shape.set_deferred("disabled", not v)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://m7etljfxs8co"]
+[gd_scene load_steps=19 format=3 uid="uid://m7etljfxs8co"]
 
 [ext_resource type="Script" uid="uid://8h02s5mruyw3" path="res://Systems/Combat/arpg/enemies/Oktorok/oktorok_2d.gd" id="1_2skei"]
 [ext_resource type="Texture2D" uid="uid://cnmwsegs3n122" path="res://Assets/Art/Ninja Adventure - Asset Pack/Actor/Monsters/RedOctopus/SpriteSheet.png" id="1_iwysq"]
@@ -12,6 +12,8 @@
 [ext_resource type="Script" uid="uid://bff4c05id2gxg" path="res://Systems/Combat/arpg/enemies/behaviors/generic/EnemyStateHurt.gd" id="9_e2fmm"]
 [ext_resource type="Script" uid="uid://dls1au1vh8dv6" path="res://Systems/Combat/arpg/enemies/behaviors/generic/EnemyStateDead.gd" id="10_5a3xy"]
 [ext_resource type="PackedScene" uid="uid://ci4yeu6c4j62a" path="res://Systems/Combat/arpg/projectiles/stone_projectile.tscn" id="10_duy8l"]
+[ext_resource type="Script" uid="uid://disr648uh23vi" path="res://Systems/Combat/arpg/enemies/behaviors/Oktorok/OktorokStateHide.gd" id="13_kekfq"]
+[ext_resource type="Script" uid="uid://dt3pdqplgnapu" path="res://Systems/Combat/arpg/enemies/behaviors/Oktorok/OktorokStateEmerge.gd" id="14_ggpuj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ppq3o"]
 
@@ -24,7 +26,7 @@ radius = 135.033
 
 [node name="Oktorok2d" type="CharacterBody2D"]
 collision_layer = 32
-collision_mask = 9
+collision_mask = 0
 script = ExtResource("1_2skei")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -38,20 +40,23 @@ script = ExtResource("2_2skei")
 max_hp = 3
 
 [node name="Hurtbox" type="Area2D" parent="."]
-collision_layer = 32
-collision_mask = 2177
+collision_layer = 64
+collision_mask = 2050
 script = ExtResource("3_duy8l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 shape = SubResource("CircleShape2D_ppq3o")
 
 [node name="AggroSensor2D" type="Area2D" parent="."]
+collision_layer = 2
 script = ExtResource("4_ppq3o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AggroSensor2D"]
 shape = SubResource("CircleShape2D_kekfq")
 
 [node name="ContactDamage" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 128
 script = ExtResource("5_kekfq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ContactDamage"]
@@ -74,6 +79,12 @@ script = ExtResource("9_e2fmm")
 
 [node name="dead" type="Node" parent="EnemyStateMachine"]
 script = ExtResource("10_5a3xy")
+
+[node name="hide" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("13_kekfq")
+
+[node name="emerge" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("14_ggpuj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_u8q36")

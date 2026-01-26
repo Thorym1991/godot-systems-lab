@@ -7,7 +7,8 @@
 size = Vector2(13, 4)
 
 [node name="Arrow2d" type="Area2D"]
-collision_mask = 40
+collision_layer = 2048
+collision_mask = 72
 script = ExtResource("1_bpmy0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

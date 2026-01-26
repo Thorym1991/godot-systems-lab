@@ -6,16 +6,21 @@ var states := {}
 var enemy: CharacterBody2D
 
 func setup(_owner: CharacterBody2D) -> void:
-	owner = _owner
+	enemy = _owner
 	for c in get_children():
 		if c is EnemyState:
 			c.machine = self
-			c.enemy = owner
+			c.enemy = enemy
 			states[c.id()] = c
 
+
 func change(id: StringName) -> void:
+	if current and current.id() == id:
+		return
 	if current and current.id() == &"dead":
 		return
+
+
 	# rest...
 
 
