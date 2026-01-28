@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://ov8ork84tq8s"]
+[gd_scene load_steps=53 format=4 uid="uid://ov8ork84tq8s"]
 
 [ext_resource type="Texture2D" uid="uid://bdo8qmyewf4k2" path="res://Assets/Art/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetField.png" id="1_htkye"]
 [ext_resource type="Texture2D" uid="uid://bvbf5iguh5iai" path="res://Assets/Art/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloor.png" id="2_bdxe5"]
@@ -17,7 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://cu0i0bdk10odc" path="res://Systems/Interaction/Interactables/Chest/Chest.tscn" id="10_i3kyx"]
 [ext_resource type="Texture2D" uid="uid://81oqijwbef5w" path="res://Assets/Art/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetHouse.png" id="10_o324a"]
 [ext_resource type="PackedScene" uid="uid://onaetwq5g6h7" path="res://Systems/Interaction/Interactables/World/BombWall2D.tscn" id="11_odcpt"]
+[ext_resource type="Texture2D" uid="uid://d1p68nahfdpaw" path="res://Assets/Art/Ninja Adventure - Asset Pack/Items/Weapons/Bow/Sprite.png" id="17_66ygu"]
 [ext_resource type="PackedScene" uid="uid://cbul32g2hq3sd" path="res://Systems/Interaction/Interactables/World/Gate.tscn" id="17_m72ov"]
+[ext_resource type="PackedScene" uid="uid://m8rxrxh2no1h" path="res://core/Items/popups/item_popup.tscn" id="18_a5npe"]
 [ext_resource type="PackedScene" uid="uid://b0qvhl1nn7f4q" path="res://Systems/Interaction/Interactables/World/Triggers/StepTrigger.tscn" id="18_oc16g"]
 [ext_resource type="PackedScene" uid="uid://dvvkbf3lsca1w" path="res://Systems/Interaction/Interactables/World/Triggers/PressurePlate.tscn" id="19_o324a"]
 [ext_resource type="PackedScene" uid="uid://du6voiohvtnyb" path="res://Systems/Interaction/Interactables/World/Triggers/TimedStepTrigger.tscn" id="19_wlrdv"]
@@ -3422,13 +3424,15 @@ position = Vector2(0, 1)
 tile_map_data = PackedByteArray("AAD8//X/AQADAAEAAAD3//X/AQADAAEAAADy//X/AQADAAEAAAABAPX/AQADAAEAAAAGAPX/AQADAAEAAAALAPX/AQADAAEAAAAQAPX/AQADAAEAAAATAPX/AQADAAAAAAATAPb/AQADAAEAAAATAPf/AQADAAEAAAATAPj/AQADAAEAAAATAPn/AQADAAEAAAATAPr/AQADAAEAAAATAPv/AQADAAEAAAATAPz/AQADAAEAAAATAP3/AQADAAEAAAATAP7/AQADAAEAAAATAP//AQADAAEAAAATAAAAAQADAAEAAAATAAEAAQADAAEAAAATAAIAAQADAAEAAAATAAQAAQADAAEAAAATAAUAAQADAAEAAAATAAYAAQADAAEAAAATAAMAAQADAAEAAAAUAAcAAQACAAAAAAASAAcAAQAAAAAAAAATAAcAAQABAAAAAAATAAgAAQABAAIAAADv//f/AQADAAEAAADv//j/AQADAAEAAADv//X/AQADAAAAAADv//b/AQADAAEAAADv//n/AQADAAEAAADv//r/AQADAAEAAADv//v/AQADAAEAAADv//z/AQADAAEAAADv//3/AQADAAEAAADv//7/AQADAAEAAADv////AQADAAEAAADv/wAAAQADAAEAAADv/wEAAQADAAEAAADv/wIAAQADAAEAAADv/wMAAQADAAEAAADv/wQAAQADAAEAAADv/wUAAQADAAEAAADv/wYAAQADAAIAAADy//P/AQABAAMAAADz//P/AQABAAMAAADx//P/AQAAAAMAAAD0//P/AQABAAMAAAD1//P/AQABAAMAAAD2//P/AQABAAMAAAD3//P/AQABAAMAAAD4//P/AQABAAMAAAD5//P/AQABAAMAAAD6//P/AQABAAMAAAD7//P/AQABAAMAAAD8//P/AQABAAMAAAD9//P/AQABAAMAAAD+//P/AQABAAMAAAD///P/AQABAAMAAAAAAPP/AQABAAMAAAABAPP/AQABAAMAAAACAPP/AQABAAMAAAADAPP/AQABAAMAAAAEAPP/AQABAAMAAAAFAPP/AQABAAMAAAAGAPP/AQABAAMAAAAHAPP/AQABAAMAAAAIAPP/AQABAAMAAAAJAPP/AQABAAMAAAAKAPP/AQABAAMAAAALAPP/AQABAAMAAAAMAPP/AQABAAMAAAANAPP/AQABAAMAAAAOAPP/AQABAAMAAAAPAPP/AQABAAMAAAAQAPP/AQABAAMAAAARAPP/AQACAAMAAAASAPL/AQAAAAAAAAATAPL/AQABAAAAAAAUAPL/AQACAAAAAAATAPP/AQABAAEAAAATAPT/AQABAAIAAADy//b/AQADAAIAAAD3//b/AQADAAIAAAD8//b/AQADAAIAAAABAPb/AQADAAIAAAAGAPb/AQADAAIAAAALAPb/AQADAAIAAAAQAPb/AQADAAIAAADu//L/AQAAAAAAAADw//L/AQACAAAAAADv//L/AQABAAAAAADv//P/AQABAAEAAADv//T/AQABAAIAAADw//P/AQACAAIAAADu//P/AQAAAAIAAAASAPP/AQAAAAIAAAAUAPP/AQACAAIAAADu/wcAAQAAAAAAAADv/wcAAQABAAAAAADw/wcAAQACAAAAAADv/wgAAQABAAIAAAACAAgAAQABAAMAAAADAAgAAQABAAMAAAAEAAgAAQABAAMAAAAFAAgAAQABAAMAAAAGAAgAAQABAAMAAAAHAAgAAQABAAMAAAAIAAgAAQABAAMAAAAJAAgAAQABAAMAAAAKAAgAAQABAAMAAAALAAgAAQABAAMAAAAMAAgAAQABAAMAAAANAAgAAQABAAMAAAAOAAgAAQABAAMAAAAPAAgAAQABAAMAAAAQAAgAAQABAAMAAAARAAgAAQACAAMAAAAAAAgAAQABAAMAAAD//wgAAQABAAMAAAD+/wgAAQABAAMAAAD9/wgAAQABAAMAAAD8/wgAAQABAAMAAAD7/wgAAQABAAMAAAD6/wgAAQABAAMAAAD5/wgAAQABAAMAAAD4/wgAAQABAAMAAAD3/wgAAQABAAMAAAD2/wgAAQABAAMAAAD1/wgAAQABAAMAAAD0/wgAAQABAAMAAADz/wgAAQABAAMAAADy/wgAAQABAAMAAADx/wgAAQAAAAMAAAD4////AgAAAAMAAAD6/wEAAgAAAAMAAAD2/wMAAgAAAAMAAAD5/wQAAgAAAAMAAAD9/wQAAgADAAMAAAD9//3/AgADAAMAAADz////AgACAAMAAADz/wIAAgABAAMAAAD9////AgABAAMAAADl/+j/AwAIAAYAAADl/+n/AwAIAAcAAADm/+f/AwAJAAUAAADm/+j/AwAJAAYAAADm/+n/AwAJAAcAAADn/+f/AwAKAAUAAADn/+j/AwAKAAYAAADn/+n/AwAKAAcAAADo/+j/AwALAAYAAADo/+n/AwALAAcAAAAHAP7/AgADAAMAAAANAP//AgAHAAMAAAAKAAEAAgABAAMAAAAOAAUAAgAFAAMAAAAKAAYAAgAEAAMAAAAFAAcAAgAHAAMAAAAFAAQAAgAGAAMAAAAEAP3/AgAFAAMAAAAOAP3/AgACAAMAAAALAP3/AgAHAAMAAAARAAAAAgADAAMAAAARAAMAAgAHAAMAAAAPAAEAAgACAAMAAAAQAAYAAgAGAAMAAAALAAMAAgAEAAMAAAABAAgAAQABAAMAAAA=")
 tile_set = SubResource("TileSet_5gw0l")
 
-[node name="Lever" parent="." instance=ExtResource("6_da0dn")]
+[node name="Lever" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_da0dn")]
 z_index = 1
 position = Vector2(-14, 121)
+target = NodePath("../Gate")
 
-[node name="Lever2" parent="." instance=ExtResource("6_da0dn")]
+[node name="Lever2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_da0dn")]
 z_index = 1
 position = Vector2(-15, 184)
+target = NodePath("../Gate")
 
 [node name="PlayerDemoTd" parent="." instance=ExtResource("7_xdtfy")]
 z_index = 1
@@ -3447,6 +3451,8 @@ z_index = 3
 z_as_relative = false
 y_sort_enabled = true
 position = Vector2(55, -159)
+reward_icon = ExtResource("17_66ygu")
+popup_scene = ExtResource("18_a5npe")
 
 [node name="Doors" type="Node2D" parent="."]
 z_index = 3
@@ -3477,8 +3483,9 @@ z_index = 2
 y_sort_enabled = true
 position = Vector2(23, 156)
 
-[node name="StepTrigger" parent="." instance=ExtResource("18_oc16g")]
+[node name="StepTrigger" parent="." node_paths=PackedStringArray("target") instance=ExtResource("18_oc16g")]
 position = Vector2(113, 200)
+target = NodePath("../Gate")
 
 [node name="TimedStepTrigger" parent="." instance=ExtResource("19_wlrdv")]
 position = Vector2(23, 268)

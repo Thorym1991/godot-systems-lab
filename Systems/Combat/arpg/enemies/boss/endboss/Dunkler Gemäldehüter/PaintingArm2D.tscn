@@ -1,0 +1,113 @@
+[gd_scene load_steps=18 format=3 uid="uid://b2u58uba6xw0q"]
+
+[ext_resource type="Script" uid="uid://d1ua8ffh2ahdj" path="res://Systems/Combat/arpg/enemies/boss/endboss/Dunkler Gemäldehüter/painting_arm_2d.gd" id="1_majlv"]
+[ext_resource type="Script" uid="uid://w77dhkkkd7n1" path="res://Systems/Combat/arpg/enemies/core/EnemyStateMachine.gd" id="2_1sy3f"]
+[ext_resource type="Texture2D" uid="uid://brvhmps4dc17t" path="res://Assets/Art/Einzel Assets/Gemälde.png" id="2_lybs5"]
+[ext_resource type="Texture2D" uid="uid://74c8357rfhjv" path="res://Assets/Art/Einzel Assets/Gemälde zerstört.png" id="2_mioy6"]
+[ext_resource type="Texture2D" uid="uid://c5y6cn7jo27ej" path="res://Assets/Art/Einzel Assets/Gemälde_warnung.png" id="3_mioy6"]
+[ext_resource type="Texture2D" uid="uid://bafhx6srt40h5" path="res://Assets/Art/Einzel Assets/Lich_shadow_arm.png" id="4_towfu"]
+[ext_resource type="Script" uid="uid://c6si3xep7hv8v" path="res://Systems/Combat/arpg/enemies/boss/endboss/Dunkler Gemäldehüter/behaviors/PaintingStateIdle.gd" id="7_cyck5"]
+[ext_resource type="Script" uid="uid://bkaw0j0uiyt4c" path="res://Systems/Combat/arpg/enemies/boss/endboss/Dunkler Gemäldehüter/behaviors/PaintingStateWarn.gd" id="8_vu4p2"]
+[ext_resource type="Script" uid="uid://bkvxduv5mnf3m" path="res://Systems/Combat/arpg/enemies/boss/endboss/Dunkler Gemäldehüter/behaviors/PaintingStateAttack.gd" id="9_biyls"]
+[ext_resource type="Script" uid="uid://c2rxqs8lxcovc" path="res://Systems/Combat/arpg/enemies/boss/endboss/Dunkler Gemäldehüter/behaviors/PaintingStateDead.gd" id="10_y2nv4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2v2v1"]
+atlas = ExtResource("2_lybs5")
+region = Rect2(0, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_toleo"]
+atlas = ExtResource("3_mioy6")
+region = Rect2(0, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyck5"]
+atlas = ExtResource("3_mioy6")
+region = Rect2(48, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vu4p2"]
+atlas = ExtResource("3_mioy6")
+region = Rect2(0, 64, 48, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_biyls"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mioy6")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2v2v1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_toleo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyck5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vu4p2")
+}],
+"loop": true,
+"name": &"warn",
+"speed": 25.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mioy6"]
+size = Vector2(48, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_towfu"]
+size = Vector2(14.9991, 121.819)
+
+[node name="PaintingArm2d" type="CharacterBody2D"]
+script = ExtResource("1_majlv")
+
+[node name="PaintingAnim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_biyls")
+animation = &"dead"
+frame_progress = 0.548838
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 2048
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("RectangleShape2D_mioy6")
+
+[node name="EnemyStateMachine" type="Node" parent="."]
+script = ExtResource("2_1sy3f")
+
+[node name="PaintingStateIdle" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("7_cyck5")
+
+[node name="PaintingStateWarn" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("8_vu4p2")
+
+[node name="PaintingStateAttack" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("9_biyls")
+
+[node name="PaintingStateDead" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("10_y2nv4")
+
+[node name="armRoot" type="Node2D" parent="."]
+
+[node name="ArmSprite" type="Sprite2D" parent="armRoot"]
+position = Vector2(-56, 39)
+texture = ExtResource("4_towfu")
+
+[node name="AttackArea" type="Area2D" parent="armRoot"]
+collision_layer = 64
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="armRoot/AttackArea"]
+position = Vector2(-47, 37)
+rotation = 0.916298
+shape = SubResource("RectangleShape2D_towfu")
+debug_color = Color(0.987912, 0, 0.307845, 0.42)

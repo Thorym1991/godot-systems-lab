@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://m8rxrxh2no1h"]
+
+[ext_resource type="Script" uid="uid://cp18xencyr8sx" path="res://core/Items/popups/item_popup.gd" id="1_apfp5"]
+
+[node name="ItemPopup" type="Node2D"]
+script = ExtResource("1_apfp5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

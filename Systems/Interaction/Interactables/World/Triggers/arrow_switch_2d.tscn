@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcsjki4yfewlx"]
+
+[ext_resource type="Script" uid="uid://kmyfq37avl2f" path="res://Systems/Interaction/Interactables/World/Triggers/arrow_switch_2d.gd" id="1_8vq0w"]
+[ext_resource type="Texture2D" uid="uid://lda8ay3wclcr" path="res://Assets/Art/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetDungeon.png" id="2_cv260"]
+[ext_resource type="Texture2D" uid="uid://87fq50lko6hq" path="res://Assets/Art/Einzel Assets/ArrowSwitch2D/on.png" id="3_y6bjx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y6bjx"]
+size = Vector2(14.5, 12.75)
+
+[node name="ArrowSwitch2d" type="Area2D"]
+collision_layer = 16
+collision_mask = 2048
+script = ExtResource("1_8vq0w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.25, 0.375)
+shape = SubResource("RectangleShape2D_y6bjx")
+
+[node name="sprite_off" type="Sprite2D" parent="."]
+rotation = 3.14159
+region_enabled = true
+region_rect = Rect2(50.3749, 49.99, 10.8815, 13.2556)
+
+[node name="sprite_on" type="Sprite2D" parent="."]
+rotation = 3.14159
+texture = ExtResource("2_cv260")
+region_enabled = true
+region_rect = Rect2(82.2319, 50.1365, 11.5942, 12.4199)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_y6bjx")

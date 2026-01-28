@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 globalsignals="*res://core/globals/GlobalSignals.gd"
 feedbackBus="*res://core/feedback/feedbackBus.gd"
 audioManager="*res://core/globals/AudioManager.gd"
+progressStore="*res://core/globals/ProgressStore.gd"
 
 [file_customization]
 
