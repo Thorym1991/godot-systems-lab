@@ -42,7 +42,7 @@ func _physics_process(delta: float) -> void:
 	if _contact_cd_left > 0.0:
 		_contact_cd_left = maxf(_contact_cd_left - delta, 0.0)
 
-	sm.physics_process(delta)
+	sm._physics_process(delta)
 
 func apply_hit(hit: HitData) -> void:
 	if is_dead:

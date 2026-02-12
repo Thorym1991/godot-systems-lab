@@ -41,7 +41,7 @@ func _physics_process(delta: float) -> void:
 	if _stun_left > 0.0:
 		_stun_left = maxf(_stun_left - delta, 0.0)
 
-	sm.physics_process(delta)
+	sm._physics_process(delta)
 
 func apply_hit(hit: HitData) -> void:
 	if is_dead:
