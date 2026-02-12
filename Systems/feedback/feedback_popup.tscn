@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://bl407f60qgeyg"]
+
+[ext_resource type="Script" uid="uid://7auvwen85r52" path="res://Systems/feedback/feedback_popup.gd" id="1_ycgw2"]
+
+[node name="FeedbackPopup" type="Control" unique_id=1289757243]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ycgw2")
+
+[node name="Panel" type="Panel" parent="." unique_id=638339538]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1524307907]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.5
+offset_top = -111.5
+offset_right = 147.5
+offset_bottom = 111.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelFun" type="Label" parent="Panel/VBoxContainer" unique_id=1575397085]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SliderFun" type="HSlider" parent="Panel/VBoxContainer" unique_id=2081369131]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="LabelClarity" type="Label" parent="Panel/VBoxContainer" unique_id=1238187880]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SliderClarity" type="HSlider" parent="Panel/VBoxContainer" unique_id=359096286]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Difficulty" type="OptionButton" parent="Panel/VBoxContainer" unique_id=375337307]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1979863653]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="CBSpikes" type="CheckBox" parent="Panel/VBoxContainer/HBoxContainer" unique_id=647178847]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Speikes"
+
+[node name="CBArm" type="CheckBox" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1422077799]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Arm"
+
+[node name="CBSog" type="CheckBox" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1228176437]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Sog"
+
+[node name="CBTennis" type="CheckBox" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1649724852]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Tennis"
+
+[node name="Comment" type="TextEdit" parent="Panel/VBoxContainer" unique_id=818698254]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1819676335]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Senden" type="Button" parent="Panel/VBoxContainer/HBoxContainer2" unique_id=596149118]
+layout_mode = 2
+text = "Senden"
+
+[node name="Copy" type="Button" parent="Panel/VBoxContainer/HBoxContainer2" unique_id=1054486024]
+layout_mode = 2
+text = "Copy"
+
+[node name="Abbrechen" type="Button" parent="Panel/VBoxContainer/HBoxContainer2" unique_id=1897022014]
+layout_mode = 2
+text = "Abbrechen
+"
+
+[node name="Status" type="Label" parent="Panel/VBoxContainer" unique_id=301626634]
+unique_name_in_owner = true
+layout_mode = 2
