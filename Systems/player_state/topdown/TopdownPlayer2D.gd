@@ -244,3 +244,25 @@ func shoot_arrow() -> void:
 	a.setup(facing_dir, arrow_damage, self, 80.0)
 
 	get_tree().current_scene.add_child(a)
+
+#testweise
+@export var feedback_popup_scene: PackedScene
+var _feedback_open := false
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("feedback_open"):
+		_open_feedback()
+
+
+func _open_feedback() -> void:
+	if _feedback_open:
+		return
+	_feedback_open = true
+
+	var pop := feedback_popup_scene.instantiate()
+	get_tree().current_scene.add_child(pop)
+
+	# Wenn Popup geschlossen wird, Flag zurücksetzen
+	pop.tree_exited.connect(func():
+		_feedback_open = false
+	)

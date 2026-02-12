@@ -1,9 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://f7jkrumw5cp4"]
+[gd_scene format=3 uid="uid://f7jkrumw5cp4"]
 
 [ext_resource type="Script" uid="uid://c8rwc7r23bplp" path="res://Systems/player_state/topdown/TopdownPlayer2D.gd" id="1_v8nwm"]
 [ext_resource type="Texture2D" uid="uid://qhrpnqg7kcpc" path="res://Assets/Art/Ninja Adventure - Asset Pack/Actor/Characters/GladiatorBlue/SpriteSheet.png" id="2_56c2u"]
 [ext_resource type="PackedScene" uid="uid://dl4ny8315k2qh" path="res://Systems/Combat/arpg/projectiles/ArrowProjectile2D.tscn" id="2_rm6mi"]
 [ext_resource type="Script" uid="uid://cm12sjpi70nmw" path="res://Systems/player_state/StateMachine.gd" id="3_5h788"]
+[ext_resource type="PackedScene" uid="uid://bl407f60qgeyg" path="res://Systems/feedback/feedback_popup.tscn" id="3_s6y47"]
 [ext_resource type="Script" uid="uid://l8cg34mr6avg" path="res://Systems/player_state/topdown/states/TopdownIdle.gd" id="4_37knj"]
 [ext_resource type="Script" uid="uid://cside3mcjntcy" path="res://Systems/player_state/topdown/states/TopdownMove.gd" id="5_opgnk"]
 [ext_resource type="Script" uid="uid://c73h87mxlbod6" path="res://Systems/Interaction/Core/InteractionManager2D.gd" id="6_5h788"]
@@ -35,93 +36,94 @@ size = Vector2(8, 9)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s6y47"]
 
-[node name="PlayerDemoTd" type="CharacterBody2D" groups=["player"]]
+[node name="PlayerDemoTd" type="CharacterBody2D" unique_id=1119019285 groups=["player"]]
 collision_layer = 4225
 collision_mask = 4168
 script = ExtResource("1_v8nwm")
 arrow_scene = ExtResource("2_rm6mi")
+feedback_popup_scene = ExtResource("3_s6y47")
 
-[node name="InteractionManager2D" type="Node2D" parent="."]
+[node name="InteractionManager2D" type="Node2D" parent="." unique_id=1451488599]
 script = ExtResource("6_5h788")
 detection_area_path = NodePath("InteractArea")
 
-[node name="InteractArea" type="Area2D" parent="InteractionManager2D"]
+[node name="InteractArea" type="Area2D" parent="InteractionManager2D" unique_id=1834283562]
 collision_layer = 3
 collision_mask = 5
 
-[node name="InteractCollider" type="CollisionShape2D" parent="InteractionManager2D/InteractArea"]
+[node name="InteractCollider" type="CollisionShape2D" parent="InteractionManager2D/InteractArea" unique_id=1738248703]
 shape = SubResource("CapsuleShape2D_56c2u")
 debug_color = Color(0.508211, 0.918194, 0.385444, 0.42)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=445745846]
 texture = ExtResource("2_56c2u")
 hframes = 4
 vframes = 7
 
-[node name="PlayerCollider" type="CollisionShape2D" parent="."]
+[node name="PlayerCollider" type="CollisionShape2D" parent="." unique_id=2094529451]
 shape = SubResource("CapsuleShape2D_37knj")
 debug_color = Color(1, 1, 1, 0.42)
 
-[node name="StateMachine" type="Node" parent="."]
+[node name="StateMachine" type="Node" parent="." unique_id=461991306]
 script = ExtResource("3_5h788")
 
-[node name="Idle" type="Node" parent="StateMachine"]
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1132033309]
 script = ExtResource("4_37knj")
 
-[node name="Move" type="Node" parent="StateMachine"]
+[node name="Move" type="Node" parent="StateMachine" unique_id=1368068477]
 script = ExtResource("5_opgnk")
 
-[node name="Grab" type="Node" parent="StateMachine"]
+[node name="Grab" type="Node" parent="StateMachine" unique_id=731229208]
 script = ExtResource("7_5h788")
 release_on_button_up = false
 
-[node name="Carry" type="Node" parent="StateMachine"]
+[node name="Carry" type="Node" parent="StateMachine" unique_id=1913299899]
 script = ExtResource("8_37knj")
 
-[node name="Dead" type="Node" parent="StateMachine"]
+[node name="Dead" type="Node" parent="StateMachine" unique_id=1762017472]
 script = ExtResource("9_7ctjp")
 
-[node name="Attack" type="Node" parent="StateMachine"]
+[node name="Attack" type="Node" parent="StateMachine" unique_id=425072303]
 script = ExtResource("10_fmy8u")
 
-[node name="Block" type="Node" parent="StateMachine"]
+[node name="Block" type="Node" parent="StateMachine" unique_id=758943438]
 script = ExtResource("12_u5hg3")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=189577620]
 zoom = Vector2(3, 3)
 script = ExtResource("9_opgnk")
 
-[node name="Health" type="Node" parent="."]
+[node name="Health" type="Node" parent="." unique_id=1156319022]
 script = ExtResource("10_53xgk")
 
-[node name="DamageFeedback2D" type="Node" parent="."]
+[node name="DamageFeedback2D" type="Node" parent="." unique_id=2113194640]
 script = ExtResource("12_6soli")
 sprite_path = NodePath("../Sprite2D")
 
-[node name="SwordPivot" type="Node2D" parent="."]
+[node name="SwordPivot" type="Node2D" parent="." unique_id=1662577455]
 
-[node name="SwordHitbox" type="Area2D" parent="SwordPivot"]
+[node name="SwordHitbox" type="Area2D" parent="SwordPivot" unique_id=1971013204]
 collision_layer = 2
 collision_mask = 64
 script = ExtResource("13_h4ceb")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SwordPivot/SwordHitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SwordPivot/SwordHitbox" unique_id=1178563669]
 shape = SubResource("CircleShape2D_h4ceb")
 
-[node name="SwordParryHitbox" type="Area2D" parent="SwordPivot"]
+[node name="SwordParryHitbox" type="Area2D" parent="SwordPivot" unique_id=178910939]
 collision_layer = 2
 collision_mask = 4096
 monitoring = false
 script = ExtResource("16_hbo3u")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SwordPivot/SwordParryHitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SwordPivot/SwordParryHitbox" unique_id=1151305190]
 shape = SubResource("RectangleShape2D_rm6mi")
 
-[node name="ShieldBlockHitbox" type="Area2D" parent="."]
+[node name="ShieldBlockHitbox" type="Area2D" parent="." unique_id=1888983988]
 collision_layer = 2
 collision_mask = 4096
 monitoring = false
 script = ExtResource("17_u5hg3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ShieldBlockHitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShieldBlockHitbox" unique_id=717243286]
 shape = SubResource("RectangleShape2D_s6y47")

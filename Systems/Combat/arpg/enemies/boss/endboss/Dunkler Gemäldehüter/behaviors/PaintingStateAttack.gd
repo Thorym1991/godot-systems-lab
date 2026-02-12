@@ -9,7 +9,11 @@ func id() -> StringName:
 	return &"attack"
 
 func enter() -> void:
-	var e := enemy as PaintingArm2D
+	var e: PaintingAbilityArm = enemy as PaintingAbilityArm
+	if e == null:
+		machine.change(&"idle")
+		return
+
 	var arm_root := e.arm_root
 	if arm_root == null:
 		push_warning("PaintingStateAttack: ArmRoot missing")
@@ -22,10 +26,8 @@ func enter() -> void:
 	var end_rot: float = deg_to_rad(-120.0)
 	arm_root.rotation = start_rot
 
-	# Hitbox an
 	e.set_attack_active(true)
 
-	# ✅ Sweep-Tween im PHYSICS-Process
 	var tw := get_tree().create_tween()
 	tw.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 	tw.tween_property(arm_root, "rotation", end_rot, extend_time)\
@@ -33,13 +35,10 @@ func enter() -> void:
 		.set_ease(Tween.EASE_OUT)
 	await tw.finished
 
-	# Optional End-Fenster
 	await get_tree().create_timer(active_time).timeout
 
-	# Hitbox aus
 	e.set_attack_active(false)
 
-	# ✅ Rückweg ebenfalls PHYSICS
 	var tw2 := get_tree().create_tween()
 	tw2.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 	tw2.tween_property(arm_root, "rotation", start_rot, retract_time)\

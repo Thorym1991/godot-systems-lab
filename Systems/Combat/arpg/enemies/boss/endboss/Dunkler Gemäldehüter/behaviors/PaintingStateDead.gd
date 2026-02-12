@@ -5,11 +5,13 @@ func id() -> StringName:
 	return &"dead"
 
 func enter() -> void:
-	var e := enemy as PaintingArm2D
+	var e: PaintingAbilityArm = enemy as PaintingAbilityArm
+	if e == null:
+		return
 
+	e.is_dead = true
 	e.set_attack_active(false)
-	e.play_dead()
 
-	if e.hurtbox:
-		e.hurtbox.set_deferred("monitoring", false)
-		e.hurtbox.set_deferred("monitorable", false)
+	# Optional: Slot informieren (wenn du dead/broken über den Slot zeigen willst)
+	if e.slot:
+		e.slot.set_broken(true)

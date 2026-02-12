@@ -17,7 +17,6 @@ func enter() -> void:
 		machine.change(&"emerge")
 	# else: bleiben, KEIN change("hide")
 
-
 func exit() -> void:
 	pass
 

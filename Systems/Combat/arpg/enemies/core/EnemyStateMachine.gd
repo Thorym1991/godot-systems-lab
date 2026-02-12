@@ -33,6 +33,6 @@ func change(id: StringName) -> void:
 		current.enter()
 
 
-func physics_process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if current:
 		current.physics_process(delta)

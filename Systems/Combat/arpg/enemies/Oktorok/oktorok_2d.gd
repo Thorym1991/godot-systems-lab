@@ -91,7 +91,6 @@ func _on_target_acquired(t: Node2D) -> void:
 	# falls er gerade versteckt/idle ist -> auftauchen
 	sm.change(&"emerge")
 
-
 func _on_target_lost() -> void:
 	_target = null
 	_active = false

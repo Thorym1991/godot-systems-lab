@@ -4,7 +4,6 @@ class_name EnemyStateEmerge
 @export var emerge_time: float = 0.35
 @export var become_vulnerable_on_enter: bool = true
 
-
 func id() -> StringName:
 	return &"emerge"
 
