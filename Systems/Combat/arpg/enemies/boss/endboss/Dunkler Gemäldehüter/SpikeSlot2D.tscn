@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b3ly4432keaxx"]
+
+[ext_resource type="Script" uid="uid://bqdnm4dj5n1ky" path="res://Systems/Combat/arpg/enemies/boss/endboss/Dunkler Gemäldehüter/spike_slot_2d.gd" id="1_n3gv7"]
+
+[node name="SpikeSlot2d" type="Marker2D" unique_id=11824956]
+script = ExtResource("1_n3gv7")

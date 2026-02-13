@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://cjj46xk4780mf"]
+
+[ext_resource type="Script" uid="uid://cu0jc2lohgv8f" path="res://Systems/Combat/arpg/enemies/boss/endboss/Dunkler Gemäldehüter/abllitys/spikes/spike_unit.gd" id="1_qh8on"]
+[ext_resource type="Texture2D" uid="uid://dx3wc4l2ggxgm" path="res://Assets/Art/Einzel Assets/Bossraum/Knochen speikes (2).png" id="2_1pq7f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4dfw"]
+atlas = ExtResource("2_1pq7f")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43ljs"]
+atlas = ExtResource("2_1pq7f")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0eps"]
+atlas = ExtResource("2_1pq7f")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3m6i2"]
+atlas = ExtResource("2_1pq7f")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdl7d"]
+atlas = ExtResource("2_1pq7f")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1vn7"]
+atlas = ExtResource("2_1pq7f")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_260hj"]
+atlas = ExtResource("2_1pq7f")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmykb"]
+atlas = ExtResource("2_1pq7f")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37tbs"]
+atlas = ExtResource("2_1pq7f")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14hjg"]
+atlas = ExtResource("2_1pq7f")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45rqp"]
+atlas = ExtResource("2_1pq7f")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sxmb4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4dfw")
+}],
+"loop": true,
+"name": &"active",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43ljs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0eps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3m6i2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdl7d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1vn7")
+}],
+"loop": false,
+"name": &"emerge",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_260hj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmykb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37tbs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14hjg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45rqp")
+}],
+"loop": false,
+"name": &"retract",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i2ymg"]
+radius = 6.0
+
+[node name="SpikeUnit" type="Node2D" unique_id=178746587]
+script = ExtResource("1_qh8on")
+
+[node name="Anim" type="AnimatedSprite2D" parent="." unique_id=635276958]
+position = Vector2(0, -2)
+sprite_frames = SubResource("SpriteFrames_sxmb4")
+animation = &"emerge"
+autoplay = "emerge"
+
+[node name="HitArea" type="Area2D" parent="." unique_id=1932526889]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea" unique_id=1067240038]
+position = Vector2(1, -11)
+shape = SubResource("CircleShape2D_i2ymg")

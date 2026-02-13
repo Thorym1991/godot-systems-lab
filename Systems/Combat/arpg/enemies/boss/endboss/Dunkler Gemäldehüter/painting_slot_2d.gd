@@ -10,6 +10,7 @@ var active: bool = true
 var broken: bool = false
 var ability_name: StringName = &"arm"
 
+
 @onready var anim: AnimatedSprite2D = $PaintingAnim
 @onready var ability_anchor: Node2D = $AbilityAnchor
 var ability_instance: Node = null
@@ -40,7 +41,11 @@ func set_ability(name: StringName) -> void:
 	if scene:
 		ability_instance = scene.instantiate()
 		ability_anchor.add_child(ability_instance)
-
+		# Inject SpikeSlots root (damit PaintingAbilitySpikes Slots sammeln kann)
+		if ability_instance is PaintingAbilitySpikes:
+			var dungeon_root: Node = get_parent().get_parent() # DungeonArpgDemo
+			var spike_slots: Node = dungeon_root.get_node("SpikeSlots")
+			(ability_instance as PaintingAbilitySpikes).set_slots_root(spike_slots)
 
 func play_warning() -> void:
 	if not active or broken:

@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://b2u58uba6xw0q"]
 
-[ext_resource type="Script" uid="uid://d1ua8ffh2ahdj" path="res://Systems/Combat/arpg/enemies/boss/endboss/Dunkler Gemäldehüter/painting_arm_2d.gd" id="1_majlv"]
-[ext_resource type="Script" uid="uid://w77dhkkkd7n1" path="res://Systems/Combat/arpg/enemies/core/EnemyStateMachine.gd" id="2_1sy3f"]
-[ext_resource type="Texture2D" uid="uid://bafhx6srt40h5" path="res://Assets/Art/Einzel Assets/Bossraum/Lich_shadow_arm.png" id="4_towfu"]
-[ext_resource type="Script" uid="uid://c6si3xep7hv8v" path="res://Systems/Combat/arpg/enemies/boss/endboss/Dunkler Gemäldehüter/behaviors/PaintingStateIdle.gd" id="7_cyck5"]
-[ext_resource type="Script" uid="uid://bkvxduv5mnf3m" path="res://Systems/Combat/arpg/enemies/boss/endboss/Dunkler Gemäldehüter/behaviors/PaintingStateAttack.gd" id="9_biyls"]
-[ext_resource type="Script" uid="uid://c2rxqs8lxcovc" path="res://Systems/Combat/arpg/enemies/boss/endboss/Dunkler Gemäldehüter/behaviors/PaintingStateDead.gd" id="10_y2nv4"]
+[ext_resource type="Script" uid="uid://d1ua8ffh2ahdj" path="res://Systems/Combat/arpg/enemies/boss/endboss/Dunkler Gemäldehüter/abllitys/Arm/painting_arm_2d.gd" id="1_f1fbk"]
+[ext_resource type="Script" uid="uid://w77dhkkkd7n1" path="res://Systems/Combat/arpg/enemies/core/EnemyStateMachine.gd" id="2_cghaf"]
+[ext_resource type="Script" uid="uid://c6si3xep7hv8v" path="res://Systems/Combat/arpg/enemies/boss/endboss/Dunkler Gemäldehüter/behaviors/PaintingStateIdle.gd" id="3_3mpkx"]
+[ext_resource type="Script" uid="uid://bkvxduv5mnf3m" path="res://Systems/Combat/arpg/enemies/boss/endboss/Dunkler Gemäldehüter/behaviors/PaintingStateAttack.gd" id="4_tp7nh"]
+[ext_resource type="Script" uid="uid://c2rxqs8lxcovc" path="res://Systems/Combat/arpg/enemies/boss/endboss/Dunkler Gemäldehüter/behaviors/PaintingStateDead.gd" id="5_htuio"]
+[ext_resource type="Texture2D" uid="uid://bafhx6srt40h5" path="res://Assets/Art/Einzel Assets/Bossraum/Lich_shadow_arm.png" id="6_8alx7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_biyls"]
 animations = []
@@ -17,7 +17,7 @@ size = Vector2(48, 64)
 size = Vector2(14.9991, 121.819)
 
 [node name="PaintingArm2d" type="CharacterBody2D" unique_id=448016897]
-script = ExtResource("1_majlv")
+script = ExtResource("1_f1fbk")
 
 [node name="PaintingAnim" type="AnimatedSprite2D" parent="." unique_id=995734553]
 sprite_frames = SubResource("SpriteFrames_biyls")
@@ -31,22 +31,22 @@ collision_mask = 2048
 shape = SubResource("RectangleShape2D_mioy6")
 
 [node name="EnemyStateMachine" type="Node" parent="." unique_id=1221857973]
-script = ExtResource("2_1sy3f")
+script = ExtResource("2_cghaf")
 
 [node name="PaintingStateIdle" type="Node" parent="EnemyStateMachine" unique_id=1164575947]
-script = ExtResource("7_cyck5")
+script = ExtResource("3_3mpkx")
 
 [node name="PaintingStateAttack" type="Node" parent="EnemyStateMachine" unique_id=47683165]
-script = ExtResource("9_biyls")
+script = ExtResource("4_tp7nh")
 
 [node name="PaintingStateDead" type="Node" parent="EnemyStateMachine" unique_id=961105301]
-script = ExtResource("10_y2nv4")
+script = ExtResource("5_htuio")
 
 [node name="armRoot" type="Node2D" parent="." unique_id=1630681382]
 
 [node name="ArmSprite" type="Sprite2D" parent="armRoot" unique_id=837590290]
 position = Vector2(-56, 39)
-texture = ExtResource("4_towfu")
+texture = ExtResource("6_8alx7")
 
 [node name="AttackArea" type="Area2D" parent="armRoot" unique_id=2099303578]
 collision_layer = 64

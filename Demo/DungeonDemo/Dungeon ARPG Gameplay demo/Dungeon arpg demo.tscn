@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cmbyagwxt0tjq" path="res://Systems/ui/DemoBackHUD.tscn" id="5_yknb2"]
 [ext_resource type="Script" uid="uid://ftuyfwsu6kvi" path="res://Systems/Combat/arpg/Combat System Controller/BossController.gd" id="6_anrvb"]
 [ext_resource type="Script" uid="uid://dgjgynqylmuwi" path="res://Demo/DungeonDemo/Dungeon ARPG Gameplay demo/start_trigger.gd" id="7_nxd0l"]
+[ext_resource type="PackedScene" uid="uid://b3ly4432keaxx" path="res://Systems/Combat/arpg/enemies/boss/endboss/Dunkler Gemäldehüter/SpikeSlot2D.tscn" id="8_px85n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g0gd7"]
 texture = ExtResource("1_qa6lg")
@@ -1255,3 +1256,17 @@ boss_controller_path = NodePath("../BossController")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StartTrigger" unique_id=1427166325]
 position = Vector2(262, 229)
 shape = SubResource("CircleShape2D_px85n")
+
+[node name="SpikeSlots" type="Node" parent="." unique_id=1306169143]
+
+[node name="SpikeSlot2d" parent="SpikeSlots" unique_id=11824956 instance=ExtResource("8_px85n")]
+position = Vector2(222, 190)
+
+[node name="SpikeSlot2d2" parent="SpikeSlots" unique_id=1275371894 instance=ExtResource("8_px85n")]
+position = Vector2(302, 254)
+
+[node name="SpikeSlot2d3" parent="SpikeSlots" unique_id=2123255102 instance=ExtResource("8_px85n")]
+position = Vector2(221, 254)
+
+[node name="SpikeSlot2d4" parent="SpikeSlots" unique_id=1262521840 instance=ExtResource("8_px85n")]
+position = Vector2(302, 190)

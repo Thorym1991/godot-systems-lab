@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cgykmkt5yhtjd"]
+
+[ext_resource type="Script" uid="uid://c314s3wxogk28" path="res://Systems/Combat/arpg/enemies/boss/endboss/Dunkler Gemäldehüter/abllitys/spikes/PaintingAbilitySpikes.gd.gd" id="1_yw5ql"]
+[ext_resource type="PackedScene" uid="uid://cjj46xk4780mf" path="res://Systems/Combat/arpg/enemies/boss/endboss/Dunkler Gemäldehüter/abllitys/spikes/SpikeUnit.tscn" id="2_mta0l"]
+
+[node name="PaintingAbilitySpikes" type="Node2D" unique_id=2025079884]
+script = ExtResource("1_yw5ql")
+spike_scene = ExtResource("2_mta0l")

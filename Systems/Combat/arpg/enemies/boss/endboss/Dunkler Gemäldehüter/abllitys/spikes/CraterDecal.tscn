@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cyg4ohju6u8ch"]
+
+[ext_resource type="Script" uid="uid://cqo8lg3pdcxd6" path="res://Systems/Combat/arpg/enemies/boss/endboss/Dunkler Gemäldehüter/abllitys/spikes/crater_decal.gd" id="1_u6ybo"]
+[ext_resource type="Texture2D" uid="uid://dx3wc4l2ggxgm" path="res://Assets/Art/Einzel Assets/Bossraum/Knochen speikes (2).png" id="2_ppo5o"]
+
+[node name="CraterDecal" type="Node2D" unique_id=426088838]
+script = ExtResource("1_u6ybo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=893364775]
+texture = ExtResource("2_ppo5o")
+region_enabled = true
+region_rect = Rect2(2.2568207, 66.706955, 28.294418, 27.529709)

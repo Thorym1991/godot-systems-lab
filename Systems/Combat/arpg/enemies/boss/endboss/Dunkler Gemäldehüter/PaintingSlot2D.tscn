@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bvc7y1chv81qk" path="res://Systems/Combat/arpg/enemies/boss/endboss/Dunkler Gemäldehüter/painting_slot_2d.gd" id="1_5g5jx"]
 [ext_resource type="Texture2D" uid="uid://cx3tsl3u4mpnv" path="res://Assets/Art/Einzel Assets/Bossraum/Gemälde2.png" id="1_rcans"]
-[ext_resource type="PackedScene" uid="uid://b2u58uba6xw0q" path="res://Systems/Combat/arpg/enemies/boss/endboss/Dunkler Gemäldehüter/PaintingArm2D.tscn" id="2_jt735"]
+[ext_resource type="PackedScene" uid="uid://b2u58uba6xw0q" path="res://Systems/Combat/arpg/enemies/boss/endboss/Dunkler Gemäldehüter/abllitys/Arm/PaintingArm2D.tscn" id="2_jt735"]
+[ext_resource type="PackedScene" uid="uid://cgykmkt5yhtjd" path="res://Systems/Combat/arpg/enemies/boss/endboss/Dunkler Gemäldehüter/abllitys/spikes/PaintingAbilitySpikes.tscn" id="3_oh0p0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5g5jx"]
 atlas = ExtResource("1_rcans")
@@ -175,6 +176,7 @@ animations = [{
 [node name="PaintingSlot2d" type="Node2D" unique_id=2017467052]
 script = ExtResource("1_5g5jx")
 scene_arm = ExtResource("2_jt735")
+scene_spikes = ExtResource("3_oh0p0")
 
 [node name="PaintingAnim" type="AnimatedSprite2D" parent="." unique_id=1719828656]
 unique_name_in_owner = true
