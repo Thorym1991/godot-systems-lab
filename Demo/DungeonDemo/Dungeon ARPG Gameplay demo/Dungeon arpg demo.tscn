@@ -1254,19 +1254,1046 @@ script = ExtResource("7_nxd0l")
 boss_controller_path = NodePath("../BossController")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StartTrigger" unique_id=1427166325]
-position = Vector2(262, 229)
+position = Vector2(262, 239)
 shape = SubResource("CircleShape2D_px85n")
 
-[node name="SpikeSlots" type="Node" parent="." unique_id=1306169143]
+[node name="SpikeSlots" type="Node" parent="." unique_id=1232172176]
 
-[node name="SpikeSlot2d" parent="SpikeSlots" unique_id=11824956 instance=ExtResource("8_px85n")]
-position = Vector2(222, 190)
+[node name="Lane_h" type="Node" parent="SpikeSlots" unique_id=835734888]
 
-[node name="SpikeSlot2d2" parent="SpikeSlots" unique_id=1275371894 instance=ExtResource("8_px85n")]
+[node name="SpikeSlot2d" parent="SpikeSlots/Lane_h" unique_id=11824956 groups=["lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(109, 189)
+
+[node name="SpikeSlot2d2" parent="SpikeSlots/Lane_h" unique_id=20876088 groups=["lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(109, 222)
+
+[node name="SpikeSlot2d3" parent="SpikeSlots/Lane_h" unique_id=1629896855 groups=["lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(109, 253)
+
+[node name="SpikeSlot2d4" parent="SpikeSlots/Lane_h" unique_id=1335462585 groups=["lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(109, 285)
+
+[node name="SpikeSlot2d5" parent="SpikeSlots/Lane_h" unique_id=861677294 groups=["lane_diag_b1", "lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(109, 318)
+
+[node name="SpikeSlot2d6" parent="SpikeSlots/Lane_h" unique_id=1510361727 groups=["lane_diag_a", "lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(125, 174)
+
+[node name="SpikeSlot2d7" parent="SpikeSlots/Lane_h" unique_id=399045605 groups=["lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(125, 206)
+
+[node name="SpikeSlot2d8" parent="SpikeSlots/Lane_h" unique_id=178152219 groups=["lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(125, 238)
+
+[node name="SpikeSlot2d9" parent="SpikeSlots/Lane_h" unique_id=1053546047 groups=["lane_h"] instance=ExtResource("8_px85n")]
+position = Vector2(125, 269)
+
+[node name="SpikeSlot2d10" parent="SpikeSlots/Lane_h" unique_id=1077576204 groups=["lane_diag_b1", "lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(125, 302)
+
+[node name="SpikeSlot2d11" parent="SpikeSlots/Lane_h" unique_id=497259258 groups=["lane_diag_b1", "lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(141, 318)
+
+[node name="SpikeSlot2d12" parent="SpikeSlots/Lane_h" unique_id=127167342 groups=["lane_diag_b1", "lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(141, 285)
+
+[node name="SpikeSlot2d13" parent="SpikeSlots/Lane_h" unique_id=242447734 groups=["lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(142, 253)
+
+[node name="SpikeSlot2d14" parent="SpikeSlots/Lane_h" unique_id=186743845 groups=["lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(142, 222)
+
+[node name="SpikeSlot2d15" parent="SpikeSlots/Lane_h" unique_id=1577192710 groups=["lane_diag_a", "lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(142, 189)
+
+[node name="SpikeSlot2d16" parent="SpikeSlots/Lane_h" unique_id=793138290 groups=["lane_diag_a", "lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(157, 174)
+
+[node name="SpikeSlot2d17" parent="SpikeSlots/Lane_h" unique_id=767315411 groups=["lane_diag_a", "lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(157, 206)
+
+[node name="SpikeSlot2d18" parent="SpikeSlots/Lane_h" unique_id=160649210 groups=["lane_h"] instance=ExtResource("8_px85n")]
+position = Vector2(157, 238)
+
+[node name="SpikeSlot2d19" parent="SpikeSlots/Lane_h" unique_id=1023306240 groups=["lane_diag_b1", "lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(157, 269)
+
+[node name="SpikeSlot2d20" parent="SpikeSlots/Lane_h" unique_id=771532948 groups=["lane_diag_b1", "lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(157, 302)
+
+[node name="SpikeSlot2d21" parent="SpikeSlots/Lane_h" unique_id=158787087 groups=["lane_diag_a", "lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(174, 189)
+
+[node name="SpikeSlot2d22" parent="SpikeSlots/Lane_h" unique_id=1919989417 groups=["lane_diag_a", "lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(174, 222)
+
+[node name="SpikeSlot2d23" parent="SpikeSlots/Lane_h" unique_id=1601182431 groups=["lane_diag_b1", "lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(174, 253)
+
+[node name="SpikeSlot2d24" parent="SpikeSlots/Lane_h" unique_id=1595415036 groups=["lane_diag_b1", "lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(174, 285)
+
+[node name="SpikeSlot2d25" parent="SpikeSlots/Lane_h" unique_id=953170521 groups=["lane_diag_b1", "lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(174, 318)
+
+[node name="SpikeSlot2d26" parent="SpikeSlots/Lane_h" unique_id=1993328891 groups=["innerring", "lane_diag_a", "lane_h", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(189, 174)
+
+[node name="SpikeSlot2d27" parent="SpikeSlots/Lane_h" unique_id=47242713 groups=["innerring", "lane_diag_a", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(189, 206)
+
+[node name="SpikeSlot2d28" parent="SpikeSlots/Lane_h" unique_id=149645065 groups=["innerring", "lane_diag_a", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(189, 238)
+
+[node name="SpikeSlot2d29" parent="SpikeSlots/Lane_h" unique_id=1924718338 groups=["innerring", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(189, 269)
+
+[node name="SpikeSlot2d30" parent="SpikeSlots/Lane_h" unique_id=43598796 groups=["innerring", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(189, 302)
+
+[node name="SpikeSlot2d31" parent="SpikeSlots/Lane_h" unique_id=261440056 groups=["lane_diag_a", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(205, 189)
+
+[node name="SpikeSlot2d32" parent="SpikeSlots/Lane_h" unique_id=1787040308 groups=["lane_diag_a", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(205, 222)
+
+[node name="SpikeSlot2d33" parent="SpikeSlots/Lane_h" unique_id=287364292 groups=["innerring", "lane_diag_a", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(205, 222)
+
+[node name="SpikeSlot2d34" parent="SpikeSlots/Lane_h" unique_id=1732807979 groups=["lane_diag_a", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(205, 254)
+
+[node name="SpikeSlot2d35" parent="SpikeSlots/Lane_h" unique_id=1228746204 groups=["lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(205, 285)
+
+[node name="SpikeSlot2d36" parent="SpikeSlots/Lane_h" unique_id=275819237 groups=["innerring", "lane_diag_a", "lane_h", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(221, 173)
+
+[node name="SpikeSlot2d37" parent="SpikeSlots/Lane_h" unique_id=126696324 groups=["innerring", "lane_diag_a", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(221, 206)
+
+[node name="SpikeSlot2d38" parent="SpikeSlots/Lane_h" unique_id=2050188182 groups=["innerring", "lane_diag_a", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(221, 238)
+
+[node name="SpikeSlot2d39" parent="SpikeSlots/Lane_h" unique_id=1353202665 groups=["lane_diag_a", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(221, 269)
+
+[node name="SpikeSlot2d40" parent="SpikeSlots/Lane_h" unique_id=1879931192 groups=["lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(220, 302)
+
+[node name="SpikeSlot2d41" parent="SpikeSlots/Lane_h" unique_id=45475293 groups=["innerring", "lane_diag_a", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(237, 189)
+
+[node name="SpikeSlot2d42" parent="SpikeSlots/Lane_h" unique_id=936698998 groups=["lane_diag_a", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(238, 254)
+
+[node name="SpikeSlot2d43" parent="SpikeSlots/Lane_h" unique_id=1066862000 groups=["innerring", "lane_diag_a", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(238, 222)
+
+[node name="SpikeSlot2d44" parent="SpikeSlots/Lane_h" unique_id=516141514 groups=["lane_diag_a", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(238, 286)
+
+[node name="SpikeSlot2d45" parent="SpikeSlots/Lane_h" unique_id=1099297017 groups=["innerring", "lane_diag_a", "lane_diag_b1", "lane_h", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(254, 173)
+
+[node name="SpikeSlot2d46" parent="SpikeSlots/Lane_h" unique_id=518050059 groups=["innerring", "lane_diag_a", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(254, 206)
+
+[node name="SpikeSlot2d47" parent="SpikeSlots/Lane_h" unique_id=723888002 groups=["innerring", "lane_diag_a", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(254, 238)
+
+[node name="SpikeSlot2d48" parent="SpikeSlots/Lane_h" unique_id=1249224578 groups=["lane_diag_a", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(254, 269)
+
+[node name="SpikeSlot2d49" parent="SpikeSlots/Lane_h" unique_id=2051651149 groups=["lane_diag_a", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(253, 302)
+
+[node name="SpikeSlot2d50" parent="SpikeSlots/Lane_h" unique_id=670696218 groups=["lane_diag_a", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(269, 189)
+
+[node name="SpikeSlot2d51" parent="SpikeSlots/Lane_h" unique_id=375617637 groups=["lane_diag_a", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(269, 222)
+
+[node name="SpikeSlot2d52" parent="SpikeSlots/Lane_h" unique_id=2092346292 groups=["innerring", "lane_diag_a", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(269, 254)
+
+[node name="SpikeSlot2d53" parent="SpikeSlots/Lane_h" unique_id=919060583 groups=["innerring", "lane_diag_a", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(270, 287)
+
+[node name="SpikeSlot2d54" parent="SpikeSlots/Lane_h" unique_id=1268115178 groups=["innerring", "lane_diag_b1", "lane_h", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(286, 173)
+
+[node name="SpikeSlot2d55" parent="SpikeSlots/Lane_h" unique_id=1354046106 groups=["lane_diag_a", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(286, 206)
+
+[node name="SpikeSlot2d56" parent="SpikeSlots/Lane_h" unique_id=1513361091 groups=["lane_diag_a", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(286, 238)
+
+[node name="SpikeSlot2d57" parent="SpikeSlots/Lane_h" unique_id=1997763422 groups=["innerring", "lane_diag_a", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(286, 269)
+
+[node name="SpikeSlot2d58" parent="SpikeSlots/Lane_h" unique_id=898932664 groups=["innerring", "lane_diag_a", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(286, 302)
+
+[node name="SpikeSlot2d59" parent="SpikeSlots/Lane_h" unique_id=74997960 groups=["lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(302, 189)
+
+[node name="SpikeSlot2d60" parent="SpikeSlots/Lane_h" unique_id=1574539358 groups=["lane_diag_a", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(302, 222)
+
+[node name="SpikeSlot2d61" parent="SpikeSlots/Lane_h" unique_id=1395639825 groups=["innerring", "lane_diag_a", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
 position = Vector2(302, 254)
 
-[node name="SpikeSlot2d3" parent="SpikeSlots" unique_id=2123255102 instance=ExtResource("8_px85n")]
+[node name="SpikeSlot2d62" parent="SpikeSlots/Lane_h" unique_id=573505120 groups=["innerring", "lane_diag_a", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(301, 287)
+
+[node name="SpikeSlot2d63" parent="SpikeSlots/Lane_h" unique_id=1440401638 groups=["innerring", "lane_diag_b1", "lane_h", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(318, 173)
+
+[node name="SpikeSlot2d64" parent="SpikeSlots/Lane_h" unique_id=17775511 groups=["innerring", "lane_diag_a", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(318, 269)
+
+[node name="SpikeSlot2d65" parent="SpikeSlots/Lane_h" unique_id=851278616 groups=["lane_diag_a", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(318, 302)
+
+[node name="SpikeSlot2d66" parent="SpikeSlots/Lane_h" unique_id=1388033262 groups=["lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(317, 206)
+
+[node name="SpikeSlot2d67" parent="SpikeSlots/Lane_h" unique_id=1879606988 groups=["lane_diag_a", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(318, 238)
+
+[node name="SpikeSlot2d68" parent="SpikeSlots/Lane_h" unique_id=372406190 groups=["innerring", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(334, 189)
+
+[node name="SpikeSlot2d69" parent="SpikeSlots/Lane_h" unique_id=606937172 groups=["innerring", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(334, 222)
+
+[node name="SpikeSlot2d70" parent="SpikeSlots/Lane_h" unique_id=880862100 groups=["innerring", "lane_diag_a", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(334, 254)
+
+[node name="SpikeSlot2d71" parent="SpikeSlots/Lane_h" unique_id=1350113236 groups=["innerring", "lane_diag_a", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(334, 286)
+
+[node name="SpikeSlot2d72" parent="SpikeSlots/Lane_h" unique_id=1300489699 groups=["lane_diag_b1", "lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(350, 173)
+
+[node name="SpikeSlot2d73" parent="SpikeSlots/Lane_h" unique_id=772700976 groups=["lane_diag_b1", "lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(350, 206)
+
+[node name="SpikeSlot2d74" parent="SpikeSlots/Lane_h" unique_id=1755509409 groups=["lane_diag_b1", "lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(350, 238)
+
+[node name="SpikeSlot2d75" parent="SpikeSlots/Lane_h" unique_id=242017031 groups=["lane_diag_a", "lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(350, 269)
+
+[node name="SpikeSlot2d76" parent="SpikeSlots/Lane_h" unique_id=2039226929 groups=["lane_diag_a", "lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(350, 302)
+
+[node name="SpikeSlot2d77" parent="SpikeSlots/Lane_h" unique_id=1402213538 groups=["lane_diag_b1", "lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(366, 190)
+
+[node name="SpikeSlot2d78" parent="SpikeSlots/Lane_h" unique_id=1521584486 groups=["lane_diag_b1", "lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(366, 222)
+
+[node name="SpikeSlot2d79" parent="SpikeSlots/Lane_h" unique_id=1684214768 groups=["lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(366, 254)
+
+[node name="SpikeSlot2d80" parent="SpikeSlots/Lane_h" unique_id=2033283642 groups=["lane_diag_a", "lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(366, 286)
+
+[node name="SpikeSlot2d81" parent="SpikeSlots/Lane_h" unique_id=2100640710 groups=["lane_diag_b1", "lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(381, 173)
+
+[node name="SpikeSlot2d82" parent="SpikeSlots/Lane_h" unique_id=577406899 groups=["lane_diag_b1", "lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(381, 206)
+
+[node name="SpikeSlot2d83" parent="SpikeSlots/Lane_h" unique_id=714753489 groups=["lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(381, 238)
+
+[node name="SpikeSlot2d84" parent="SpikeSlots/Lane_h" unique_id=1882134932 groups=["lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(381, 270)
+
+[node name="SpikeSlot2d85" parent="SpikeSlots/Lane_h" unique_id=92675017 groups=["lane_diag_a", "lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(381, 302)
+
+[node name="SpikeSlot2d86" parent="SpikeSlots/Lane_h" unique_id=1963272089 groups=["lane_diag_b1", "lane_h"] instance=ExtResource("8_px85n")]
+position = Vector2(398, 190)
+
+[node name="SpikeSlot2d87" parent="SpikeSlots/Lane_h" unique_id=1874381942 groups=["lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(398, 222)
+
+[node name="SpikeSlot2d88" parent="SpikeSlots/Lane_h" unique_id=673568988 groups=["lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(398, 254)
+
+[node name="SpikeSlot2d89" parent="SpikeSlots/Lane_h" unique_id=1344222158 groups=["lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(398, 286)
+
+[node name="SpikeSlot2d90" parent="SpikeSlots/Lane_h" unique_id=1923911641 groups=["lane_diag_b1", "lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(413, 174)
+
+[node name="SpikeSlot2d91" parent="SpikeSlots/Lane_h" unique_id=326781172 groups=["lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(413, 206)
+
+[node name="SpikeSlot2d92" parent="SpikeSlots/Lane_h" unique_id=752605488 groups=["lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(413, 237)
+
+[node name="SpikeSlot2d93" parent="SpikeSlots/Lane_h" unique_id=112714860 groups=["lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(413, 270)
+
+[node name="SpikeSlot2d94" parent="SpikeSlots/Lane_h" unique_id=1506861232 groups=["lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(413, 302)
+
+[node name="SpikeSlot2d95" parent="SpikeSlots/Lane_h" unique_id=8031104 groups=["lane_diag_a", "lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(398, 318)
+
+[node name="SpikeSlot2d96" parent="SpikeSlots/Lane_h" unique_id=2097902826 groups=["lane_diag_a", "lane_h", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(366, 318)
+
+[node name="SpikeSlot2d97" parent="SpikeSlots/Lane_h" unique_id=211204674 groups=["innerring", "lane_diag_a", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(334, 318)
+
+[node name="SpikeSlot2d98" parent="SpikeSlots/Lane_h" unique_id=1721107366 groups=["innerring", "lane_diag_a", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(301, 318)
+
+[node name="SpikeSlot2d99" parent="SpikeSlots/Lane_h" unique_id=1578678931 groups=["innerring", "lane_diag_a", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(270, 318)
+
+[node name="SpikeSlot2d100" parent="SpikeSlots/Lane_h" unique_id=2038450919 groups=["innerring", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(238, 318)
+
+[node name="SpikeSlot2d101" parent="SpikeSlots/Lane_h" unique_id=61744574 groups=["innerring", "lane_diag_b1", "lane_h", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(205, 318)
+
+[node name="Lane_h2" type="Node" parent="SpikeSlots" unique_id=628905260 groups=["outerringlane"]]
+
+[node name="SpikeSlot2d" parent="SpikeSlots/Lane_h2" unique_id=639240944 groups=["lane_diag_a1", "lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(109, 174)
+
+[node name="SpikeSlot2d2" parent="SpikeSlots/Lane_h2" unique_id=1878413573 groups=["lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(109, 206)
+
+[node name="SpikeSlot2d3" parent="SpikeSlots/Lane_h2" unique_id=285483571 groups=["lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(109, 238)
+
+[node name="SpikeSlot2d4" parent="SpikeSlots/Lane_h2" unique_id=419421374 groups=["lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(109, 269)
+
+[node name="SpikeSlot2d5" parent="SpikeSlots/Lane_h2" unique_id=1290640945 groups=["lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(109, 302)
+
+[node name="SpikeSlot2d6" parent="SpikeSlots/Lane_h2" unique_id=1521593033 groups=["lane_diag_b", "lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(125, 318)
+
+[node name="SpikeSlot2d7" parent="SpikeSlots/Lane_h2" unique_id=798913639 groups=["lane_diag_a1", "lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(125, 189)
+
+[node name="SpikeSlot2d8" parent="SpikeSlots/Lane_h2" unique_id=1618099768 groups=["lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(125, 222)
+
+[node name="SpikeSlot2d9" parent="SpikeSlots/Lane_h2" unique_id=1362829419 groups=["lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(125, 253)
+
+[node name="SpikeSlot2d10" parent="SpikeSlots/Lane_h2" unique_id=140926853 groups=["lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(125, 285)
+
+[node name="SpikeSlot2d11" parent="SpikeSlots/Lane_h2" unique_id=926655846 groups=["lane_diag_b", "lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(141, 302)
+
+[node name="SpikeSlot2d12" parent="SpikeSlots/Lane_h2" unique_id=140493002 groups=["lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(141, 269)
+
+[node name="SpikeSlot2d13" parent="SpikeSlots/Lane_h2" unique_id=1602316380 groups=["lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(142, 238)
+
+[node name="SpikeSlot2d14" parent="SpikeSlots/Lane_h2" unique_id=149823995 groups=["lane_diag_a1", "lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(142, 206)
+
+[node name="SpikeSlot2d15" parent="SpikeSlots/Lane_h2" unique_id=646055100 groups=["lane_diag_a1", "lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(142, 174)
+
+[node name="SpikeSlot2d16" parent="SpikeSlots/Lane_h2" unique_id=699749347 groups=["lane_diag_b", "lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(157, 318)
+
+[node name="SpikeSlot2d17" parent="SpikeSlots/Lane_h2" unique_id=107109165 groups=["lane_diag_a1", "lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(157, 189)
+
+[node name="SpikeSlot2d18" parent="SpikeSlots/Lane_h2" unique_id=537519110 groups=["lane_diag_a1", "lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(157, 222)
+
+[node name="SpikeSlot2d19" parent="SpikeSlots/Lane_h2" unique_id=1721762281 groups=["lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(157, 253)
+
+[node name="SpikeSlot2d20" parent="SpikeSlots/Lane_h2" unique_id=1578537469 groups=["lane_diag_b", "lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(157, 285)
+
+[node name="SpikeSlot2d21" parent="SpikeSlots/Lane_h2" unique_id=1992458507 groups=["lane_diag_a1", "lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(174, 174)
+
+[node name="SpikeSlot2d22" parent="SpikeSlots/Lane_h2" unique_id=1467760376 groups=["lane_diag_a1", "lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(174, 206)
+
+[node name="SpikeSlot2d23" parent="SpikeSlots/Lane_h2" unique_id=626704427 groups=["lane_diag_a1", "lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(174, 238)
+
+[node name="SpikeSlot2d24" parent="SpikeSlots/Lane_h2" unique_id=1657231002 groups=["lane_diag_b", "lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(174, 269)
+
+[node name="SpikeSlot2d25" parent="SpikeSlots/Lane_h2" unique_id=552092801 groups=["lane_diag_b", "lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(174, 302)
+
+[node name="SpikeSlot2d26" parent="SpikeSlots/Lane_h2" unique_id=1681309744 groups=["innerring", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(189, 318)
+
+[node name="SpikeSlot2d27" parent="SpikeSlots/Lane_h2" unique_id=463678673 groups=["innerring", "lane_diag_a1", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(189, 189)
+
+[node name="SpikeSlot2d28" parent="SpikeSlots/Lane_h2" unique_id=458498814 groups=["innerring", "lane_diag_a1", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(189, 222)
+
+[node name="SpikeSlot2d29" parent="SpikeSlots/Lane_h2" unique_id=1281016379 groups=["innerring", "lane_diag_a1", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(189, 254)
+
+[node name="SpikeSlot2d30" parent="SpikeSlots/Lane_h2" unique_id=2086660994 groups=["innerring", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(189, 285)
+
+[node name="SpikeSlot2d31" parent="SpikeSlots/Lane_h2" unique_id=1297109527 groups=["innerring", "lane_diag_a1", "lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(205, 174)
+
+[node name="SpikeSlot2d33" parent="SpikeSlots/Lane_h2" unique_id=409772472 groups=["lane_diag_a1", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(205, 206)
+
+[node name="SpikeSlot2d34" parent="SpikeSlots/Lane_h2" unique_id=1461607046 groups=["lane_diag_a1", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(205, 238)
+
+[node name="SpikeSlot2d35" parent="SpikeSlots/Lane_h2" unique_id=1811587338 groups=["innerring", "lane_diag_a1", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(205, 269)
+
+[node name="SpikeSlot2d36" parent="SpikeSlots/Lane_h2" unique_id=748858773 groups=["innerring", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(221, 318)
+
+[node name="SpikeSlot2d37" parent="SpikeSlots/Lane_h2" unique_id=1972373616 groups=["lane_diag_a1", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(221, 191)
+
+[node name="SpikeSlot2d38" parent="SpikeSlots/Lane_h2" unique_id=811826275 groups=["lane_diag_a1", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(221, 222)
+
+[node name="SpikeSlot2d39" parent="SpikeSlots/Lane_h2" unique_id=1630831246 groups=["innerring", "lane_diag_a1", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
 position = Vector2(221, 254)
 
-[node name="SpikeSlot2d4" parent="SpikeSlots" unique_id=1262521840 instance=ExtResource("8_px85n")]
-position = Vector2(302, 190)
+[node name="SpikeSlot2d40" parent="SpikeSlots/Lane_h2" unique_id=1488589639 groups=["innerring", "lane_diag_a1", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(220, 287)
+
+[node name="SpikeSlot2d41" parent="SpikeSlots/Lane_h2" unique_id=1798569923 groups=["innerring", "lane_diag_a1", "lane_h1", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(237, 174)
+
+[node name="SpikeSlot2d42" parent="SpikeSlots/Lane_h2" unique_id=40840736 groups=["lane_diag_a1", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(238, 238)
+
+[node name="SpikeSlot2d43" parent="SpikeSlots/Lane_h2" unique_id=1730908560 groups=["lane_diag_a1", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(238, 206)
+
+[node name="SpikeSlot2d44" parent="SpikeSlots/Lane_h2" unique_id=1692107962 groups=["innerring", "lane_diag_a1", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(238, 269)
+
+[node name="SpikeSlot2d45" parent="SpikeSlots/Lane_h2" unique_id=1839950810 groups=["innerring", "lane_diag_a1", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(254, 318)
+
+[node name="SpikeSlot2d46" parent="SpikeSlots/Lane_h2" unique_id=429227215 groups=["lane_diag_a1", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(254, 191)
+
+[node name="SpikeSlot2d47" parent="SpikeSlots/Lane_h2" unique_id=1072014337 groups=["lane_diag_a1", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(254, 222)
+
+[node name="SpikeSlot2d48" parent="SpikeSlots/Lane_h2" unique_id=1717247356 groups=["innerring", "lane_diag_a1", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(254, 254)
+
+[node name="SpikeSlot2d49" parent="SpikeSlots/Lane_h2" unique_id=1895564454 groups=["innerring", "lane_diag_a1", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(253, 287)
+
+[node name="SpikeSlot2d50" parent="SpikeSlots/Lane_h2" unique_id=116622347 groups=["innerring", "lane_diag_a1", "lane_diag_b", "lane_h1", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(269, 174)
+
+[node name="SpikeSlot2d51" parent="SpikeSlots/Lane_h2" unique_id=1740102724 groups=["innerring", "lane_diag_a1", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(269, 207)
+
+[node name="SpikeSlot2d52" parent="SpikeSlots/Lane_h2" unique_id=1451545531 groups=["innerring", "lane_diag_a1", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(269, 238)
+
+[node name="SpikeSlot2d53" parent="SpikeSlots/Lane_h2" unique_id=43950119 groups=["lane_diag_a1", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(269, 269)
+
+[node name="SpikeSlot2d54" parent="SpikeSlots/Lane_h2" unique_id=246581230 groups=["innerring", "lane_diag_a1", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(285, 318)
+
+[node name="SpikeSlot2d55" parent="SpikeSlots/Lane_h2" unique_id=1850354288 groups=["innerring", "lane_diag_a1", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(286, 191)
+
+[node name="SpikeSlot2d56" parent="SpikeSlots/Lane_h2" unique_id=1712774133 groups=["innerring", "lane_diag_a1", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(286, 222)
+
+[node name="SpikeSlot2d57" parent="SpikeSlots/Lane_h2" unique_id=1879846362 groups=["lane_diag_a1", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(286, 254)
+
+[node name="SpikeSlot2d58" parent="SpikeSlots/Lane_h2" unique_id=661630237 groups=["lane_diag_a1", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(286, 287)
+
+[node name="SpikeSlot2d59" parent="SpikeSlots/Lane_h2" unique_id=883920862 groups=["innerring", "lane_diag_b", "lane_h1", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(302, 174)
+
+[node name="SpikeSlot2d60" parent="SpikeSlots/Lane_h2" unique_id=1899825370 groups=["innerring", "lane_diag_a1", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(302, 207)
+
+[node name="SpikeSlot2d61" parent="SpikeSlots/Lane_h2" unique_id=823443136 groups=["innerring", "lane_diag_a1", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(302, 238)
+
+[node name="SpikeSlot2d62" parent="SpikeSlots/Lane_h2" unique_id=683433348 groups=["lane_diag_a1", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(301, 269)
+
+[node name="SpikeSlot2d63" parent="SpikeSlots/Lane_h2" unique_id=405551487 groups=["innerring", "lane_diag_a1", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(318, 318)
+
+[node name="SpikeSlot2d64" parent="SpikeSlots/Lane_h2" unique_id=697633985 groups=["lane_diag_a1", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(318, 254)
+
+[node name="SpikeSlot2d65" parent="SpikeSlots/Lane_h2" unique_id=606819861 groups=["lane_diag_a1", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(318, 287)
+
+[node name="SpikeSlot2d66" parent="SpikeSlots/Lane_h2" unique_id=1468099829 groups=["lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(317, 191)
+
+[node name="SpikeSlot2d67" parent="SpikeSlots/Lane_h2" unique_id=805276553 groups=["innerring", "lane_diag_a1", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(318, 222)
+
+[node name="SpikeSlot2d68" parent="SpikeSlots/Lane_h2" unique_id=1374159888 groups=["innerring", "lane_diag_b", "lane_h1", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(334, 174)
+
+[node name="SpikeSlot2d69" parent="SpikeSlots/Lane_h2" unique_id=206746758 groups=["innerring", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(334, 207)
+
+[node name="SpikeSlot2d70" parent="SpikeSlots/Lane_h2" unique_id=842895488 groups=["innerring", "lane_diag_a1", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(334, 238)
+
+[node name="SpikeSlot2d71" parent="SpikeSlots/Lane_h2" unique_id=1376284742 groups=["innerring", "lane_diag_a1", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(334, 269)
+
+[node name="SpikeSlot2d72" parent="SpikeSlots/Lane_h2" unique_id=597180568 groups=["lane_diag_a1", "lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(350, 318)
+
+[node name="SpikeSlot2d73" parent="SpikeSlots/Lane_h2" unique_id=57962770 groups=["lane_diag_b", "lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(350, 191)
+
+[node name="SpikeSlot2d74" parent="SpikeSlots/Lane_h2" unique_id=1574923094 groups=["lane_diag_b", "lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(350, 223)
+
+[node name="SpikeSlot2d75" parent="SpikeSlots/Lane_h2" unique_id=1464156949 groups=["lane_diag_a1", "lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(350, 254)
+
+[node name="SpikeSlot2d76" parent="SpikeSlots/Lane_h2" unique_id=242034326 groups=["lane_diag_a1", "lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(350, 286)
+
+[node name="SpikeSlot2d77" parent="SpikeSlots/Lane_h2" unique_id=679511252 groups=["lane_diag_b", "lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(366, 174)
+
+[node name="SpikeSlot2d78" parent="SpikeSlots/Lane_h2" unique_id=985762096 groups=["lane_diag_b", "lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(366, 207)
+
+[node name="SpikeSlot2d79" parent="SpikeSlots/Lane_h2" unique_id=764825596 groups=["lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(366, 239)
+
+[node name="SpikeSlot2d80" parent="SpikeSlots/Lane_h2" unique_id=1603803674 groups=["lane_diag_a1", "lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(366, 269)
+
+[node name="SpikeSlot2d81" parent="SpikeSlots/Lane_h2" unique_id=1585777428 groups=["lane_diag_a1", "lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(381, 318)
+
+[node name="SpikeSlot2d82" parent="SpikeSlots/Lane_h2" unique_id=425797077 groups=["lane_diag_b", "lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(381, 190)
+
+[node name="SpikeSlot2d83" parent="SpikeSlots/Lane_h2" unique_id=1707224560 groups=["lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(381, 223)
+
+[node name="SpikeSlot2d84" parent="SpikeSlots/Lane_h2" unique_id=153487835 groups=["lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(381, 255)
+
+[node name="SpikeSlot2d85" parent="SpikeSlots/Lane_h2" unique_id=183912392 groups=["lane_diag_a1", "lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(381, 287)
+
+[node name="SpikeSlot2d86" parent="SpikeSlots/Lane_h2" unique_id=764988323 groups=["lane_diag_b", "lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(398, 174)
+
+[node name="SpikeSlot2d87" parent="SpikeSlots/Lane_h2" unique_id=602643692 groups=["lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(398, 207)
+
+[node name="SpikeSlot2d88" parent="SpikeSlots/Lane_h2" unique_id=1402638499 groups=["lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(398, 239)
+
+[node name="SpikeSlot2d89" parent="SpikeSlots/Lane_h2" unique_id=1648640183 groups=["lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(398, 271)
+
+[node name="SpikeSlot2d90" parent="SpikeSlots/Lane_h2" unique_id=1248749626 groups=["lane_diag_a1", "lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(413, 318)
+
+[node name="SpikeSlot2d91" parent="SpikeSlots/Lane_h2" unique_id=840206912 groups=["lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(413, 190)
+
+[node name="SpikeSlot2d92" parent="SpikeSlots/Lane_h2" unique_id=1107076967 groups=["lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(413, 222)
+
+[node name="SpikeSlot2d93" parent="SpikeSlots/Lane_h2" unique_id=762974088 groups=["lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(413, 255)
+
+[node name="SpikeSlot2d94" parent="SpikeSlots/Lane_h2" unique_id=2035389207 groups=["lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(413, 287)
+
+[node name="SpikeSlot2d95" parent="SpikeSlots/Lane_h2" unique_id=181252828 groups=["lane_diag_a1", "lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(398, 302)
+
+[node name="SpikeSlot2d96" parent="SpikeSlots/Lane_h2" unique_id=387892834 groups=["lane_diag_a1", "lane_h1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(366, 302)
+
+[node name="SpikeSlot2d97" parent="SpikeSlots/Lane_h2" unique_id=921009412 groups=["innerring", "lane_diag_a1", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(334, 302)
+
+[node name="SpikeSlot2d98" parent="SpikeSlots/Lane_h2" unique_id=969777104 groups=["lane_diag_a1", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(301, 302)
+
+[node name="SpikeSlot2d99" parent="SpikeSlots/Lane_h2" unique_id=209197093 groups=["lane_diag_a1", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(270, 302)
+
+[node name="SpikeSlot2d100" parent="SpikeSlots/Lane_h2" unique_id=1030103840 groups=["innerring", "lane_diag_a1", "lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(238, 302)
+
+[node name="SpikeSlot2d101" parent="SpikeSlots/Lane_h2" unique_id=1607143177 groups=["lane_diag_b", "lane_h1", "lane_v1"] instance=ExtResource("8_px85n")]
+position = Vector2(205, 302)
+
+[node name="Lane_v" type="Node" parent="SpikeSlots" unique_id=2101192474 groups=["outerringlane"]]
+
+[node name="SpikeSlot2d" parent="SpikeSlots/Lane_v" unique_id=2127636919 groups=["lane_diag_a1", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(189, 94)
+
+[node name="SpikeSlot2d2" parent="SpikeSlots/Lane_v" unique_id=2010380920 groups=["lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(221, 94)
+
+[node name="SpikeSlot2d3" parent="SpikeSlots/Lane_v" unique_id=1557612403 groups=["lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(254, 94)
+
+[node name="SpikeSlot2d4" parent="SpikeSlots/Lane_v" unique_id=1400712290 groups=["lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(286, 94)
+
+[node name="SpikeSlot2d5" parent="SpikeSlots/Lane_v" unique_id=1164246930 groups=["lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(317, 94)
+
+[node name="SpikeSlot2d6" parent="SpikeSlots/Lane_v" unique_id=646547048 groups=["lane_diag_a1", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(205, 110)
+
+[node name="SpikeSlot2d7" parent="SpikeSlots/Lane_v" unique_id=1420073351 groups=["lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(238, 110)
+
+[node name="SpikeSlot2d8" parent="SpikeSlots/Lane_v" unique_id=1510342861 groups=["lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(270, 110)
+
+[node name="SpikeSlot2d9" parent="SpikeSlots/Lane_v" unique_id=1495114656 groups=["lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(302, 110)
+
+[node name="SpikeSlot2d10" parent="SpikeSlots/Lane_v" unique_id=232525056 groups=["lane_diag_b", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(334, 110)
+
+[node name="SpikeSlot2d11" parent="SpikeSlots/Lane_v" unique_id=913246710 groups=["lane_diag_a1", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(189, 126)
+
+[node name="SpikeSlot2d12" parent="SpikeSlots/Lane_v" unique_id=1076635382 groups=["lane_diag_a1", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(221, 126)
+
+[node name="SpikeSlot2d13" parent="SpikeSlots/Lane_v" unique_id=989719249 groups=["lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(254, 126)
+
+[node name="SpikeSlot2d14" parent="SpikeSlots/Lane_v" unique_id=1107682857 groups=["lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(286, 126)
+
+[node name="SpikeSlot2d15" parent="SpikeSlots/Lane_v" unique_id=451845441 groups=["lane_diag_b", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(317, 126)
+
+[node name="SpikeSlot2d16" parent="SpikeSlots/Lane_v" unique_id=908783606 groups=["lane_diag_a1", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(205, 143)
+
+[node name="SpikeSlot2d17" parent="SpikeSlots/Lane_v" unique_id=1490783020 groups=["lane_diag_a1", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(237, 143)
+
+[node name="SpikeSlot2d18" parent="SpikeSlots/Lane_v" unique_id=924219039 groups=["lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(270, 142)
+
+[node name="SpikeSlot2d19" parent="SpikeSlots/Lane_v" unique_id=940334884 groups=["lane_diag_b", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(302, 142)
+
+[node name="SpikeSlot2d20" parent="SpikeSlots/Lane_v" unique_id=1381465446 groups=["lane_diag_b", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(334, 141)
+
+[node name="SpikeSlot2d21" parent="SpikeSlots/Lane_v" unique_id=1127580940 groups=["lane_diag_a1", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(189, 158)
+
+[node name="SpikeSlot2d22" parent="SpikeSlots/Lane_v" unique_id=1705247535 groups=["lane_diag_a1", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(221, 158)
+
+[node name="SpikeSlot2d23" parent="SpikeSlots/Lane_v" unique_id=278224880 groups=["lane_diag_a1", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(254, 158)
+
+[node name="SpikeSlot2d24" parent="SpikeSlots/Lane_v" unique_id=1938467312 groups=["lane_diag_b", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(286, 158)
+
+[node name="SpikeSlot2d25" parent="SpikeSlots/Lane_v" unique_id=1643262273 groups=["lane_diag_b", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(318, 158)
+
+[node name="SpikeSlot2d26" parent="SpikeSlots/Lane_v" unique_id=485620026 groups=["lane_diag_b", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(205, 334)
+
+[node name="SpikeSlot2d27" parent="SpikeSlots/Lane_v" unique_id=1123395723 groups=["lane_diag_b", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(237, 334)
+
+[node name="SpikeSlot2d28" parent="SpikeSlots/Lane_v" unique_id=463104670 groups=["lane_diag_a1", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(270, 334)
+
+[node name="SpikeSlot2d29" parent="SpikeSlots/Lane_v" unique_id=2025003660 groups=["lane_diag_a1", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(302, 334)
+
+[node name="SpikeSlot2d30" parent="SpikeSlots/Lane_v" unique_id=1692292355 groups=["lane_diag_a1", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(333, 334)
+
+[node name="SpikeSlot2d31" parent="SpikeSlots/Lane_v" unique_id=1478062488 groups=["outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(318, 350)
+
+[node name="SpikeSlot2d32" parent="SpikeSlots/Lane_v" unique_id=749972456 groups=["lane_diag_a1", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(285, 350)
+
+[node name="SpikeSlot2d33" parent="SpikeSlots/Lane_v" unique_id=130186646 groups=["lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(254, 349)
+
+[node name="SpikeSlot2d34" parent="SpikeSlots/Lane_v" unique_id=1269308349 groups=["lane_diag_b", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(221, 349)
+
+[node name="SpikeSlot2d35" parent="SpikeSlots/Lane_v" unique_id=349351141 groups=["lane_diag_b", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(189, 349)
+
+[node name="SpikeSlot2d36" parent="SpikeSlots/Lane_v" unique_id=91530998 groups=["lane_diag_b", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(205, 366)
+
+[node name="SpikeSlot2d37" parent="SpikeSlots/Lane_v" unique_id=363662538 groups=["lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(237, 366)
+
+[node name="SpikeSlot2d38" parent="SpikeSlots/Lane_v" unique_id=783826005 groups=["lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(270, 365)
+
+[node name="SpikeSlot2d39" parent="SpikeSlots/Lane_v" unique_id=1286462688 groups=["lane_diag_a1", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(301, 366)
+
+[node name="SpikeSlot2d40" parent="SpikeSlots/Lane_v" unique_id=1109075216 groups=["lane_diag_a1", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(333, 366)
+
+[node name="SpikeSlot2d41" parent="SpikeSlots/Lane_v" unique_id=1073784435 groups=["lane_diag_b", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(189, 382)
+
+[node name="SpikeSlot2d42" parent="SpikeSlots/Lane_v" unique_id=1510554932 groups=["lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(221, 382)
+
+[node name="SpikeSlot2d43" parent="SpikeSlots/Lane_v" unique_id=1305451641 groups=["lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(253, 382)
+
+[node name="SpikeSlot2d44" parent="SpikeSlots/Lane_v" unique_id=640298887 groups=["lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(285, 382)
+
+[node name="SpikeSlot2d45" parent="SpikeSlots/Lane_v" unique_id=756894235 groups=["lane_diag_a1", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(318, 382)
+
+[node name="SpikeSlot2d46" parent="SpikeSlots/Lane_v" unique_id=966176444 groups=["lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(205, 397)
+
+[node name="SpikeSlot2d47" parent="SpikeSlots/Lane_v" unique_id=1607133183 groups=["lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(237, 397)
+
+[node name="SpikeSlot2d48" parent="SpikeSlots/Lane_v" unique_id=743818944 groups=["lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(269, 397)
+
+[node name="SpikeSlot2d49" parent="SpikeSlots/Lane_v" unique_id=729702588 groups=["lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(301, 397)
+
+[node name="SpikeSlot2d50" parent="SpikeSlots/Lane_v" unique_id=802972594 groups=["lane_diag_a1", "lane_v1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(334, 397)
+
+[node name="Lane_v1" type="Node" parent="SpikeSlots" unique_id=242504489 groups=["outerringlane"]]
+
+[node name="SpikeSlot2d" parent="SpikeSlots/Lane_v1" unique_id=156484100 groups=["lane_diag_b1", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(189, 334)
+
+[node name="SpikeSlot2d2" parent="SpikeSlots/Lane_v1" unique_id=1506805172 groups=["lane_diag_b1", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(221, 334)
+
+[node name="SpikeSlot2d3" parent="SpikeSlots/Lane_v1" unique_id=115196455 groups=["lane_diag_b1", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(253, 334)
+
+[node name="SpikeSlot2d4" parent="SpikeSlots/Lane_v1" unique_id=1177213289 groups=["lane_diag_a", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(285, 334)
+
+[node name="SpikeSlot2d5" parent="SpikeSlots/Lane_v1" unique_id=1475953113 groups=["lane_diag_a", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(318, 334)
+
+[node name="SpikeSlot2d6" parent="SpikeSlots/Lane_v1" unique_id=1733314549 groups=["lane_diag_b1", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(205, 349)
+
+[node name="SpikeSlot2d7" parent="SpikeSlots/Lane_v1" unique_id=1127260570 groups=["lane_diag_b1", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(237, 349)
+
+[node name="SpikeSlot2d8" parent="SpikeSlots/Lane_v1" unique_id=1653644037 groups=["lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(270, 349)
+
+[node name="SpikeSlot2d9" parent="SpikeSlots/Lane_v1" unique_id=1002761768 groups=["lane_diag_a", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(302, 349)
+
+[node name="SpikeSlot2d10" parent="SpikeSlots/Lane_v1" unique_id=1717653334 groups=["lane_diag_a", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(333, 350)
+
+[node name="SpikeSlot2d11" parent="SpikeSlots/Lane_v1" unique_id=1641618131 groups=["lane_diag_b1", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(189, 366)
+
+[node name="SpikeSlot2d12" parent="SpikeSlots/Lane_v1" unique_id=1357416802 groups=["lane_diag_b1", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(221, 366)
+
+[node name="SpikeSlot2d13" parent="SpikeSlots/Lane_v1" unique_id=212686242 groups=["lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(254, 365)
+
+[node name="SpikeSlot2d14" parent="SpikeSlots/Lane_v1" unique_id=1719392796 groups=["lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(285, 365)
+
+[node name="SpikeSlot2d15" parent="SpikeSlots/Lane_v1" unique_id=1436121573 groups=["lane_diag_a", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(318, 366)
+
+[node name="SpikeSlot2d16" parent="SpikeSlots/Lane_v1" unique_id=354350021 groups=["lane_diag_b1", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(205, 382)
+
+[node name="SpikeSlot2d17" parent="SpikeSlots/Lane_v1" unique_id=321356210 groups=["lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(237, 382)
+
+[node name="SpikeSlot2d18" parent="SpikeSlots/Lane_v1" unique_id=1673516639 groups=["lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(270, 382)
+
+[node name="SpikeSlot2d19" parent="SpikeSlots/Lane_v1" unique_id=1535196370 groups=["lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(301, 382)
+
+[node name="SpikeSlot2d20" parent="SpikeSlots/Lane_v1" unique_id=971549468 groups=["lane_diag_a", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(334, 382)
+
+[node name="SpikeSlot2d21" parent="SpikeSlots/Lane_v1" unique_id=1663144014 groups=["lane_diag_b1", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(189, 397)
+
+[node name="SpikeSlot2d22" parent="SpikeSlots/Lane_v1" unique_id=1774275619 groups=["lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(221, 397)
+
+[node name="SpikeSlot2d23" parent="SpikeSlots/Lane_v1" unique_id=263370293 groups=["lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(254, 397)
+
+[node name="SpikeSlot2d24" parent="SpikeSlots/Lane_v1" unique_id=115271883 groups=["lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(285, 397)
+
+[node name="SpikeSlot2d25" parent="SpikeSlots/Lane_v1" unique_id=1096397010 groups=["lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(318, 397)
+
+[node name="SpikeSlot2d26" parent="SpikeSlots/Lane_v1" unique_id=420151256 groups=["lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(205, 94)
+
+[node name="SpikeSlot2d27" parent="SpikeSlots/Lane_v1" unique_id=79109899 groups=["lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(238, 94)
+
+[node name="SpikeSlot2d28" parent="SpikeSlots/Lane_v1" unique_id=567119294 groups=["lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(270, 94)
+
+[node name="SpikeSlot2d29" parent="SpikeSlots/Lane_v1" unique_id=647407144 groups=["lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(302, 94)
+
+[node name="SpikeSlot2d30" parent="SpikeSlots/Lane_v1" unique_id=146934557 groups=["lane_diag_b1", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(334, 94)
+
+[node name="SpikeSlot2d31" parent="SpikeSlots/Lane_v1" unique_id=1330231995 groups=["lane_diag_b1", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(317, 110)
+
+[node name="SpikeSlot2d32" parent="SpikeSlots/Lane_v1" unique_id=258230065 groups=["lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(286, 110)
+
+[node name="SpikeSlot2d33" parent="SpikeSlots/Lane_v1" unique_id=1768882137 groups=["lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(254, 110)
+
+[node name="SpikeSlot2d34" parent="SpikeSlots/Lane_v1" unique_id=1359344588 groups=["lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(221, 110)
+
+[node name="SpikeSlot2d35" parent="SpikeSlots/Lane_v1" unique_id=1761949146 groups=["lane_diag_a", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(189, 110)
+
+[node name="SpikeSlot2d36" parent="SpikeSlots/Lane_v1" unique_id=1249787092 groups=["lane_diag_a", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(207, 126)
+
+[node name="SpikeSlot2d37" parent="SpikeSlots/Lane_v1" unique_id=457527073 groups=["lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(238, 126)
+
+[node name="SpikeSlot2d38" parent="SpikeSlots/Lane_v1" unique_id=1814797967 groups=["lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(270, 126)
+
+[node name="SpikeSlot2d39" parent="SpikeSlots/Lane_v1" unique_id=2082131364 groups=["lane_diag_b1", "lane_v"] instance=ExtResource("8_px85n")]
+position = Vector2(302, 126)
+
+[node name="SpikeSlot2d40" parent="SpikeSlots/Lane_v1" unique_id=960696844 groups=["lane_diag_b1", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(334, 126)
+
+[node name="SpikeSlot2d41" parent="SpikeSlots/Lane_v1" unique_id=363870500 groups=["lane_diag_a", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(189, 143)
+
+[node name="SpikeSlot2d42" parent="SpikeSlots/Lane_v1" unique_id=21677252 groups=["lane_diag_a", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(221, 143)
+
+[node name="SpikeSlot2d43" parent="SpikeSlots/Lane_v1" unique_id=57445465 groups=["lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(254, 142)
+
+[node name="SpikeSlot2d44" parent="SpikeSlots/Lane_v1" unique_id=1953213856 groups=["lane_diag_b1", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(286, 142)
+
+[node name="SpikeSlot2d45" parent="SpikeSlots/Lane_v1" unique_id=1270250620 groups=["lane_diag_b1", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(318, 142)
+
+[node name="SpikeSlot2d46" parent="SpikeSlots/Lane_v1" unique_id=217481287 groups=["lane_diag_a", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(205, 158)
+
+[node name="SpikeSlot2d47" parent="SpikeSlots/Lane_v1" unique_id=1987245496 groups=["lane_diag_a", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(238, 158)
+
+[node name="SpikeSlot2d48" parent="SpikeSlots/Lane_v1" unique_id=1535023741 groups=["lane_diag_b1", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(270, 158)
+
+[node name="SpikeSlot2d49" parent="SpikeSlots/Lane_v1" unique_id=1722915267 groups=["lane_diag_b1", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(302, 158)
+
+[node name="SpikeSlot2d50" parent="SpikeSlots/Lane_v1" unique_id=1837469034 groups=["lane_diag_b1", "lane_v", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(334, 158)
+
+[node name="SpikeSlots_CBR" type="Node" parent="SpikeSlots" unique_id=1500633549 groups=["outerringlane"]]
+
+[node name="SpikeSlot2d" parent="SpikeSlots/SpikeSlots_CBR" unique_id=860815930 groups=["corner_br", "lane_diag_a", "lane_diag_a1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(350, 382)
+
+[node name="SpikeSlot2d2" parent="SpikeSlots/SpikeSlots_CBR" unique_id=601293288 groups=["corner_br", "lane_diag_a", "lane_diag_a1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(366, 366)
+
+[node name="SpikeSlot2d3" parent="SpikeSlots/SpikeSlots_CBR" unique_id=133998776 groups=["corner_br", "lane_diag_a", "lane_diag_a1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(382, 350)
+
+[node name="SpikeSlot2d4" parent="SpikeSlots/SpikeSlots_CBR" unique_id=1886856470 groups=["corner_br", "lane_diag_a", "lane_diag_a1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(398, 334)
+
+[node name="SpikeSlot2d5" parent="SpikeSlots/SpikeSlots_CBR" unique_id=2009430459 groups=["corner_br", "lane_diag_a", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(382, 334)
+
+[node name="SpikeSlot2d6" parent="SpikeSlots/SpikeSlots_CBR" unique_id=895673260 groups=["corner_br", "lane_diag_a", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(366, 350)
+
+[node name="SpikeSlot2d7" parent="SpikeSlots/SpikeSlots_CBR" unique_id=749667595 groups=["corner_br", "lane_diag_a", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(350, 366)
+
+[node name="SpikeSlot2d8" parent="SpikeSlots/SpikeSlots_CBR" unique_id=1610821072 groups=["corner_br", "lane_diag_a", "lane_diag_a1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(366, 334)
+
+[node name="SpikeSlot2d9" parent="SpikeSlots/SpikeSlots_CBR" unique_id=814498501 groups=["corner_br", "lane_diag_a", "lane_diag_a1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(350, 350)
+
+[node name="SpikeSlot2d10" parent="SpikeSlots/SpikeSlots_CBR" unique_id=320031522 groups=["corner_br", "lane_diag_a", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(350, 334)
+
+[node name="SpikeSlots_CBL" type="Node" parent="SpikeSlots" unique_id=1779778110 groups=["outerringlane"]]
+
+[node name="SpikeSlot2d" parent="SpikeSlots/SpikeSlots_CBL" unique_id=330907145 groups=["corner_bl", "lane_diag_b1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(125, 334)
+
+[node name="SpikeSlot2d2" parent="SpikeSlots/SpikeSlots_CBL" unique_id=1623223207 groups=["corner_bl", "lane_diag_b1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(141, 349)
+
+[node name="SpikeSlot2d3" parent="SpikeSlots/SpikeSlots_CBL" unique_id=165148961 groups=["corner_bl", "lane_diag_b1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(157, 366)
+
+[node name="SpikeSlot2d4" parent="SpikeSlots/SpikeSlots_CBL" unique_id=1294388564 groups=["corner_bl", "lane_diag_b1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(174, 382)
+
+[node name="SpikeSlot2d5" parent="SpikeSlots/SpikeSlots_CBL" unique_id=1982575985 groups=["corner_bl", "lane_diag_b", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(174, 366)
+
+[node name="SpikeSlot2d6" parent="SpikeSlots/SpikeSlots_CBL" unique_id=1858303252 groups=["corner_bl", "lane_diag_b", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(157, 349)
+
+[node name="SpikeSlot2d7" parent="SpikeSlots/SpikeSlots_CBL" unique_id=1140083687 groups=["corner_bl", "lane_diag_b", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(141, 334)
+
+[node name="SpikeSlot2d8" parent="SpikeSlots/SpikeSlots_CBL" unique_id=129336068 groups=["corner_bl", "lane_diag_b1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(157, 334)
+
+[node name="SpikeSlot2d9" parent="SpikeSlots/SpikeSlots_CBL" unique_id=1609856781 groups=["corner_bl", "lane_diag_b1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(174, 349)
+
+[node name="SpikeSlot2d10" parent="SpikeSlots/SpikeSlots_CBL" unique_id=2086719341 groups=["corner_bl", "lane_diag_b", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(174, 334)
+
+[node name="SpikeSlots_CTR" type="Node" parent="SpikeSlots" unique_id=1071949172 groups=["outerringlane"]]
+
+[node name="SpikeSlot2d" parent="SpikeSlots/SpikeSlots_CTR" unique_id=1789470822 groups=["corner_tr", "lane_diag_b1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(349, 110)
+
+[node name="SpikeSlot2d2" parent="SpikeSlots/SpikeSlots_CTR" unique_id=816761372 groups=["corner_tr", "lane_diag_b1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(365, 126)
+
+[node name="SpikeSlot2d3" parent="SpikeSlots/SpikeSlots_CTR" unique_id=1897051471 groups=["corner_tr", "lane_diag_b1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(381, 141)
+
+[node name="SpikeSlot2d4" parent="SpikeSlots/SpikeSlots_CTR" unique_id=679097752 groups=["corner_tr", "lane_diag_b1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(398, 158)
+
+[node name="SpikeSlot2d5" parent="SpikeSlots/SpikeSlots_CTR" unique_id=182092944 groups=["corner_tr", "lane_diag_b", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(381, 158)
+
+[node name="SpikeSlot2d6" parent="SpikeSlots/SpikeSlots_CTR" unique_id=1327786958 groups=["corner_tr", "lane_diag_b", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(365, 141)
+
+[node name="SpikeSlot2d7" parent="SpikeSlots/SpikeSlots_CTR" unique_id=1823266708 groups=["corner_tr", "lane_diag_b", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(349, 126)
+
+[node name="SpikeSlot2d8" parent="SpikeSlots/SpikeSlots_CTR" unique_id=592677803 groups=["corner_tr", "lane_diag_b1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(349, 141)
+
+[node name="SpikeSlot2d9" parent="SpikeSlots/SpikeSlots_CTR" unique_id=1164372412 groups=["corner_tr", "lane_diag_b1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(365, 158)
+
+[node name="SpikeSlot2d10" parent="SpikeSlots/SpikeSlots_CTR" unique_id=815574961 groups=["corner_tr", "lane_diag_b", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(349, 158)
+
+[node name="SpikeSlots_CTL" type="Node" parent="SpikeSlots" unique_id=1335208984 groups=["innerring", "outerringlane"]]
+
+[node name="SpikeSlot2d" parent="SpikeSlots/SpikeSlots_CTL" unique_id=2110394196 groups=["corner_tl", "lane_diag_a1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(174, 110)
+
+[node name="SpikeSlot2d2" parent="SpikeSlots/SpikeSlots_CTL" unique_id=1042084403 groups=["corner_tl", "lane_diag_a1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(158, 126)
+
+[node name="SpikeSlot2d3" parent="SpikeSlots/SpikeSlots_CTL" unique_id=1797034949 groups=["corner_tl", "lane_diag_a1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(142, 143)
+
+[node name="SpikeSlot2d4" parent="SpikeSlots/SpikeSlots_CTL" unique_id=366065136 groups=["corner_tl", "lane_diag_a1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(125, 158)
+
+[node name="SpikeSlot2d5" parent="SpikeSlots/SpikeSlots_CTL" unique_id=752827904 groups=["corner_tl", "lane_diag_a", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(142, 158)
+
+[node name="SpikeSlot2d6" parent="SpikeSlots/SpikeSlots_CTL" unique_id=1288447914 groups=["corner_tl", "lane_diag_a", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(158, 143)
+
+[node name="SpikeSlot2d7" parent="SpikeSlots/SpikeSlots_CTL" unique_id=1959054569 groups=["corner_tl", "lane_diag_a", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(174, 126)
+
+[node name="SpikeSlot2d8" parent="SpikeSlots/SpikeSlots_CTL" unique_id=1358189122 groups=["corner_tl", "lane_diag_a1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(174, 143)
+
+[node name="SpikeSlot2d9" parent="SpikeSlots/SpikeSlots_CTL" unique_id=436924302 groups=["corner_tl", "lane_diag_a1", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(158, 158)
+
+[node name="SpikeSlot2d10" parent="SpikeSlots/SpikeSlots_CTL" unique_id=42990245 groups=["corner_tl", "lane_diag_a", "outerringlane"] instance=ExtResource("8_px85n")]
+position = Vector2(174, 158)

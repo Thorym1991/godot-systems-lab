@@ -6,3 +6,4 @@
 [node name="PaintingAbilitySpikes" type="Node2D" unique_id=2025079884]
 script = ExtResource("1_yw5ql")
 spike_scene = ExtResource("2_mta0l")
+lane_groups = Array[StringName]([&"lane_h", &"lane_h1", &"lane_v", &"lane_v1", &"lane_diag_a", &"lane_diag_a1", &"lane_diag_b", &"lane_diag_b1"])
